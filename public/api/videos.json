@@ -1,0 +1,239 @@
+[
+  {
+    "id": "playlist3",
+    "type": "playlist",
+    "title": "Mix - supercell / My Dearest",
+    "thumbnail": "https://i.ytimg.com/vi/a6nmtJAC4NM/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYfyATKBUwDw==&rs=AOn4CLCthLa3Cx_PbcP1-YXlLMoyLWPgpw",
+    "videosCount": 12,
+    "author": "EGOIST, DAZBEE, Chiai Fujikawa and more",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CodeMaster",
+    "publishedAt": "2025-12-20T11:00:00Z"
+  },
+  {
+    "id": "video8",
+    "type": "video",
+    "title": "Game Maker за 12 часов с нуля полный курс перезалив Sempiternal Rain Dev",
+    "thumbnail": "https://i.ytimg.com/vi/sRq7nIq5ktQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDZ7TUgXKMZcNB_9DGitllCBB_v0Q",
+    "duration": "11:36:38",
+    "views": 101000,
+    "author": "Shalfey | Туториалы по разработке игр",
+    "authorAvatar": "https://yt3.ggpht.com/7SzfNEisEjABZ-_NtW7crGeSZAuvXC32z03tcbL1_Gu3t76bMKwNNeSMxwd53ZWgT0uBTKQayg=s68-c-k-c0x00ffffff-no-rj",
+    "publishedAt": "2025-01-11T12:00:00Z"
+  },
+  {
+    "id": "stream5",
+    "type": "stream",
+    "title": "lofi hip hop radio 📚 beats to relax/study to",
+    "thumbnail": "https://i.ytimg.com/vi/jfKfPfyJRdk/hq720.jpg?v=6911ace0&sqp=CJyt2csG-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBmafo_prPc_k1gDR2A546yUwwNig",
+    "viewers": 15000,
+    "author": "Lofi Girl",
+    "authorAvatar": "https://yt3.ggpht.com/_BSh2VVvVMzqBoKyWbQnyC35XFOV-ZbXavf9nfu3ZjpFUGEImQnlWt9ZlpfGQBqWEbGNc4rPWg=s88-c-k-c0x00ffffff-no-rj",
+    "isLive": true,
+    "startedAt": "2026-01-23T18:00:00Z"
+  },
+  {
+    "id": "place2",
+    "type": "music",
+    "title": "Tokyo Nights: Neon Streets & Food",
+    "thumbnail": "https://picsum.photos/seed/place_tokyo/640/360",
+    "duration": "11:20",
+    "views": 20345,
+    "author": "UrbanExplorer",
+    "authorAvatar": "https://i.pravatar.cc/150?u=UrbanExplorer",
+    "publishedAt": "2026-01-08T18:30:00Z"
+  },
+  {
+    "id": "video1",
+    "type": "video",
+    "title": "Hytale: A Fresh Start",
+    "thumbnail": "https://i.ytimg.com/vi/jlUY9cYEoJQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDdZFHyxjqJD15gSV3IITQ9-_jT4w",
+    "duration": "50:45",
+    "views": 1800000,
+    "author": "Mumbo Jumbo",
+    "authorAvatar": "https://yt3.ggpht.com/ssE5Ek6IuCo3BjDPDodGFjQ6_Ubtt4iKpKmLNznY55gEXjxHAFGK_8YB1tjI5V_vfYqT298DAw=s68-c-k-c0x00ffffff-no-rj",
+    "publishedAt": "2026-01-19T12:00:00Z"
+  },
+
+  {
+    "id": "video4",
+    "type": "video",
+    "title": "GraphQL для начинающих",
+    "thumbnail": "https://picsum.photos/seed/video4/640/360",
+    "duration": "15:10",
+    "views": 5400,
+    "author": "BackendGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=BackendGuru",
+    "publishedAt": "2026-01-15T13:00:00Z"
+  },
+  {
+    "id": "place1",
+    "type": "music",
+    "title": "Wandering in Paris: A Street-Level Tour",
+    "thumbnail": "https://picsum.photos/seed/place_paris/640/360",
+    "duration": "7:45",
+    "views": 15432,
+    "author": "CityWalks",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CityWalks",
+    "publishedAt": "2026-01-10T09:00:00Z"
+  },
+  {
+    "id": "playlist1",
+    "type": "playlist",
+    "title": "React для начинающих",
+    "thumbnail": "https://picsum.photos/seed/playlist1/640/360",
+    "videosCount": 15,
+    "author": "CodeMaster",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CodeMaster",
+    "publishedAt": "2025-12-15T10:00:00Z"
+  },
+  {
+    "id": "video6",
+    "type": "video",
+    "title": "React Router: Практика",
+    "thumbnail": "https://picsum.photos/seed/video6/640/360",
+    "duration": "10:50",
+    "views": 6700,
+    "author": "NextGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=NextGuru",
+    "publishedAt": "2026-01-13T12:00:00Z"
+  },
+  {
+    "id": "place5",
+    "type": "music",
+    "title": "Northern Lights Over Reykjavik",
+    "thumbnail": "https://picsum.photos/seed/place_reykjavik/640/360",
+    "duration": "9:40",
+    "views": 14321,
+    "author": "AuroraWatch",
+    "authorAvatar": "https://i.pravatar.cc/150?u=AuroraWatch",
+    "publishedAt": "2025-12-25T22:00:00Z"
+  },
+  {
+    "id": "stream1",
+    "type": "stream",
+    "title": "Live: Разбор кода на React",
+    "thumbnail": "https://picsum.photos/seed/stream1/640/360",
+    "viewers": 532,
+    "author": "CodeMaster",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CodeMaster",
+    "isLive": true,
+    "startedAt": "2026-01-23T14:00:00Z"
+  },
+  {
+    "id": "playlist4",
+    "type": "playlist",
+    "title": "JavaScript от А до Я",
+    "thumbnail": "https://picsum.photos/seed/playlist4/640/360",
+    "videosCount": 25,
+    "author": "JSNinja",
+    "authorAvatar": "https://i.pravatar.cc/150?u=JSNinja",
+    "publishedAt": "2025-11-20T14:00:00Z"
+  },
+  {
+    "id": "video2",
+    "type": "video",
+    "title": "TypeScript: Советы для новичков",
+    "thumbnail": "https://picsum.photos/seed/video2/640/360",
+    "duration": "8:20",
+    "views": 20456,
+    "author": "TSGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=TSGuru",
+    "publishedAt": "2026-01-18T16:00:00Z"
+  },
+  {
+    "id": "place4",
+    "type": "music",
+    "title": "Bali Beaches: Sunrise to Sunset",
+    "thumbnail": "https://picsum.photos/seed/place_bali/640/360",
+    "duration": "14:02",
+    "views": 27654,
+    "author": "TravelVibes",
+    "authorAvatar": "https://i.pravatar.cc/150?u=TravelVibes",
+    "publishedAt": "2025-12-30T06:00:00Z"
+  },
+  {
+    "id": "video7",
+    "type": "video",
+    "title": "JS Event Loop в деталях",
+    "thumbnail": "https://picsum.photos/seed/video7/640/360",
+    "duration": "14:20",
+    "views": 9800,
+    "author": "JSNinja",
+    "authorAvatar": "https://i.pravatar.cc/150?u=JSNinja",
+    "publishedAt": "2026-01-12T12:00:00Z"
+  },
+  {
+    "id": "playlist2",
+    "type": "playlist",
+    "title": "Node.js с нуля",
+    "thumbnail": "https://picsum.photos/seed/playlist2/640/360",
+    "videosCount": 20,
+    "author": "BackendGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=BackendGuru",
+    "publishedAt": "2025-11-10T12:00:00Z"
+  },
+  {
+    "id": "video5",
+    "type": "video",
+    "title": "TypeScript vs JavaScript",
+    "thumbnail": "https://picsum.photos/seed/video5/640/360",
+    "duration": "11:00",
+    "views": 9200,
+    "author": "TSGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=TSGuru",
+    "publishedAt": "2026-01-14T12:00:00Z"
+  },
+  {
+    "id": "stream3",
+    "type": "stream",
+    "title": "Live: Проект на Next.js",
+    "thumbnail": "https://picsum.photos/seed/stream3/640/360",
+    "viewers": 250,
+    "author": "NextGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=NextGuru",
+    "isLive": true,
+    "startedAt": "2026-01-23T16:00:00Z"
+  },
+  {
+    "id": "playlist7",
+    "type": "playlist",
+    "title": "JavaScript от А до Я",
+    "thumbnail": "https://picsum.photos/seed/playlist7/640/360",
+    "videosCount": 22,
+    "author": "JSNinja",
+    "authorAvatar": "https://i.pravatar.cc/150?u=JSNinja",
+    "publishedAt": "2025-12-05T12:00:00Z"
+  },
+  {
+    "id": "video3",
+    "type": "video",
+    "title": "CSS анимации для новичков",
+    "thumbnail": "https://picsum.photos/seed/video3/640/360",
+    "duration": "9:50",
+    "views": 8321,
+    "author": "FrontendPro",
+    "authorAvatar": "https://i.pravatar.cc/150?u=FrontendPro",
+    "publishedAt": "2026-01-17T14:00:00Z"
+  },
+  {
+    "id": "place3",
+    "type": "music",
+    "title": "Central Park Relaxing Walk (NYC)",
+    "thumbnail": "https://picsum.photos/seed/place_nyc/640/360",
+    "duration": "6:10",
+    "views": 9821,
+    "author": "CityScenes",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CityScenes",
+    "publishedAt": "2026-01-05T10:00:00Z"
+  },
+  {
+    "id": "playlist5",
+    "type": "playlist",
+    "title": "Node.js API от А до Я",
+    "thumbnail": "https://picsum.photos/seed/playlist5/640/360",
+    "videosCount": 18,
+    "author": "BackendGuru",
+    "authorAvatar": "https://i.pravatar.cc/150?u=BackendGuru",
+    "publishedAt": "2025-12-10T12:00:00Z"
+  }
+]

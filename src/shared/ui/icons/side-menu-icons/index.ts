@@ -1,0 +1,10 @@
+export { ClipIcon } from "./ClipIcon";
+export { CoursesIcon } from "./CoursesIcon";
+export { DownloadIcon } from "./DownloadIcon";
+export { HistoryIcon } from "./HistoryIcon";
+export { LikeIcon } from "./LikeIcon";
+export { PlaylistsIcon } from "./PlaylistsIcon";
+export { PodcastsIcon } from "./PodcastsIcon";
+export { VideoIcon } from "./VideoIcon";
+export { WatchIcon } from "./WatchIcon";
+export { LiveIcon } from "./LiveIcon";

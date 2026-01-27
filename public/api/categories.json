@@ -1,0 +1,18 @@
+{
+  "topics_library": [
+    { "id": "t1", "label": "All", "type": "global" },
+    { "id": "t2", "label": "Gaming", "type": "global" },
+    { "id": "t3", "label": "Music", "type": "global" },
+    { "id": "t4", "label": "Mixes", "type": "global" },
+    { "id": "t5", "label": "Live", "type": "global" },
+    { "id": "t6", "label": "RPGs", "type": "interest" },
+    { "id": "t7", "label": "Minecraft", "type": "interest" },
+    { "id": "t8", "label": "Clash Royale", "type": "interest" },
+    { "id": "t9", "label": "Recently uploaded", "type": "system" },
+    { "id": "t10", "label": "Watched", "type": "system" },
+    { "id": "t11", "label": "New to you", "type": "system" }
+  ],
+  "users_preferences": {
+    "user_1": ["t6", "t7", "t8"]
+  }
+}

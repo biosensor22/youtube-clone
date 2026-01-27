@@ -1,0 +1,109 @@
+{
+  "subscriptions": [
+    {
+      "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+      "title": "Bring Me To The Horizon",
+      "url": "https://www.youtube.com/@GoogleDevelopers",
+      "category": "Music",
+      "subscribedAt": "2025-01-12",
+      "pfp": "https://yt3.ggpht.com/U1HL6pU4YN-TqrjqOTUcdDdY6f_ASLdnxG-FOG6ywpOM0zvDGrbW5T0tl-oFjDSeLQnfcKeKjg=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": true
+    },
+    {
+      "channelId": "UCJZv4d5rbIKd4QHMPkcABC",
+      "title": "Lofi Girl",
+      "url": "https://www.youtube.com/@frontenddev",
+      "category": "Programming",
+      "subscribedAt": "2025-02-03",
+      "pfp": "https://yt3.ggpht.com/_BSh2VVvVMzqBoKyWbQnyC35XFOV-ZbXavf9nfu3ZjpFUGEImQnlWt9ZlpfGQBqWEbGNc4rPWg=s88-c-k-c0x00ffffff-no-rj",
+      "live": true,
+      "newVideoChecked": false
+    },
+    {
+      "channelId": "UCabcd1234Gaming5",
+      "title": "Rokudenashi",
+      "url": "https://www.youtube.com/@gamingchannel",
+      "category": "Gaming",
+      "subscribedAt": "2024-11-20",
+      "pfp": "https://yt3.ggpht.com/r997eUN3Xv-Ytf4qvI4QOJxdEZS0UMjJnccQdLvMtleGBtwRMp3tI15iw2-IxlP9zffSm4MJzA=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": false
+    },
+    {
+      "channelId": "UCBJycsmduvYEL83R_U4JriQ",
+      "title": "CrunchyRoll",
+      "url": "https://www.youtube.com/@mkbhd",
+      "category": "Technology",
+      "subscribedAt": "2024-10-05",
+      "pfp": "https://yt3.ggpht.com/BUp_RGMNx21asWdmkCSN0X9QoBAARyCXxG_cnC-Zd4_8xARZDgRDVjbhSa99jmoy4z9bdbNy=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": true
+    },
+    {
+      "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+      "title": "IShowSpeed",
+      "url": "https://www.youtube.com/@freecodecamp",
+      "category": "Programming",
+      "subscribedAt": "2025-03-18",
+      "pfp": "https://yt3.ggpht.com/ieK0j0sDqI_AHDwYxZ2Wly07-R7PG4S3YMtxOWCEe1QH-I0FgimJ92tlydQa6M78YD0VaywCaw=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": true
+    },
+    {
+      "channelId": "UC295-Dw_tDNtZXFeAPAW6Aw",
+      "title": "Jeff Nippard",
+      "url": "https://www.youtube.com/@kurzgesagt",
+      "category": "Science",
+      "subscribedAt": "2023-07-22",
+      "pfp": "https://yt3.ggpht.com/ytc/AIdro_k3d_sCJXZcQk5KQTlFzdGMIJwJpZ9g2W07Z616E5DENGI=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": false
+    },
+    {
+      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
+      "title": "Школа itProger",
+      "url": "https://www.youtube.com/@LinusTechTips",
+      "category": "Technology",
+      "subscribedAt": "2024-01-30",
+      "pfp": "https://yt3.ggpht.com/ytc/AIdro_ni4-GkOkWGEv_ZjK6ZR4CwL4V2fZ4WBx80HJ6dj9_QyA=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": true
+    },
+    {
+      "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw3",
+      "title": "Bring Me To The Horizon",
+      "url": "https://www.youtube.com/@GoogleDevelopers",
+      "category": "Music",
+      "subscribedAt": "2025-01-12",
+      "pfp": "https://yt3.ggpht.com/U1HL6pU4YN-TqrjqOTUcdDdY6f_ASLdnxG-FOG6ywpOM0zvDGrbW5T0tl-oFjDSeLQnfcKeKjg=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": false
+    },
+    {
+      "channelId": "UCJZv4d5rbIKd4QHMPkcABC21",
+      "title": "Lofi Girl",
+      "url": "https://www.youtube.com/@frontenddev",
+      "category": "Programming",
+      "subscribedAt": "2025-02-03",
+      "pfp": "https://yt3.ggpht.com/_BSh2VVvVMzqBoKyWbQnyC35XFOV-ZbXavf9nfu3ZjpFUGEImQnlWt9ZlpfGQBqWEbGNc4rPWg=s88-c-k-c0x00ffffff-no-rj",
+      "live": false,
+      "newVideoChecked": true
+    },
+    {
+      "channelId": "UCabcd1234Ga33ming",
+      "title": "Rokudenashi",
+      "url": "https://www.youtube.com/@gamingchannel",
+      "category": "Gaming",
+      "subscribedAt": "2024-11-20",
+      "pfp": "https://yt3.ggpht.com/r997eUN3Xv-Ytf4qvI4QOJxdEZS0UMjJnccQdLvMtleGBtwRMp3tI15iw2-IxlP9zffSm4MJzA=s88-c-k-c0x00ffffff-no-rj",
+      "live": true,
+      "newVideoChecked": false
+    }
+  ],
+  "meta": {
+    "exportedFrom": "YouTube",
+    "exportDate": "2026-01-18",
+    "total": 7
+  }
+}

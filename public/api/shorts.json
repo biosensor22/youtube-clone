@@ -1,0 +1,79 @@
+[
+  {
+    "id": "short1",
+    "type": "short",
+    "title": "Быстрый трюк с JavaScript",
+    "thumbnail": "https://picsum.photos/seed/short1/640/360",
+    "duration": "0:45",
+    "views": 8900,
+    "author": "JSNinja",
+    "authorAvatar": "https://i.pravatar.cc/150?u=JSNinja",
+    "publishedAt": "2026-01-22T08:00:00Z"
+  },
+  {
+    "id": "short2",
+    "type": "short",
+    "title": "Трюк с CSS Grid",
+    "thumbnail": "https://picsum.photos/seed/short2/640/360",
+    "duration": "0:30",
+    "views": 15400,
+    "author": "FrontendPro",
+    "authorAvatar": "https://i.pravatar.cc/150?u=FrontendPro",
+    "publishedAt": "2026-01-19T09:00:00Z"
+  },
+  {
+    "id": "short3",
+    "type": "short",
+    "title": "Быстрая оптимизация JS",
+    "thumbnail": "https://picsum.photos/seed/short3/640/360",
+    "duration": "0:25",
+    "views": 11200,
+    "author": "JSNinja",
+    "authorAvatar": "https://i.pravatar.cc/150?u=JSNinja",
+    "publishedAt": "2026-01-20T10:00:00Z"
+  },
+  {
+    "id": "short4",
+    "type": "short",
+    "title": "Трюк с useEffect",
+    "thumbnail": "https://picsum.photos/seed/short4/640/360",
+    "duration": "0:35",
+    "views": 7300,
+    "author": "CodeMaster",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CodeMaster",
+    "publishedAt": "2026-01-18T11:00:00Z"
+  },
+  {
+    "id": "short5",
+    "type": "short",
+    "title": "CSS переменные лайфхак",
+    "thumbnail": "https://picsum.photos/seed/short5/640/360",
+    "duration": "0:40",
+    "views": 5600,
+    "author": "FrontendPro",
+    "authorAvatar": "https://i.pravatar.cc/150?u=FrontendPro",
+    "publishedAt": "2026-01-16T10:00:00Z"
+  },
+  {
+    "id": "short6",
+    "type": "short",
+    "title": "Оптимизация useMemo",
+    "thumbnail": "https://picsum.photos/seed/short6/640/360",
+    "duration": "0:50",
+    "views": 4100,
+    "author": "CodeMaster",
+    "authorAvatar": "https://i.pravatar.cc/150?u=CodeMaster",
+    "publishedAt": "2026-01-15T11:00:00Z"
+  },
+  {
+    "id": "short7",
+    "type": "short",
+    "title": "CSS Grid трюк",
+    "thumbnail": "https://picsum.photos/seed/short7/640/360",
+    "duration": "0:35",
+    "views": 2200,
+    "author": "FrontendPro",
+    "authorAvatar": "https://i.pravatar.cc/150?u=FrontendPro",
+    "publishedAt": "2026-01-14T10:00:00Z"
+  }
+]

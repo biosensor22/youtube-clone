@@ -1,0 +1,18 @@
+export function PrevListIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="20"
+      viewBox="0 0 24 24"
+      width="20"
+      focusable="false"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        fill={`white`}
+        d="M13.793 5.293 7.086 12l6.707 6.707a1 1 0 101.414-1.414L9.914 12l5.293-5.293a1 1 0 10-1.414-1.414Z"
+      ></path>
+    </svg>
+  );
+}

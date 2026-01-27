@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+@theme {
+  --container-mdxs: 48.55rem;
+  --container-video-md: 36rem;
+  --container-video-lg: 55.75rem;
+  --container-video-xl: 109.5rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-dark: rgb(15, 15, 15);
+  --hover-btn-color: rgba(255, 255, 255, 0.2);
+  --active-btn-color: rgba(255, 255, 255, 0.3);
+  --border-color: rgb(255, 255, 255, 0.1);
+  --focus-input-color: #065fd4;
+  --btn-bg-color: rgba(255, 255, 255, 0.08);
+  --profile-border-color: #5e84f1;
+  --input-bg-color: hsl(0, 0%, 7%);
+  --tip-bg-color: rgb(97, 97, 97);
+  --glass-bg: rgba(15, 15, 15, 0.8);
+  --category-btn: rgb(15, 15, 15);
+  --links-color-grey: rgb(170, 170, 170);
+  --google-copyright-color: rgba(113, 113, 113, 0.9);
+  --video-blue-checked: rgb(62, 166, 255);
+  --grey-text-color: rgb(170, 170, 170);
+  --live-red-bg: rgba(225, 0, 45, 0.9);
+  --dark-grey-bg: rgb(40, 40, 40);
+
+  --blur-high: 48px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.scrollbar-side {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+
+  scrollbar-width: thin;
+  scrollbar-color: #737374 transparent;
+}
+
+.scrollbar-side::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+
+.scrollbar-side::-webkit-scrollbar-thumb {
+  background-color: #535355;
+  border-radius: 20px;
+}
+
+html {
+  background-color: var(--bg-dark);
+}
+
+html.lock-scroll {
+  overflow: hidden !important;
+  scrollbar-gutter: stable;
 }

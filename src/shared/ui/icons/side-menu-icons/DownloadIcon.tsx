@@ -1,0 +1,23 @@
+interface DownloadSVGProps {
+  props?: React.SVGProps<SVGSVGElement>;
+}
+
+export function DownloadIcon({ props }: DownloadSVGProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      focusable="false"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1
+			 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"
+      ></path>
+    </svg>
+  );
+}
