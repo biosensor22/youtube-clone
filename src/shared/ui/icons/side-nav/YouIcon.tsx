@@ -1,5 +1,6 @@
 interface YouSVGProps {
   props?: React.SVGProps<SVGSVGElement>;
+  onSwitch?: () => void;
   isActive: string;
 }
 
