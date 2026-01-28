@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { viewsConvert } from "@/shared/lib/viewsConvert";
+import { MenuButton } from "../menu-button/ui/MenuButton";
 
 type PlaylistProps = {
   id: string;
@@ -50,7 +51,12 @@ export function StreamCard({
           alt={author}
         />
         <div>
-          <p className="font-medium">{title}</p>
+          <div className="flex">
+            <p className="font-medium max-w-[calc(100%-10px)] ">{title}</p>
+            <div className="absolute right-4 cursor-pointer">
+              <MenuButton type={type} />
+            </div>
+          </div>
           <Link href="/">
             <p className="text-[14px] text-(--grey-text-color) hover:text-white duration-150">
               {author}

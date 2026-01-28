@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { MenuButton } from "../menu-button/ui/MenuButton";
 
 type PlaylistProps = {
   id: string;
@@ -33,7 +34,10 @@ export function PlaylistCard({
           Mix
         </p>
       </div>
-      <div className="flex gap-x-3 w-full">
+      <div className="flex gap-x-3 w-full relative">
+        <div className="absolute right-0 cursor-pointer">
+          <MenuButton type={type} />
+        </div>
         <div>
           <p className=" font-medium">{title}</p>
 

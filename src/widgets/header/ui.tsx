@@ -10,9 +10,8 @@ import { SearchMobileBar } from "./components/search-mobile/ui";
 export function Header() {
   return (
     <header
-      className="fixed backdrop-blur-3xl top-0 left-0 flex w-full
-     h-29  px-2 sm:px-4 pt-2 bg-(--glass-bg)
-     z-10
+      className="fixed backdrop-blur-3xl top-0 left-0 flex sm:w-full w-screen
+     h-29 px-2 sm:px-4 pt-2 bg-(--glass-bg) z-10
      "
     >
       <div className="gap-4 h-10 flex">
@@ -25,11 +24,11 @@ export function Header() {
         <div className="justify-center w-full sm:flex hidden duration-150">
           <SearchBar />
         </div>
-        <div className=" h-10 justify-end w-10 sm:hidden flex">
+        <div className=" h-10 justify-end w-12 sm:hidden flex mx-4 sm:mx-0">
           <SearchMobileBar />
         </div>
         <div className="flex sm:hidden ">
-          <div className=" sm:bg-(--btn-bg-color) flex min-w-10 h-10 bg-transparent rounded-full ml-1">
+          <div className=" sm:bg-(--btn-bg-color) min-w-10 h-10 bg-transparent rounded-full ml-1 hidden sm:flex">
             <VoiceSearch />
           </div>
         </div>
@@ -37,10 +36,10 @@ export function Header() {
 
       <div className="flex  px-1 sm:px-3">
         <CreateButton />
-        <div className="sm:mr-2.5">
+        <div className="sm:mr-2.5 hidden h-10 sm:flex">
           <Notifications />
         </div>
-        <div className="mr-2 mt-1 sm:mr-0">
+        <div className="mx-4 mt-1 sm:mr-0 sm:mx-0">
           <ProfileButton />
         </div>
       </div>

@@ -22,7 +22,7 @@ export function CategoriesList() {
   if (isLoading) return <div className="h-13"></div>;
 
   return (
-    <div className="relative text-white w-full h-13 group z-100">
+    <div className="relative text-white sm:w-full w-screen h-13 group z-100">
       {showLeft && (
         <div className="rounded-full absolute left-0 bottom-0 z-10 flex items-center pr-10">
           <PrevListBtn onClick={scrollPrev} />
@@ -32,7 +32,7 @@ export function CategoriesList() {
       <div
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex w-[calc(100%-20px)] ml-2 h-full pt-5 gap-2 overflow-x-auto scroll-smooth no-scrollbar"
+        className="flex sm:w-[calc(100%-20px)] w-screen ml-2 h-full pt-5 gap-2 overflow-x-auto scroll-smooth no-scrollbar"
       >
         {categories.map((category) => (
           <CategoryButton
@@ -45,7 +45,7 @@ export function CategoriesList() {
       </div>
 
       {showRight && (
-        <div className="rounded-full absolute right-0 bottom-0 flex items-center pl-10">
+        <div className="rounded-full absolute right-10 bottom-0 flex items-center pl-10">
           <NextListBtn onClick={scrollNext} />
         </div>
       )}
