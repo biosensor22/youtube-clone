@@ -1,5 +1,6 @@
 import { CategoriesList } from "@/widgets/category/ui";
 import { SideBar } from "@/widgets/sidebar/ui";
+
 import { MediaSection } from "@/widgets/video-feed/ui/MediaSection";
 
 export default function Home() {

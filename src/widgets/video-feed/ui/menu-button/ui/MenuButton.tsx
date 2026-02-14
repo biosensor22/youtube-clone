@@ -3,8 +3,9 @@
 import { useMenuOpen } from "../model/useMenuOpen";
 import { ModalMenu } from "./ModalMenu";
 import { MenuIcon } from "@/shared/ui/icons/feed-icons";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { usePress } from "@/shared/ui/hooks/usePress";
+import { useClickOutside } from "../model/useClickOutside";
 
 type MenuBtnProps = {
   type: string;
@@ -14,22 +15,7 @@ export function MenuButton({ type }: MenuBtnProps) {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const { opened, menuRef, onSwitch, onClose } = useMenuOpen();
   const { pressed, onPress, onRelease } = usePress();
-
-  useEffect(() => {
-    function clickOutside(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        onClose();
-      }
-    }
-
-    if (opened) {
-      document.addEventListener("click", clickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("click", clickOutside);
-    };
-  }, [opened, onClose]);
+  useClickOutside({ menuRef, opened, onClose });
 
   return (
     <div
