@@ -6,7 +6,7 @@
     "dev": "next dev",
     "server": "json-server db.json5 --watch --port $PORT",
     "build": "next build",
-    "start": "json-server --watch db.json --port $PORT & cd frontend && npm start",
+    "start": "npx json-server --watch db.json5 --port $PORT",
     "analyze": "next experimental-analyze",
     "lint": "eslint"
   },
