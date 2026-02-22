@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppSelector } from "@/app/providers/hooks";
 import { useEffect } from "react";
 

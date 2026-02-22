@@ -1,3 +1,5 @@
+"use client";
+
 import { forwardRef, RefObject } from "react";
 import { usePosition } from "../model/usePosition";
 import { buttonsVideo, buttonsPlaylist } from "../model/buttons";
@@ -21,17 +23,17 @@ export const MenuCard = forwardRef<HTMLDivElement, MenuBtnProps>(
       >
         {type === "video" &&
           buttonsVideo.map((i) => (
-            <Button id={i.id} label={i.label} icon={i.icon} />
+            <Button key={i.id} id={i.id} label={i.label} icon={i.icon} />
           ))}
 
         {type === "stream" &&
           buttonsVideo.map((i) => (
-            <Button id={i.id} label={i.label} icon={i.icon} />
+            <Button key={i.id} id={i.id} label={i.label} icon={i.icon} />
           ))}
 
         {type === "playlist" &&
           buttonsPlaylist.map((i) => (
-            <Button id={i.id} label={i.label} icon={i.icon} />
+            <Button key={i.id} id={i.id} label={i.label} icon={i.icon} />
           ))}
       </div>
     );

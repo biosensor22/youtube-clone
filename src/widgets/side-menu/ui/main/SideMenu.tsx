@@ -1,9 +1,9 @@
 "use client";
 
 import { LogoHome } from "@/widgets/header";
-import { SideMenuBtn } from "@/widgets/header/components/side-menu-btn/ui";
+import { SideMenuBtn } from "@/widgets/header/ui/side-menu-btn/ui";
 import { NavPanel } from "../nav-side/NavPanel";
-import { SplitLine } from "../utils/SplitLine";
+import { SplitLine } from "@/shared/ui/ui/SplitLine";
 import { Subscriptions } from "../subscriptions";
 import { YouPanel } from "../you/YouPanel";
 import { ModalBg } from "./ModalBg";

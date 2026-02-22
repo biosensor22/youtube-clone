@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { usePress } from "@/shared/ui/hooks/usePress";
+import { usePress } from "@/shared/lib/hooks";
 
 interface BtnProps {
   label: string;

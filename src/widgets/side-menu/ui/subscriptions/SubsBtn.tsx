@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { NextListIcon } from "@/shared/ui/icons/category-icons/NextListIcon";
-import { usePress } from "@/shared/ui/hooks/usePress";
+import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
 
 export function SubsBtn() {
   const { pressed, onPress, onRelease } = usePress();

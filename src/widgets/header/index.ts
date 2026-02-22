@@ -1,2 +1,2 @@
-export { Header } from "./ui";
-export * from "./components/logo";
+export { Header } from "./HeaderWide";
+export * from "./ui/logo";

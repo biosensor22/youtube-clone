@@ -4,7 +4,7 @@ import { fetchCategories } from "@/entities/category/api/categoryApi";
 import { useEffect, useState } from "react";
 import type { Category } from "./types";
 
-export const useUserCategories = (userId: string) => {
+export function useUserCategories(userId: string) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -30,4 +30,4 @@ export const useUserCategories = (userId: string) => {
     loadData();
   }, [userId]);
   return { categories, isLoading, error };
-};
+}

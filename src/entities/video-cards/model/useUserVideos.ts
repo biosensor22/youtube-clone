@@ -25,7 +25,7 @@ export function useUserVideos(userId: string) {
 
     const loadData = async () => {
       try {
-        const data = await fetchVideoCards(userId, controller.signal);
+        const data = await fetchVideoCards(controller.signal);
         if (!isMounted) return;
 
         setVideos(data.items);

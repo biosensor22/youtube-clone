@@ -1,8 +1,8 @@
 "use client";
 
-import { usePress } from "@/shared/ui/hooks/usePress";
+import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
 import { HomeIcon } from "@/shared/ui/icons/side-nav";
-import { useCursorTooltip } from "@/shared/ui/hooks/useCursorTooltip";
+import { useCursorToolTip } from "@/shared/lib/hooks/btn-hooks/useCursorToolTip";
 
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ type HomeLinkProps = {
 
 export function HomeLink({ isActive, onActive }: HomeLinkProps) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useCursorTooltip("Home", { delay: 500 });
+  const tooltip = useCursorToolTip("Home", { delay: 500 });
 
   return (
     <Link

@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { usePress } from "@/shared/ui/hooks/usePress";
+import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
 import { LiveIcon } from "@/shared/ui/icons/side-menu-icons";
-import { useCursorTooltip } from "@/shared/ui/hooks/useCursorTooltip";
+import { useCursorToolTip } from "@/shared/lib/hooks/btn-hooks/useCursorToolTip";
 
 type Props = {
   pfp: string;
@@ -14,7 +16,7 @@ type Props = {
 
 export function SubsProfile({ pfp, title, url, live, newVideoChecked }: Props) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useCursorTooltip(title, { delay: 500 });
+  const tooltip = useCursorToolTip(title, { delay: 500 });
 
   return (
     <Link
@@ -50,7 +52,11 @@ export function SubsProfile({ pfp, title, url, live, newVideoChecked }: Props) {
           ${newVideoChecked && !live ? "w-1 h-1 rounded-full bg-(--video-blue-checked) mr-1.5" : ""}
         `}
       >
-        {live && <LiveIcon />}
+        {live && (
+          <div className="text-(--live-red-bg)">
+            <LiveIcon />
+          </div>
+        )}
       </div>
     </Link>
   );

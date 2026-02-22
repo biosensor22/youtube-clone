@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 @theme {
+  --container-xs: 28.75rem;
   --container-mdxs: 48.55rem;
   --container-video-md: 36rem;
   --container-video-lg: 55.75rem;
   --container-video-xl: 109.5rem;
+
+  --breakpoint-mobile: 26.75rem;
+  --breakpoint-small: 34.25rem;
 }
 
 :root {
@@ -26,6 +30,7 @@
   --live-red-bg: rgba(225, 0, 45, 0.9);
   --dark-grey-bg: rgb(40, 40, 40);
 
+  --bg-drop-menu: rgb(28, 28, 28);
   --blur-high: 48px;
 }
 
@@ -59,8 +64,21 @@
 
 html {
   background-color: var(--bg-dark);
+  scrollbar-width: 20px;
+  scrollbar-color: rgb(162, 163, 162) transparent;
 }
 
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #6366f1;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #4f46e5;
+  border-radius: 6px;
+}
 html.lock-scroll {
   overflow: hidden !important;
   scrollbar-gutter: stable;

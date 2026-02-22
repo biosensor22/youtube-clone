@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/widgets/header";
 import { SideMenu } from "@/widgets/side-menu/ui";
 import { StoreProvider } from "./providers/StoreProvider";
+import { NotificationProvider } from "@/widgets/header/ui/notifications/ui/NotificationContext";
+import { CreateBtnProvider } from "@/widgets/header/ui/create-btn/ui/CreateBtnContext";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -12,8 +14,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Youtube",
-  description: "Youtube clone",
+  title: "YouTube",
+  description: "YouTube clone",
 };
 
 export default function RootLayout({
@@ -26,10 +28,13 @@ export default function RootLayout({
       <body className={`${roboto.variable} @container antialiased`}>
         <div>
           <StoreProvider>
-            <SideMenu />
-            <Header />
-
-            <main>{children}</main>
+            <CreateBtnProvider>
+              <NotificationProvider>
+                <SideMenu />
+                <Header />
+                <main>{children}</main>
+              </NotificationProvider>
+            </CreateBtnProvider>
           </StoreProvider>
         </div>
       </body>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, RefObject, useState } from "react";
 
 export function usePosition(ref: RefObject<HTMLDivElement>) {

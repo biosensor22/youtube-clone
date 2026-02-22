@@ -2,11 +2,11 @@
 
 import { useAppSelector } from "@/app/providers/hooks";
 import { close } from "../../model";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "@/app/providers/hooks";
 
 export function ModalBg() {
   const isOpen = useAppSelector((state) => state.menu.isOpen);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleClose = () => {
     dispatch(close());

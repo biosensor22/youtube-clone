@@ -4,7 +4,7 @@ import { useMenuOpen } from "../model/useMenuOpen";
 import { ModalMenu } from "./ModalMenu";
 import { MenuIcon } from "@/shared/ui/icons/feed-icons";
 import { useRef } from "react";
-import { usePress } from "@/shared/ui/hooks/usePress";
+import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
 import { useClickOutside } from "../model/useClickOutside";
 
 type MenuBtnProps = {

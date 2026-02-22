@@ -1,6 +1,6 @@
-import { usePress } from "@/shared/ui/hooks/usePress";
+import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
 import { ShortsIcon } from "@/shared/ui/icons/side-nav";
-import { useCursorTooltip } from "@/shared/ui/hooks/useCursorTooltip";
+import { useCursorToolTip } from "@/shared/lib/hooks/btn-hooks/useCursorToolTip";
 
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ type ShortsLinkProps = {
 
 export function ShortsLink({ isActive, onActive }: ShortsLinkProps) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useCursorTooltip("Shorts", { delay: 500 });
+  const tooltip = useCursorToolTip("Shorts", { delay: 500 });
 
   return (
     <Link

@@ -6,55 +6,42 @@ import {
   ShortsIcon,
   SubscriptionsIcon,
   YouIcon,
-} from "@/shared/ui/icons/side-nav";
-import { useState } from "react";
+} from "@/shared/ui/icons";
 import { usePathname } from "next/navigation";
 
 export function SideBar() {
-  const pathname = usePathname().replace(/^\/+/, "");
-  const [isActive, setIsActive] = useState(!pathname ? "home" : pathname);
+  const pathname = usePathname();
+  const current = pathname === "/" ? "home" : pathname.replace(/^\/+/, "");
 
   const navItems = [
     {
       id: "home",
       label: "Home",
       path: "/",
-      icon: (
-        <HomeIcon onSwitch={() => setIsActive("home")} isActive={isActive} />
-      ),
+      icon: <HomeIcon isActive={current === "home"} />,
     },
     {
       id: "shorts",
       label: "Shorts",
       path: "/shorts",
-      icon: (
-        <ShortsIcon
-          onSwitch={() => setIsActive("shorts")}
-          isActive={isActive}
-        />
-      ),
+      icon: <ShortsIcon isActive={current === "shorts"} />,
     },
     {
       id: "subscriptions",
       label: "Subscriptions",
       path: "/subscriptions",
-      icon: (
-        <SubscriptionsIcon
-          onSwitch={() => setIsActive("subscriptions")}
-          isActive={isActive}
-        />
-      ),
+      icon: <SubscriptionsIcon isActive={current === "subscriptions"} />,
     },
     {
       id: "you",
       label: "You",
       path: "/you",
-      icon: <YouIcon onSwitch={() => setIsActive("you")} isActive={isActive} />,
+      icon: <YouIcon isActive={current === "you"} />,
     },
   ];
 
   return (
-    <aside className="fixed z-10 left-1 top-10 w-16 h-10 hidden items-center flex-col mt-5 @mdxs:flex">
+    <aside className="fixed z-10 left-1 top-10 w-16 hidden items-center flex-col mt-5 @mdxs:flex">
       {navItems.map((item) => (
         <SideBarButton
           key={item.id}

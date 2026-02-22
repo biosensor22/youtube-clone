@@ -1,6 +1,6 @@
 import { PrevListIcon } from "@/shared/ui/icons/category-icons/PrevListIcon";
-import { usePress } from "@/shared/ui/hooks/usePress";
-import { useTooltip } from "@/shared/ui/hooks/useToolTip";
+import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
+import { useToolTip } from "@/shared/lib/hooks";
 
 interface PrevListBtnProps {
   onClick?: () => void;
@@ -8,7 +8,7 @@ interface PrevListBtnProps {
 
 export function PrevListBtn({ onClick }: PrevListBtnProps) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useTooltip("Previous", {
+  const tooltip = useToolTip("Previous", {
     delay: 100,
     position: "bottom",
   });

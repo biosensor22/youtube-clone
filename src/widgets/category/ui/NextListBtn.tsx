@@ -1,6 +1,6 @@
-import { usePress } from "@/shared/ui/hooks/usePress";
-import { NextListIcon } from "@/shared/ui/icons/category-icons/NextListIcon";
-import { useTooltip } from "@/shared/ui/hooks/useToolTip";
+import { usePress } from "@/shared/lib/hooks";
+import { NextListIcon } from "@/shared/ui/icons";
+import { useToolTip } from "@/shared/lib/hooks";
 
 interface NextListBtnProps {
   onClick?: () => void;
@@ -8,7 +8,7 @@ interface NextListBtnProps {
 
 export function NextListBtn({ onClick }: NextListBtnProps) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useTooltip("Next", {
+  const tooltip = useToolTip("Next", {
     delay: 100,
     position: "bottom",
   });

@@ -1,11 +1,14 @@
-import { CategoriesList } from "@/widgets/category/ui";
-import { SideBar } from "@/widgets/sidebar/ui";
+"use client";
 
-import { MediaSection } from "@/widgets/video-feed/ui/MediaSection";
+import { CategoriesList } from "@/widgets/category";
+import { lazy, Suspense } from "react";
+import { MediaSection } from "@/widgets/video-feed";
+
+const SideBar = lazy(() => import("@/widgets/sidebar"));
 
 export default function Home() {
   return (
-    <div className="mt-29 duration-200 @mdxs:ml-18 @container">
+    <div className="mt-29 duration-200 @mdxs:ml-18 @container overflow-y-hidden">
       <div
         className="sm:w-full w-screen @mdxs:w-[calc(100%-70px)] h-17
        top-0 fixed mt-12 z-10"
@@ -15,7 +18,9 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <SideBar />
+        <Suspense fallback={<div>Loading...</div>}>
+          <SideBar />
+        </Suspense>
       </div>
 
       <MediaSection />

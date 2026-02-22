@@ -1,4 +1,5 @@
 import type { FeedItem } from "../model/types";
+import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 
 export type FeedResponse = {
   items: FeedItem[];
@@ -12,7 +13,12 @@ async function fetchWrapper<T>(
   retries: number = 0,
 ): Promise<T> {
   try {
-    const res = await fetch(url, { signal });
+    const fetchOptions: RequestInit = {};
+    if (signal instanceof AbortSignal) {
+      fetchOptions.signal = signal;
+    }
+
+    const res = await fetch(url, fetchOptions);
 
     if (!res.ok) {
       throw new Error(`Fetch failed: ${res.status}`);
@@ -34,11 +40,10 @@ async function fetchWrapper<T>(
 }
 
 export async function fetchVideoCards(
-  userId: string,
   signal?: AbortSignal,
 ): Promise<FeedResponse> {
-  const items: FeedItem[] = await fetchWrapper<FeedItem[]>(
-    "/api/videos.json",
+  const items = await fetchWrapper<FeedItem[]>(
+    `${API_BASE_URL}${API_ROUTES.videos}`,
     signal,
   );
 

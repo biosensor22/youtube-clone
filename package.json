@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "server": "json-server db.json5 --watch --port 3001",
     "build": "next build",
     "start": "next start",
     "analyze": "next experimental-analyze",
@@ -13,6 +14,7 @@
     "@reduxjs/toolkit": "^2.11.2",
     "classnames": "^2.5.1",
     "git": "^0.1.5",
+    "json-server": "^1.0.0-beta.6",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",

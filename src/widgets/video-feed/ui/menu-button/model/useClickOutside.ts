@@ -1,9 +1,11 @@
+"use client";
+
 import { useEffect, RefObject } from "react";
 
 interface useClickOutsideProps {
   menuRef: RefObject<HTMLDivElement | null>;
   opened: boolean;
-  onClose: () => void; 
+  onClose: () => void;
 }
 
 export function useClickOutside({
