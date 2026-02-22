@@ -53,7 +53,7 @@ export function StreamCard({
             className="absolute flex justify-center items-center bottom-2 right-2 text-[12px]
          font-medium bg-(--live-red-bg) rounded-sm px-1 gap-1 py-px"
           >
-            <LiveIcon props={{ className: "w-3" }} />
+            <LiveIcon className="w-3 h-3" />
             <p>LIVE</p>
           </div>
         </div>

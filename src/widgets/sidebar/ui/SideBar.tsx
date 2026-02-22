@@ -8,9 +8,11 @@ import {
   YouIcon,
 } from "@/shared/ui/icons";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export function SideBar() {
   const pathname = usePathname();
+  const [isActive, setIsActive] = useState("home");
   const current = pathname === "/" ? "home" : pathname.replace(/^\/+/, "");
 
   const navItems = [
@@ -18,25 +20,25 @@ export function SideBar() {
       id: "home",
       label: "Home",
       path: "/",
-      icon: <HomeIcon isActive={current === "home"} />,
+      icon: <HomeIcon isActive={isActive} />,
     },
     {
       id: "shorts",
       label: "Shorts",
       path: "/shorts",
-      icon: <ShortsIcon isActive={current === "shorts"} />,
+      icon: <ShortsIcon isActive={isActive} />,
     },
     {
       id: "subscriptions",
       label: "Subscriptions",
       path: "/subscriptions",
-      icon: <SubscriptionsIcon isActive={current === "subscriptions"} />,
+      icon: <SubscriptionsIcon isActive={isActive} />,
     },
     {
       id: "you",
       label: "You",
       path: "/you",
-      icon: <YouIcon isActive={current === "you"} />,
+      icon: <YouIcon isActive={isActive} />,
     },
   ];
 
