@@ -2,21 +2,55 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+Run frontend + json-server in development:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Frontend: [http://localhost:3000](http://localhost:3000)  
+API (json-server): [http://localhost:3001](http://localhost:3001)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production / Deploy
+
+In production app and `json-server` run in one process and one port.
+
+```bash
+npm run build
+npm start
+```
+
+`npm start` launches `server.mjs`, which:
+- serves Next.js pages
+- proxies `/api/*` to internal `json-server` (from `db.json5`)
+- uses `PORT` from environment (required by most hosting providers)
+
+Optional env vars:
+- `PORT` (default `3000`)
+- `HOST` (default `0.0.0.0`)
+- `JSON_DB_FILE` (default `db.json5`)
+
+## Deploy on Render (single service)
+
+Project is ready for Render Blueprint deploy with one web service:
+- Next.js UI
+- internal `json-server` under `/api/*`
+- one external port (`PORT`, provided by Render)
+
+Steps:
+1. Push this repo to GitHub.
+2. In Render create a new **Blueprint** and select this repo.
+3. Render will read `render.yaml` automatically.
+4. Deploy.
+
+Main settings already declared in `render.yaml`:
+- Build command: `npm ci && npm run build`
+- Start command: `npm start`
+- Node: `22.12.0`
+
+After deploy:
+- app: `https://<your-service>.onrender.com`
+- api: `https://<your-service>.onrender.com/api/videos`
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

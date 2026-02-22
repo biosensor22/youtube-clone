@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "server": "json-server db.json5 --watch --port $PORT",
+    "dev": "concurrently \"next dev\" \"json-server db.json5 --watch --port 3001\"",
+    "dev:web": "next dev",
+    "dev:api": "json-server db.json5 --watch --port 3001",
     "build": "next build",
-    "start": "next start",
+    "start": "node server.mjs",
     "analyze": "next experimental-analyze",
     "lint": "eslint"
   },

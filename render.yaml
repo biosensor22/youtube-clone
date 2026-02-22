@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: youtube-clone-frontend
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: JSON_DB_FILE
+        value: db.json5
