@@ -54,6 +54,7 @@ export function SearchBarAndVoice() {
         className="bg-(--btn-bg-color) flex items-center justify-center
           border border-(--border-color) border-l-0
           rounded-r-full w-16 cursor-pointer"
+        aria-label="Search"
       >
         <SearchIcon />
       </button>
