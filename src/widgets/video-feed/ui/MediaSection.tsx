@@ -30,14 +30,13 @@ export function MediaSection() {
       className="w-full text-white px-4 pt-6 sm:pt-6 gap-4 gap-y-8
     grid grid-cols-1 @video-md:grid-cols-2 @video-lg:grid-cols-3 @video-xl:grid-cols-4"
     >
-      {videos.map((v) => {
+      {videos.map((v, i) => {
+        const isPriority = i < 2;
         switch (v.type) {
           case "video":
-            return <VideoCard key={v.id} {...v} />;
-
+            return <VideoCard key={v.id} priority={isPriority} {...v} />;
           case "playlist":
             return <PlaylistCard key={v.id} {...v} />;
-
           case "stream":
             return <StreamCard key={v.id} {...v} />;
           default:

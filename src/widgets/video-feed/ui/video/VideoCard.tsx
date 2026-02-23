@@ -18,6 +18,7 @@ type VideoProps = {
   views: number;
   authorAvatar: string;
   publishedAt: string;
+  priority: boolean;
 };
 
 export function VideoCard({
@@ -30,6 +31,7 @@ export function VideoCard({
   views,
   authorAvatar,
   publishedAt,
+  priority,
 }: VideoProps) {
   const dominantColor = useDominantColor(thumbnail);
   return (
@@ -52,6 +54,9 @@ export function VideoCard({
             height={400}
             src={thumbnail}
             alt={title}
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwMDAwIi8+"
+            priority={priority}
           />
           <div
             className="absolute justify-center items-center flex bottom-2 right-2 text-[12px]
@@ -68,6 +73,7 @@ export function VideoCard({
             height={40}
             src={authorAvatar}
             alt={author}
+            priority
           />
           <div className="w-full relative">
             <div className="absolute right-1 cursor-pointer">

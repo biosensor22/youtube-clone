@@ -48,6 +48,8 @@ export function StreamCard({
             height={400}
             src={thumbnail}
             alt={title}
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwMDAwIi8+"
           />
           <div
             className="absolute flex justify-center items-center bottom-2 right-2 text-[12px]
