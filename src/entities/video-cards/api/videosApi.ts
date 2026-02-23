@@ -1,31 +1,37 @@
 import type { FeedItem } from "../model/types";
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 
+type PaginatedResponse<T> = {
+  first: number;
+  prev: number | null;
+  next: number | null;
+  last: number;
+  pages: number;
+  items: number;
+  data: T;
+};
+
 export type FeedResponse = {
   items: FeedItem[];
-  nextCursor?: string;
-  hasMore?: boolean;
+  hasMore: boolean;
+  total: number;
+  page: number;
+  perPage: number;
 };
 
 async function fetchWrapper<T>(
   url: string,
   signal?: AbortSignal,
-  retries: number = 0,
+  retries = 2,
 ): Promise<T> {
   try {
-    const fetchOptions: RequestInit = {};
-    if (signal instanceof AbortSignal) {
-      fetchOptions.signal = signal;
-    }
-
-    const res = await fetch(url, fetchOptions);
+    const res = await fetch(url, { signal });
 
     if (!res.ok) {
       throw new Error(`Fetch failed: ${res.status}`);
     }
 
-    const data: T = await res.json();
-    return data;
+    return (await res.json()) as T;
   } catch (err) {
     if ((err as DOMException).name === "AbortError") {
       throw err;
@@ -39,17 +45,50 @@ async function fetchWrapper<T>(
   }
 }
 
+type FetchVideoCardsParams = {
+  page?: number;
+  perPage?: number;
+  userId?: string;
+  signal?: AbortSignal;
+};
+
 export async function fetchVideoCards(
-  signal?: AbortSignal,
+  params: FetchVideoCardsParams = {},
 ): Promise<FeedResponse> {
-  const items = await fetchWrapper<FeedItem[]>(
-    `${API_BASE_URL}${API_ROUTES.videos}`,
-    signal,
-  );
+  const { page = 1, perPage = 12, signal, userId } = params;
+  void userId;
+
+  const query = new URLSearchParams({
+    _page: String(page),
+    _per_page: String(perPage),
+  });
+
+  const response = await fetchWrapper<
+    PaginatedResponse<FeedItem[]> | FeedItem[]
+  >(`${API_BASE_URL}${API_ROUTES.videos}?${query.toString()}`, signal);
+
+  if (Array.isArray(response)) {
+    const total = response.length;
+    const from = (page - 1) * perPage;
+    const to = page * perPage;
+    return {
+      items: response.slice(from, to),
+      hasMore: to < total,
+      total,
+      page,
+      perPage,
+    };
+  }
+
+  const items = Array.isArray(response.data) ? response.data : [];
+  const total =
+    typeof response.items === "number" ? response.items : items.length;
 
   return {
     items,
-    nextCursor: "page_2",
-    hasMore: false,
+    hasMore: response.next !== null,
+    total,
+    page,
+    perPage,
   };
 }

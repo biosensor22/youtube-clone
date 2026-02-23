@@ -79,13 +79,13 @@ export function StreamCard({
                 <MenuButton type={type} />
               </div>
             </div>
-            <Link href="/">
+            <Link className="flex ml-14" href="/">
               <p className="text-[14px] text-(--grey-text-color) hover:text-white duration-150">
                 {author}
               </p>
             </Link>
 
-            <div className="flex items-center gap-x-2 ">
+            <div className="flex ml-14 items-center gap-x-2 ">
               <p className="text-(--grey-text-color) text-[14px]">
                 {viewsConvert(viewers)} watching
               </p>

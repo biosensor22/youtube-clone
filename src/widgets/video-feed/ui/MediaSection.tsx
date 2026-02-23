@@ -9,20 +9,35 @@ import { SkeletonCard } from "./skeleton/SkeletonCard";
 
 export function MediaSection() {
   const userId = "123";
-  const skeletonArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const initialSkeleton = [1, 2, 3, 4, 5, 6, 7, 8];
+  const appendSkeleton = [1, 2, 3, 4];
   const { videos, isLoading, empty, error } = useUserVideos(userId);
+  const isInitialLoading = isLoading && videos.length === 0;
+  const isAppending = isLoading && videos.length > 0;
 
-  if (isLoading || empty) {
+  if (isInitialLoading) {
     return (
       <div
         className="w-full text-white px-2 pt-6
     grid grid-cols-1 @video-md:grid-cols-2 @video-lg:grid-cols-3 @video-xl:grid-cols-4"
       >
-        {skeletonArr.map((item) => (
+        {initialSkeleton.map((item) => (
           <SkeletonCard key={item} />
         ))}
       </div>
     );
+  }
+
+  if (error && videos.length === 0) {
+    return (
+      <div className="w-full text-white px-4 pt-6">
+        Failed to load videos. Try refreshing the page.
+      </div>
+    );
+  }
+
+  if (empty) {
+    return <div className="w-full text-white px-4 pt-6">No videos found.</div>;
   }
 
   return (
@@ -43,6 +58,9 @@ export function MediaSection() {
             return null;
         }
       })}
+
+      {isAppending &&
+        appendSkeleton.map((item) => <SkeletonCard key={`append-${item}`} />)}
     </div>
   );
 }

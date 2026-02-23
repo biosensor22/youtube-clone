@@ -3,6 +3,7 @@ export type FeedItemBase = {
   title: string;
   thumbnail: string;
   author: string;
+  videosCount?: number;
 };
 
 type VideoItem = FeedItemBase & {
