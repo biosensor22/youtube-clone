@@ -1,6 +1,5 @@
-import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
-import { ShortsIcon } from "@/shared/ui/icons/side-nav";
-import { useCursorToolTip } from "@/shared/lib/hooks/btn-hooks/useCursorToolTip";
+import { ShortsIcon } from "@/shared/ui/icons";
+import { useCursorToolTip, usePress } from "@/shared/lib/hooks";
 
 import Link from "next/link";
 

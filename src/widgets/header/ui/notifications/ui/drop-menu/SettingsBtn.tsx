@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SettingsIcon } from "@/shared/ui/icons/SettingsIcon";
+import { SettingsIcon } from "@/shared/ui/icons";
 import { usePress } from "@/shared/lib/hooks";
 
 export function SettingsBtn() {

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/widgets/header";
-import { SideMenu } from "@/widgets/side-menu/ui";
+import { SideMenu } from "@/widgets/side-menu";
 import { StoreProvider } from "./providers/StoreProvider";
-import { NotificationProvider } from "@/widgets/header/ui/notifications/ui/NotificationContext";
-import { CreateBtnProvider } from "@/widgets/header/ui/create-btn/ui/CreateBtnContext";
+import { NotificationProvider } from "@/widgets/header/ui/notifications";
+import { CreateBtnProvider } from "@/widgets/header/ui/create-btn";
 
 const roboto = Roboto({
   variable: "--font-roboto",

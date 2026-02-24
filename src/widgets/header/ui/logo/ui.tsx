@@ -1,8 +1,8 @@
 "use client";
 
-import { YouTubeIcon } from "@/shared/ui/icons/header-icons";
-import { useCursorToolTip } from "@/shared/lib/hooks";
 import Link from "next/link";
+import { YouTubeIcon } from "@/shared/ui/icons";
+import { useCursorToolTip } from "@/shared/lib/hooks";
 
 export function LogoHome() {
   const tooltip = useCursorToolTip("YouTube Home", { delay: 500 });

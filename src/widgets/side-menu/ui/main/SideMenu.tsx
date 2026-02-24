@@ -1,17 +1,19 @@
 "use client";
 
 import { LogoHome } from "@/widgets/header";
-import { SideMenuBtn } from "@/widgets/header/ui/side-menu-btn/ui";
-import { NavPanel } from "../nav-side/NavPanel";
+import { SideMenuBtn } from "@/widgets/header/ui/side-menu-btn";
+import {
+  NavPanel,
+  Subscriptions,
+  YouPanel,
+  useSideMenuScroll,
+} from "@/widgets/side-menu";
 import { SplitLine } from "@/shared/ui/ui/SplitLine";
-import { Subscriptions } from "../subscriptions";
-import { YouPanel } from "../you/YouPanel";
 import { ModalBg } from "./ModalBg";
 import { SideMenuLayer } from "./SideMenuLayer";
-import { useSideMenuScroll } from "../../model";
 import { SideMenuContainer } from "./SideMenuContainer";
 import { NavBtnPanel } from "../you/NavBtnPanel";
-import { Links } from "../links/Links";
+import { Links } from "@/widgets/side-menu/ui/links";
 
 export function SideMenu() {
   useSideMenuScroll();

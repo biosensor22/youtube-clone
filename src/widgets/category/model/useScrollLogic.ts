@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { useUserCategories } from "@/entities/category/model/useUserCategories";
+import { useUserCategories } from "@/entities/category";
 
 export function useScrollLogic() {
   const userId = "user_1";

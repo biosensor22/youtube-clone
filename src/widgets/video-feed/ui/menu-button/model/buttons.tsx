@@ -1,10 +1,12 @@
-import { BlockIcon } from "@/shared/ui/icons/feed-icons/BlockIcon";
-import { ClockIcon } from "@/shared/ui/icons/feed-icons/ClockIcon";
-import { NotIcon } from "@/shared/ui/icons/feed-icons/NotIcon";
-import { QueueIcon } from "@/shared/ui/icons/feed-icons/QueueIcon";
-import { ReportIcon } from "@/shared/ui/icons/feed-icons/ReportIcon";
-import { SaveIcon } from "@/shared/ui/icons/feed-icons/SaveIcon";
-import { ShareIcon } from "@/shared/ui/icons/feed-icons/ShareIcon";
+import {
+  BlockIcon,
+  ClockIcon,
+  NotIcon,
+  QueueIcon,
+  ReportIcon,
+  SaveIcon,
+  ShareIcon,
+} from "@/shared/ui/icons";
 
 export type BtnItems = {
   id: number;

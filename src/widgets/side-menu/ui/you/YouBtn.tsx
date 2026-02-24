@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { NextListIcon } from "@/shared/ui/icons/category-icons/NextListIcon";
-import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
+import { NextListIcon } from "@/shared/ui/icons";
+import { usePress } from "@/shared/lib/hooks";
 
 export function YouBtn() {
   const { pressed, onPress, onRelease } = usePress();

@@ -1,8 +1,7 @@
 "use client";
 
-import { useSearchUI } from "../../lib/hooks/btn-hooks/useSearchUI";
-import { useSearch } from "../../lib/hooks/btn-hooks/useSearch";
-import { CrossIcon, SearchIcon } from "@/shared/ui/icons/header-icons";
+import { useSearchUI, useSearch } from "@/shared/lib/hooks";
+import { CrossIcon, SearchIcon } from "@/shared/ui/icons";
 
 export function SearchBar() {
   const { isFocused, onFocused, onBlured, focusRef, inputRef } = useSearchUI();

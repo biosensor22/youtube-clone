@@ -1,8 +1,7 @@
 "use client";
 
-import { useAppSelector } from "@/app/providers/hooks";
-import { close } from "../../model";
-import { useAppDispatch } from "@/app/providers/hooks";
+import { close } from "@/widgets/side-menu";
+import { useAppDispatch, useAppSelector } from "@/app/providers/hooks";
 
 export function ModalBg() {
   const isOpen = useAppSelector((state) => state.menu.isOpen);

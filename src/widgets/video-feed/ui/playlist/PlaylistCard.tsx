@@ -32,14 +32,14 @@ export function PlaylistCard({
       />
       <div className="w-full pb-6 flex flex-col gap-y-3">
         <div className="relative">
-          <div className="absolute -top-3 cursor-pointer items-center flex flex-col w-full">
+          <div className="absolute -top-2.5 cursor-pointer items-center flex flex-col w-full">
             <div
               style={{ "--bg": dominantColor } as React.CSSProperties}
-              className="w-[90%] h-1.5 bg-[rgba(var(--bg),0.2)] border border-(--bg-dark) rounded-t-full"
+              className="w-[90%] h-1 mb-px bg-[rgba(var(--bg),0.2)] border border-transparent rounded-t-3xl"
             />
             <div
               style={{ "--bg": dominantColor } as React.CSSProperties}
-              className="w-[95%] h-1.5 bg-[rgba(var(--bg),0.2)] border border-(--bg-dark) rounded-t-full"
+              className="w-[95%] h-1 bg-[rgba(var(--bg),0.5)] border border-transparent rounded-t-3xl"
             />
           </div>
           <Image

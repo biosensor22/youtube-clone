@@ -1,8 +1,7 @@
 "use client";
 
 import { MicroIcon } from "@/shared/ui/icons";
-import { usePress } from "@/shared/lib/hooks";
-import { useToolTip } from "@/shared/lib/hooks";
+import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 export function VoiceSearch() {
   const { pressed, onPress, onRelease } = usePress();

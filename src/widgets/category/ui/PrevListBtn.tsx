@@ -1,6 +1,5 @@
-import { PrevListIcon } from "@/shared/ui/icons/category-icons/PrevListIcon";
-import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
-import { useToolTip } from "@/shared/lib/hooks";
+import { PrevListIcon } from "@/shared/ui/icons";
+import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 interface PrevListBtnProps {
   onClick?: () => void;

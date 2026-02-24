@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserVideos } from "@/entities/video-cards/model/useUserVideos";
+import { useUserVideos } from "@/entities/video-cards";
 import { VideoCard } from "./video/VideoCard";
 import { PlaylistCard } from "./playlist/PlaylistCard";
 import { StreamCard } from "./stream/StreamCard";

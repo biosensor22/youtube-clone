@@ -1,8 +1,7 @@
 "use client";
 
-import { usePress } from "@/shared/lib/hooks";
 import { NotificationIcon } from "@/shared/ui/icons";
-import { useToolTip } from "@/shared/lib/hooks";
+import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -39,12 +38,17 @@ export function NotificationBtn() {
       }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
-      className={`inline-flex rounded-full p-2 relative transition-colors duration-150 cursor-pointer mx-2.5 ${
-        pressed
-          ? "bg-(--active-btn-color)"
-          : "hover:bg-(--hover-btn-color) bg-transparent"
-      }`}
+      className={`inline-flex rounded-full p-2 relative transition-colors duration-150 cursor-pointer mx-2.5
+        text-white text-[9px]
+         ${
+           pressed
+             ? "bg-(--active-btn-color)"
+             : "hover:bg-(--hover-btn-color) bg-transparent"
+         }`}
     >
+      <div className="h-3 w-3 right-2 top-2 bg-red-600 rounded-full absolute flex justify-center items-center">
+        4
+      </div>
       <NotificationIcon />
       {tooltip.tooltip}
     </div>

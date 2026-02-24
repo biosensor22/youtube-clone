@@ -1,10 +1,10 @@
 "use client";
 
-import { toggle } from "@/widgets/side-menu/model/menuSlice";
+import { toggle } from "@/widgets/side-menu";
 import { useDispatch } from "react-redux";
 
-import { BurgerBtnIcon } from "@/shared/ui/icons/header-icons";
-import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
+import { BurgerBtnIcon } from "@/shared/ui/icons";
+import { usePress } from "@/shared/lib/hooks";
 
 export function SideMenuBtn() {
   const { pressed, onPress, onRelease } = usePress();

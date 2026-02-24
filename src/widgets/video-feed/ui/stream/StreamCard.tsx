@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { viewsConvert } from "@/shared/lib/hooks/feed-hooks/viewsConvert";
-import { MenuButton } from "../menu-button/ui/MenuButton";
+import { viewsConvert } from "@/shared/lib/hooks";
+import { MenuButton, useDominantColor } from "@/widgets/video-feed";
 import { LiveIcon } from "@/shared/ui/icons";
-import { useDominantColor } from "../video/useDominantColor";
 
 type PlaylistProps = {
   id: string;

@@ -6,3 +6,4 @@ export { PlusIcon } from "./PlusIcon";
 export { YouTubeIcon } from "./YouTubeIcon";
 export { NotificationIcon } from "./NotificationIcon";
 export { CreatePostIcon } from "./CreatePostIcon";
+export { ArrowIcon } from "./ArrowIcon";

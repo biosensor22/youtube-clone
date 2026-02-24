@@ -1,4 +1,4 @@
-import { NotifOptionsBtn } from "../options/NotifOptionsBtn";
+import { NotifOptionsBtn } from "@/widgets/header/ui/notifications";
 import { timeAgo } from "@/shared/lib/hooks";
 import Image from "next/image";
 

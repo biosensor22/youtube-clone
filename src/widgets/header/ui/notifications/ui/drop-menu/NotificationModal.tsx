@@ -6,7 +6,7 @@ import { close } from "@/widgets/header/ui/notifications";
 import { SplitLine } from "@/shared/ui/ui/SplitLine";
 import { SettingsBtn } from "./SettingsBtn";
 import { Notification } from "./Notification";
-import { useNotifications } from "@/entities/notifications/model";
+import { useNotifications } from "@/entities/notifications";
 import Image from "next/image";
 import { useClickOutside } from "@/shared/lib/hooks";
 
@@ -23,7 +23,13 @@ export function NotificationModal() {
       fixed flex flex-col w-[calc(100%-12px)] top-2 h-160 rounded-xl max-w-120 bg-(--bg-drop-menu)
        z-11 mobile:top-14 small:right-20 small:left-auto left-2 mobile:w-[90vw] justify-center items-center"
       >
-        <Image src="/loaders.gif" width={75} height={75} alt="loading" />
+        <Image
+          src="/loaders.gif"
+          width={75}
+          height={75}
+          alt="loading"
+          unoptimized
+        />
       </div>
     );
 

@@ -1,7 +1,6 @@
 "use client";
 
-import { useSearchUI } from "@/shared/lib/hooks";
-import { useSearch } from "@/shared/lib/hooks";
+import { useSearch, useSearchUI } from "@/shared/lib/hooks";
 import { CrossIcon, SearchIcon } from "@/shared/ui/icons";
 import { VoiceSearch } from "@/widgets/header/ui/voice-search";
 

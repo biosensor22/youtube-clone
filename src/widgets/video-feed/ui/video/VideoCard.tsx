@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { timeAgo } from "@/shared/lib/hooks";
-import { viewsConvert } from "@/shared/lib/hooks";
-import { MenuButton } from "../menu-button";
+import { timeAgo, viewsConvert } from "@/shared/lib/hooks";
+import { MenuButton } from "@/widgets/video-feed";
 import { NoteIcon } from "@/shared/ui/icons";
 import { useDominantColor } from "./useDominantColor";
 

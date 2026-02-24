@@ -1,5 +1,5 @@
-import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
-import { ArrowIcon } from "@/shared/ui/icons/header-icons/ArrowIcon";
+import { usePress } from "@/shared/lib/hooks";
+import { ArrowIcon } from "@/shared/ui/icons";
 
 interface BackBtnProps {
   onBack: () => void;

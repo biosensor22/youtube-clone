@@ -1,10 +1,9 @@
 "use client";
 
-import { LiveIcon, VideoIcon } from "@/shared/ui/icons";
-import { CreatePostIcon } from "@/shared/ui/icons";
 import Link from "next/link";
-import { close } from "../model";
 import { useDispatch } from "react-redux";
+import { LiveIcon, VideoIcon, CreatePostIcon } from "@/shared/ui/icons";
+import { close } from "@/widgets/header/ui/create-btn";
 import { useCreateBtnContext } from "./CreateBtnContext";
 import { useClickOutside } from "@/shared/lib/hooks";
 

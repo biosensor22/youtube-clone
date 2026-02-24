@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePress } from "@/shared/lib/hooks/btn-hooks/usePress";
-import { LiveIcon } from "@/shared/ui/icons/side-menu-icons";
-import { useCursorToolTip } from "@/shared/lib/hooks/btn-hooks/useCursorToolTip";
+import { LiveIcon } from "@/shared/ui/icons";
+import { useCursorToolTip, usePress } from "@/shared/lib/hooks";
 
 type Props = {
   pfp: string;

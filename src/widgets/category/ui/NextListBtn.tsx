@@ -1,6 +1,5 @@
-import { usePress } from "@/shared/lib/hooks";
 import { NextListIcon } from "@/shared/ui/icons";
-import { useToolTip } from "@/shared/lib/hooks";
+import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 interface NextListBtnProps {
   onClick?: () => void;

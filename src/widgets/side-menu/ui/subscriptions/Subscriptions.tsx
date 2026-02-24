@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ShowMore } from "../utils/ShowMore";
 import { SubsBtn } from "./SubsBtn";
 import { SubsProfile } from "./SubsProfile";
-import { useSubscriptionsSide } from "@/entities/subscriptions-side-menu/model/useSubscriptionsSide";
+import { useSubscriptionsSide } from "@/entities/subscriptions-side-menu";
 
 export function Subscriptions() {
   const [active, setActive] = useState(false);
