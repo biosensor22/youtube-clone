@@ -1,9 +1,11 @@
 "use client";
 
-import { CategoryButton } from "./CategoryButton";
-import { NextListBtn } from "./NextListBtn";
-import { PrevListBtn } from "./PrevListBtn";
-import { useScrollLogic } from "../model/useScrollLogic";
+import {
+  CategoryButton,
+  NextListBtn,
+  PrevListBtn,
+  useScrollLogic,
+} from "@/widgets/category";
 
 export function CategoriesList() {
   const {

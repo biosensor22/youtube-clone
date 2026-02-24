@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useRef, RefObject } from "react";
-import { NotificationModal } from "@/widgets/header/ui/notifications/ui/drop-menu";
+import { NotificationModal } from "@/widgets/header/ui/notifications";
 import { useAppSelector } from "@/app/providers/hooks";
 
 type NotificationContextType = {

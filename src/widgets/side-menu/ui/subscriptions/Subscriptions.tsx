@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShowMore } from "../utils/ShowMore";
-import { SubsBtn } from "./SubsBtn";
+import { SubsBtn, ShowMore } from "@/widgets/side-menu";
 import { SubsProfile } from "./SubsProfile";
 import { useSubscriptionsSide } from "@/entities/subscriptions-side-menu";
 

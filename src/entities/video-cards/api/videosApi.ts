@@ -1,4 +1,4 @@
-import type { FeedItem } from "../model/types";
+import type { FeedItem } from "@/entities/video-cards";
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 
 type PaginatedResponse<T> = {

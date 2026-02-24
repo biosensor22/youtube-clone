@@ -1,14 +1,16 @@
 "use client";
 
-import { useNotificationContext } from "../NotificationContext";
+import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { close } from "@/widgets/header/ui/notifications";
-import { SplitLine } from "@/shared/ui/ui/SplitLine";
+import { SplitLine } from "@/shared/ui";
 import { SettingsBtn } from "./SettingsBtn";
 import { Notification } from "./Notification";
 import { useNotifications } from "@/entities/notifications";
-import Image from "next/image";
 import { useClickOutside } from "@/shared/lib/hooks";
+import {
+  useNotificationContext,
+  close,
+} from "@/widgets/header/ui/notifications";
 
 export function NotificationModal() {
   const { notifications, isLoading, error } = useNotifications("dwadw");

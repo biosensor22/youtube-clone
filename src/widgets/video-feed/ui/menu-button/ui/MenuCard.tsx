@@ -1,9 +1,13 @@
 "use client";
 
 import { forwardRef, RefObject } from "react";
-import { usePosition } from "../model/usePosition";
-import { buttonsVideo, buttonsPlaylist } from "../model/buttons";
-import { Button } from "./Button";
+
+import {
+  usePosition,
+  buttonsVideo,
+  buttonsPlaylist,
+  Button,
+} from "@/widgets/video-feed";
 
 type MenuBtnProps = {
   type: string;

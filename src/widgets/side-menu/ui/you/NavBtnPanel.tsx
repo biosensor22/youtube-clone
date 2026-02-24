@@ -11,9 +11,8 @@ import {
   PodcastsIcon,
   VideoIcon,
   WatchIcon,
-} from "@/shared/ui/icons/side-menu-icons";
-import { NavBtn } from "./NavBtn";
-import { ShowMore } from "../utils";
+} from "@/shared/ui/icons";
+import { NavBtn, ShowMore } from "@/widgets/side-menu";
 
 export function NavBtnPanel() {
   const [active, setActive] = useState(false);

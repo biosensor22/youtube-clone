@@ -1,8 +1,10 @@
 "use client";
 
-import { fetchNotifications } from "../api/notificationsApi";
-import type { Notifications } from "./types";
 import { useEffect, useState } from "react";
+import {
+  fetchNotifications,
+  type Notifications,
+} from "@/entities/notifications";
 
 export function useNotifications(userId: string) {
   const [notifications, setNotifications] = useState<Notifications[]>([]);

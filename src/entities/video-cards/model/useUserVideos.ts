@@ -1,8 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchVideoCards } from "../api/videosApi";
-import type { FeedItem } from "../model/types";
+import { fetchVideoCards, type FeedItem } from "@/entities/video-cards";
 
 const PAGE_SIZE = 12;
 const SCROLL_OFFSET = 120;
@@ -18,45 +17,48 @@ export function useUserVideos(userId: string) {
 
   const empty = !isLoading && videos.length === 0 && !error;
 
-  const fetchData = useCallback(async (targetPage: number, replace = false) => {
-    if (loadingRef.current) return;
-    if (!replace && !hasMoreRef.current) return;
+  const fetchData = useCallback(
+    async (targetPage: number, replace = false) => {
+      if (loadingRef.current) return;
+      if (!replace && !hasMoreRef.current) return;
 
-    const controller = new AbortController();
-    abortRef.current = controller;
+      const controller = new AbortController();
+      abortRef.current = controller;
 
-    loadingRef.current = true;
-    setIsLoading(true);
-    setError(null);
+      loadingRef.current = true;
+      setIsLoading(true);
+      setError(null);
 
-    try {
-      const data = await fetchVideoCards({
-        page: targetPage,
-        perPage: PAGE_SIZE,
-        userId,
-        signal: controller.signal,
-      });
+      try {
+        const data = await fetchVideoCards({
+          page: targetPage,
+          perPage: PAGE_SIZE,
+          userId,
+          signal: controller.signal,
+        });
 
-      if (controller.signal.aborted) return;
+        if (controller.signal.aborted) return;
 
-      setVideos((prev) => (replace ? data.items : [...prev, ...data.items]));
+        setVideos((prev) => (replace ? data.items : [...prev, ...data.items]));
 
-      const nextPage = targetPage + 1;
-      pageRef.current = nextPage;
+        const nextPage = targetPage + 1;
+        pageRef.current = nextPage;
 
-      hasMoreRef.current = data.hasMore;
-    } catch (err) {
-      if ((err as DOMException).name === "AbortError") return;
+        hasMoreRef.current = data.hasMore;
+      } catch (err) {
+        if ((err as DOMException).name === "AbortError") return;
 
-      setError(err as Error);
-      console.error("Error loading videos", err);
-    } finally {
-      if (abortRef.current !== controller) return;
-      abortRef.current = null;
-      loadingRef.current = false;
-      setIsLoading(false);
-    }
-  }, [userId]);
+        setError(err as Error);
+        console.error("Error loading videos", err);
+      } finally {
+        if (abortRef.current !== controller) return;
+        abortRef.current = null;
+        loadingRef.current = false;
+        setIsLoading(false);
+      }
+    },
+    [userId],
+  );
 
   useEffect(() => {
     abortRef.current?.abort();
@@ -91,11 +93,7 @@ export function useUserVideos(userId: string) {
           window.innerHeight + window.scrollY >=
           document.documentElement.scrollHeight - SCROLL_OFFSET;
 
-        if (
-          reachedBottom &&
-          !loadingRef.current &&
-          hasMoreRef.current
-        ) {
+        if (reachedBottom && !loadingRef.current && hasMoreRef.current) {
           void fetchData(pageRef.current);
         }
       });

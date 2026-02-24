@@ -1,5 +1,4 @@
-import type { BtnItems } from "./ModalMenu";
-import { buttonsVideo } from "../model/buttons";
+import { buttonsVideo, type BtnItems } from "@/widgets/video-feed";
 
 export function Button({ id, label, icon }: BtnItems) {
   return (

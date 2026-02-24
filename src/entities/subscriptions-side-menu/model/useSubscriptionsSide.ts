@@ -1,8 +1,10 @@
 "use client";
 
-import { fetchSubscriptions } from "../api/subscriptionsApi";
+import {
+  fetchSubscriptions,
+  type SubscriptionsSideMenu,
+} from "@/entities/subscriptions-side-menu";
 import { useState, useEffect } from "react";
-import { SubscriptionsSideMenu } from "./types";
 
 export function useSubscriptionsSide(userId: string) {
   const [subscriptions, setSubscriptions] = useState<SubscriptionsSideMenu[]>(

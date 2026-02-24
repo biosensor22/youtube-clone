@@ -1,5 +1,5 @@
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
-import type { Category } from "../model/types";
+import type { Category } from "@/entities/category";
 
 export async function fetchCategories(userId: string): Promise<Category[]> {
   try {

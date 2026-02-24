@@ -1,5 +1,5 @@
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
-import type { Notifications } from "../model/types";
+import type { Notifications } from "@/entities/notifications";
 
 export async function fetchNotifications(userId: string) {
   try {

@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MenuButton } from "../menu-button/ui/MenuButton";
-import { useDominantColor } from "../video/useDominantColor";
+import { MenuButton, useDominantColor } from "@/widgets/video-feed";
 
 type PlaylistProps = {
   id: string;
