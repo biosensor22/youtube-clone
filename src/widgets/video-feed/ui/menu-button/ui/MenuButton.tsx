@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { useRef } from "react";
 import { ModalMenu } from "./ModalMenu";
 import { MenuIcon } from "@/shared/ui/icons";
@@ -21,26 +22,23 @@ export function MenuButton({ type }: MenuBtnProps) {
       onMouseDown={onPress}
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
-      className={`rounded-full p-1.5 absolute -right-2 -top-1
-        ${
-          pressed
-            ? "bg-(--active-btn-color)"
-            : "hover:bg-(--hover-btn-color) bg-transparent"
-        }
-        `}
+      className={clsx(
+        "rounded-full p-1.5 absolute -right-2 -top-1",
+        pressed
+          ? "bg-(--active-btn-color)"
+          : "bg-transparent hover:bg-(--hover-btn-color)",
+      )}
     >
       <MenuIcon onClick={onSwitch} />
 
       <div
         ref={menuRef}
-        className={`
-          absolute $
-          ${
-            opened
-              ? "opacity-100 pointer-events-auto z-9"
-              : "opacity-0 pointer-events-none -z-100"
-          }
-        `}
+        className={clsx(
+          "absolute",
+          opened
+            ? "opacity-100 pointer-events-auto z-9"
+            : "opacity-0 pointer-events-none -z-100",
+        )}
       >
         <ModalMenu ref={modalRef} type={type} />
       </div>

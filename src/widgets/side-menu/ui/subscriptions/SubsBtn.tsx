@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import { NextListIcon } from "@/shared/ui/icons";
 import { usePress } from "@/shared/lib/hooks";
@@ -12,12 +13,12 @@ export function SubsBtn() {
       onMouseDown={onPress}
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
-      className={`px-3 h-10 rounded-xl text-white font-semibold flex justify-start items-center
-					${
-            pressed
-              ? "bg-(--active-btn-color)"
-              : "hover:bg-(--hover-btn-color) bg-transparent"
-          }`}
+      className={clsx(
+        "px-3 h-10 rounded-xl text-white font-semibold flex justify-start items-center",
+        pressed
+          ? "bg-(--active-btn-color)"
+          : "bg-transparent hover:bg-(--hover-btn-color)",
+      )}
       href=""
     >
       <p>Subscriptions</p>

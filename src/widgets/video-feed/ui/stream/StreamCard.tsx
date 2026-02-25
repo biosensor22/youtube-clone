@@ -6,7 +6,7 @@ import { viewsConvert } from "@/shared/lib/hooks";
 import { MenuButton, useDominantColor } from "@/widgets/video-feed";
 import { LiveIcon } from "@/shared/ui/icons";
 
-type PlaylistProps = {
+type StreamProps = {
   id: string;
   type: string;
   title: string;
@@ -28,7 +28,7 @@ export function StreamCard({
   isLive,
   startedAt,
   authorAvatar,
-}: PlaylistProps) {
+}: StreamProps) {
   const dominantColor = useDominantColor(thumbnail);
 
   return (

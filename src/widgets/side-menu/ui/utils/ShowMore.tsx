@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import { NextListIcon } from "@/shared/ui/icons";
 import { usePress } from "@/shared/lib/hooks";
@@ -16,12 +17,13 @@ export function ShowMore({ isActive }: ShowMoreProps) {
       onMouseDown={onPress}
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
-      className={`px-3 gap-4.5 h-10 rounded-xl text-white text-sm flex justify-start items-center
-					${
-            pressed
-              ? "bg-(--active-btn-color)"
-              : "hover:bg-(--hover-btn-color) bg-transparent"
-          }`}
+      className={clsx(
+        "px-3 gap-4.5 h-10 rounded-xl text-white text-sm flex justify-start items-center bg-transparent",
+        {
+          "bg-(--active-btn-color)": pressed,
+          "hover:bg-(--hover-btn-color)": !pressed,
+        },
+      )}
       href=""
     >
       <NextListIcon className={` ${isActive ? "rotate-270" : "rotate-90"}`} />

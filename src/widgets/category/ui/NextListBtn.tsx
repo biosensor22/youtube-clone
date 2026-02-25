@@ -1,3 +1,6 @@
+"use client";
+
+import clsx from "clsx";
 import { NextListIcon } from "@/shared/ui/icons";
 import { useToolTip, usePress } from "@/shared/lib/hooks";
 
@@ -28,14 +31,13 @@ export function NextListBtn({ onClick }: NextListBtnProps) {
           onClick?.();
         }}
         onMouseLeave={onRelease}
-        className={`
-          rounded-full cursor-pointer p-1.5 scale-125 transition-colors duration-150
-          ${
-            pressed
-              ? "bg-(--active-btn-color)"
-              : "hover:bg-(--hover-btn-color) bg-transparent"
-          }
-        `}
+        className={clsx(
+          "rounded-full cursor-pointer p-1.5 scale-125 transition-colors duration-150 bg-transparent",
+          {
+            "bg-(--active-btn-color)": pressed,
+            "hover:bg-(--hover-btn-color)": !pressed,
+          },
+        )}
       >
         <NextListIcon />
         {tooltip.tooltip}

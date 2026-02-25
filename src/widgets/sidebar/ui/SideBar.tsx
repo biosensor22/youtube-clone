@@ -10,6 +10,8 @@ import {
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+type urlPaths = {};
+
 export function SideBar() {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState("home");

@@ -23,6 +23,12 @@ export function Notification({
   by,
   message,
 }: NotificationProps) {
+  const textMap: Record<string, string> = {
+    reply: `${by} replied: ${message}`,
+    liked: `👍 Someone liked your comment: ${message}`,
+    video: `${by} uploaded: ${message}`,
+  };
+
   return (
     <div className="relative flex justify-between px-1 py-4 pr-4 hover:bg-(--hover-btn-color)">
       <div className="flex gap-2 justify-center h-11">
@@ -36,11 +42,7 @@ export function Notification({
         />
       </div>
       <div className="max-w-59 text-[14px] cursor-pointer">
-        <p>
-          {type === "reply" ? `${by} replied: ${message}` : ""}
-          {type === "liked" ? `👍 Someone liked your ${type}: ${message}` : ""}
-          {type === "video" ? `${by} uploaded: ${message}` : ""}
-        </p>
+        <p>{textMap[type]}</p>
         <p className="text-(--grey-text-color) mt-1 font-normal">
           {timeAgo(date)}
         </p>

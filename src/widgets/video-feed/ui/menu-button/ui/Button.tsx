@@ -1,16 +1,19 @@
 import { buttonsVideo, type BtnItems } from "@/widgets/video-feed";
+import clsx from "clsx";
 
 export function Button({ id, label, icon }: BtnItems) {
   return (
     <button
-      key={id}
-      className={`hover:bg-(--hover-btn-color) text-start px-4 py-2 flex gap-2 cursor-pointer
-								${id === 1 ? "rounded-t-xl" : ""} ${
-                  id === buttonsVideo.length ? "rounded-b-xl" : ""
-                }`}
+      className={clsx(
+        "hover:bg-(--hover-btn-color) text-start px-4 py-2 flex gap-2 cursor-pointer",
+        {
+          "rounded-t-xl": id === 1,
+          "rounded-b-xl": id === buttonsVideo.length,
+        },
+      )}
     >
       {icon}
-      <p className="text-[14px]">{label}</p>
+      <div className="text-[14px]">{label}</div>
     </button>
   );
 }

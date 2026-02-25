@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import { LiveIcon } from "@/shared/ui/icons";
@@ -27,14 +28,13 @@ export function SubsProfile({ pfp, title, url, live, newVideoChecked }: Props) {
       }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
-      className={`flex items-center gap-x-4 rounded-xl px-2 py-1 pr-2 mt-1 text-white text-[14px]
-        ${
-          pressed
-            ? "bg-(--active-btn-color)"
-            : "hover:bg-(--hover-btn-color) bg-transparent"
-        }
-        
-        `}
+      className={clsx(
+        "flex items-center gap-x-4 rounded-xl px-2 py-1 pr-2 mt-1 text-white text-[14px] bg-transparent",
+        {
+          "bg-(--active-btn-color)": pressed,
+          "hover:bg-(--hover-btn-color)": !pressed,
+        },
+      )}
     >
       <Image
         className="rounded-full"

@@ -9,3 +9,5 @@ export { StreamCard } from "./stream";
 export { SkeletonCard } from "./skeleton";
 
 export * from "./menu-button";
+
+export * from "./video";

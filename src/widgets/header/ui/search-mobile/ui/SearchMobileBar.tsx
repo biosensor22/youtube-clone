@@ -1,5 +1,7 @@
 "use client";
 
+import clsx from "clsx";
+
 import { SearchIcon } from "@/shared/ui/icons";
 import { useToolTip, usePress } from "@/shared/lib/hooks";
 
@@ -19,15 +21,13 @@ export function SearchMobileBar() {
       }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
-      className={`
-         rounded-full p-1
-        transition-colors duration-150 cursor-pointer
-        ${
-          pressed
-            ? "bg-(--active-btn-color)"
-            : "hover:bg-(--hover-btn-color) bg-transparent"
-        }
-      `}
+      className={clsx(
+        "rounded-full p-1 transition-colors duration-150 cursor-pointer bg-transparent",
+        {
+          "bg-(--active-btn-color)": pressed,
+          "hover:bg-(--hover-btn-color)": !pressed,
+        },
+      )}
     >
       <SearchIcon />
       {tooltip.tooltip}

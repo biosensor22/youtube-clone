@@ -1,3 +1,6 @@
+"use client";
+
+import clsx from "clsx";
 import Link from "next/link";
 import { SettingsIcon } from "@/shared/ui/icons";
 import { usePress } from "@/shared/lib/hooks";
@@ -11,13 +14,10 @@ export function SettingsBtn() {
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
       href="/"
-      className={`p-2 rounded-full
-
-				${
-          pressed
-            ? "bg-(--active-btn-color)"
-            : "hover:bg-(--hover-btn-color) bg-transparent"
-        }`}
+      className={clsx("p-2 rounded-full bg-transparent", {
+        "bg-(--active-btn-color)": pressed,
+        "hover:bg-(--hover-btn-color)": !pressed,
+      })}
     >
       <SettingsIcon />
     </Link>

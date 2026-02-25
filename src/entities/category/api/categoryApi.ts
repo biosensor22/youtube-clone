@@ -12,6 +12,6 @@ export async function fetchCategories(userId: string): Promise<Category[]> {
     return data;
   } catch (err) {
     console.error("[Category API]:", err);
-    return [];
   }
+  return [];
 }
