@@ -4,18 +4,18 @@ import { LogoHome } from "@/widgets/header";
 import { SideMenuBtn } from "@/widgets/header/ui/side-menu-btn";
 
 import {
-  NavPanel,
-  Subscriptions,
-  YouPanel,
-  useSideMenuScroll,
-  ModalBg,
-  SideMenuLayer,
   SideMenuContainer,
+  SideMenuLayer,
+  NavPanel,
+  Links,
+  Subscriptions,
   NavBtnPanel,
+  ModalBg,
 } from "@/widgets/side-menu";
 
-import { Links } from "@/widgets/side-menu";
-import { SplitLine } from "@/shared/ui/ui/SplitLine";
+import { YouPanel } from "@/widgets/side-menu/ui";
+import { SplitLine } from "@/shared/ui";
+import { useSideMenuScroll } from "@/widgets/side-menu";
 
 export function SideMenu() {
   useSideMenuScroll();

@@ -1,6 +1,6 @@
 "use client";
 
-import { toggle } from "@/widgets/side-menu";
+import { toggle } from "@/widgets/side-menu/model";
 import { useDispatch } from "react-redux";
 
 import { BurgerBtnIcon } from "@/shared/ui/icons";

@@ -1,1 +1,0 @@
-    console.log(column, '=, p.source, p.line, p.column, p.name);

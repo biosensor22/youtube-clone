@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { close } from "@/widgets/side-menu";
+import { close } from "@/widgets/side-menu/model";
 import { useAppDispatch, useAppSelector } from "@/app/providers/hooks";
 
 export function ModalBg() {
