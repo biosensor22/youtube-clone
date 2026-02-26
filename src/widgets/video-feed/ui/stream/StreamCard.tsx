@@ -19,14 +19,11 @@ type StreamProps = {
 };
 
 export function StreamCard({
-  id,
   type,
   title,
   thumbnail,
   author,
   viewers,
-  isLive,
-  startedAt,
   authorAvatar,
 }: StreamProps) {
   const dominantColor = useDominantColor(thumbnail);

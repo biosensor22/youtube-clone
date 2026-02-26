@@ -1,8 +1,7 @@
 interface VideoSVGProps extends React.SVGProps<SVGSVGElement> {
-  isActive?: boolean;
   onSwitch?: () => void;
 }
-export function VideoIcon({ isActive, ...props }: VideoSVGProps) {
+export function VideoIcon({ ...props }: VideoSVGProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

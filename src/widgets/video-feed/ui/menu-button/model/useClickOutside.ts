@@ -27,5 +27,5 @@ export function useClickOutside({
     return () => {
       document.removeEventListener("click", clickOutside);
     };
-  }, [opened, onClose]);
+  }, [opened, onClose, menuRef]);
 }

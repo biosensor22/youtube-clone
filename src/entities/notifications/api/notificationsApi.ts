@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 import type { Notifications } from "@/entities/notifications";
 
-export async function fetchNotifications(userId: string) {
+export async function fetchNotifications() {
   try {
     const res = await fetch(`${API_BASE_URL}${API_ROUTES.notifications}`);
 

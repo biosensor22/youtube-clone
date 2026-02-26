@@ -14,9 +14,7 @@ interface NotificationProps {
 }
 
 export function Notification({
-  id,
   type,
-  checked,
   icon,
   thumbnail,
   date,

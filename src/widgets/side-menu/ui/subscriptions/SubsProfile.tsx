@@ -46,10 +46,10 @@ export function SubsProfile({ pfp, title, url, live, newVideoChecked }: Props) {
       <p className="whitespace-nowrap truncate">{title}</p>
       {tooltip.tooltip}
       <div
-        className={`ml-auto pr-[-10px]
-          
-          ${newVideoChecked && !live ? "w-1 h-1 rounded-full bg-(--video-blue-checked) mr-1.5" : ""}
-        `}
+        className={clsx("ml-auto pr-[-10px]", {
+          "w-1 h-1 rounded-full bg-(--video-blue-checked) mr-1.5":
+            newVideoChecked && !live,
+        })}
       >
         {live && (
           <div className="text-(--live-red-bg)">

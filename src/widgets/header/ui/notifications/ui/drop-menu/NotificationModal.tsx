@@ -13,7 +13,7 @@ import {
 } from "@/widgets/header/ui/notifications";
 
 export function NotificationModal() {
-  const { notifications, isLoading, error } = useNotifications("dwadw");
+  const { notifications, isLoading } = useNotifications("dwadw");
   const dispatch = useDispatch();
   const { triggerRef } = useNotificationContext();
   const { modalRef } = useClickOutside(triggerRef, () => dispatch(close()));

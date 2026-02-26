@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import clsx from "clsx";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/widgets/header";
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} @container antialiased`}>
+      <body className={clsx(roboto.variable, "@container antialiased")}>
         <div>
           <StoreProvider>
             <CreateBtnProvider>

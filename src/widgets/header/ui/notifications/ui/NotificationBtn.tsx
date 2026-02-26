@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { NotificationIcon } from "@/shared/ui/icons";
 import { useToolTip, usePress } from "@/shared/lib/hooks";
 
@@ -12,16 +13,18 @@ export function NotificationBtn() {
   const dispatch = useDispatch();
   const { triggerRef: contextRef } = useNotificationContext();
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useToolTip("Notifications", {
-    delay: 100,
-    position: "bottom",
-  });
+  const {
+    triggerRef,
+    onMouseEnter,
+    onMouseLeave,
+    tooltip: tooltipNode,
+  } = useToolTip("Search", { delay: 100, position: "bottom" });
 
   useEffect(() => {
-    if (tooltip.triggerRef.current) {
-      contextRef.current = tooltip.triggerRef.current;
+    if (triggerRef.current) {
+      contextRef.current = triggerRef.current;
     }
-  }, [tooltip.triggerRef, contextRef]);
+  }, [triggerRef, contextRef]);
 
   const handleToggle = () => {
     dispatch(toggle());
@@ -30,27 +33,27 @@ export function NotificationBtn() {
   return (
     <div
       onClick={handleToggle}
-      ref={tooltip.triggerRef}
-      onMouseEnter={tooltip.onMouseEnter}
+      ref={triggerRef}
+      onMouseEnter={onMouseEnter}
       onMouseLeave={() => {
-        tooltip.onMouseLeave();
+        onMouseLeave();
         onRelease();
       }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
-      className={`inline-flex rounded-full p-2 relative transition-colors duration-150 cursor-pointer mx-2.5
-        text-white text-[12px]
-         ${
-           pressed
-             ? "bg-(--active-btn-color)"
-             : "hover:bg-(--hover-btn-color) bg-transparent"
-         }`}
+      className={clsx(
+        "inline-flex rounded-full p-2 relative transition-colors duration-150 cursor-pointer mx-2.5 text-white text-[12px] bg-transparent",
+        {
+          "bg-(--active-btn-color)": pressed,
+          "hover:bg-(--hover-btn-color)": !pressed,
+        },
+      )}
     >
       <div className="h-5 w-5 right-0 top-1 mb-1 border-2 border-black bg-red-600 rounded-full absolute flex justify-center items-center">
         <p className="mb-0.5">4</p>
       </div>
       <NotificationIcon />
-      {tooltip.tooltip}
+      {tooltipNode}
     </div>
   );
 }

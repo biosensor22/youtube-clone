@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { PrevListIcon } from "@/shared/ui/icons";
 import { useToolTip, usePress } from "@/shared/lib/hooks";
 
@@ -7,17 +8,19 @@ interface PrevListBtnProps {
 
 export function PrevListBtn({ onClick }: PrevListBtnProps) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useToolTip("Previous", {
-    delay: 100,
-    position: "bottom",
-  });
-
+  const {
+    triggerRef,
+    onMouseEnter,
+    onMouseLeave,
+    tooltip: tooltipNode,
+  } = useToolTip("Search", { delay: 100, position: "bottom" });
   return (
     <div
-      ref={tooltip.triggerRef}
-      onMouseEnter={tooltip.onMouseEnter}
+      ref={triggerRef}
+      onMouseEnter={onMouseEnter}
       onMouseLeave={() => {
-        (tooltip.onMouseLeave(), onRelease());
+        onMouseLeave();
+        onRelease();
       }}
       className="rounded-full bg-(--category-btn)"
     >
@@ -28,18 +31,16 @@ export function PrevListBtn({ onClick }: PrevListBtnProps) {
           onClick?.();
         }}
         onMouseLeave={onRelease}
-        className={`
-          rounded-full cursor-pointer p-1.5 scale-125
-          transition-colors duration-150
-          ${
-            pressed
-              ? "bg-(--active-btn-color)"
-              : "hover:bg-(--hover-btn-color) bg-transparent"
-          }
-        `}
+        className={clsx(
+          "rounded-full cursor-pointer p-1.5 scale-125 transition-colors duration-150 bg-transparent",
+          {
+            "bg-(--active-btn-color)": pressed,
+            "hover:bg-(--hover-btn-color)": !pressed,
+          },
+        )}
       >
         <PrevListIcon />
-        {tooltip.tooltip}
+        {tooltipNode}
       </div>
     </div>
   );

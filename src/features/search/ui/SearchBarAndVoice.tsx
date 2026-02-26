@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { useSearch, useSearchUI } from "@/shared/lib/hooks";
 import { CrossIcon, SearchIcon } from "@/shared/ui/icons";
 import { VoiceSearch } from "@/widgets/header/ui/voice-search";
@@ -13,13 +14,13 @@ export function SearchBarAndVoice() {
       <div className="relative flex-1">
         <div
           onClick={focusRef}
-          className={`
-            absolute right-0 flex items-center justify-between
-            border border-(--border-color) rounded-l-full py-1.25 pl-3
-            bg-(--input-bg-color) text-white/70 text-lg cursor-text 
-            
-            ${isFocused ? "w-[105%] border-(--focus-input-color)" : "w-full"}
-          `}
+          className={clsx(
+            "absolute right-0 flex items-center justify-between border border-(--border-color) rounded-l-full py-1.25 pl-3 bg-(--input-bg-color) text-white/70 text-lg cursor-text",
+            {
+              "w-[105%] border-(--focus-input-color)": isFocused,
+              "w-full": !isFocused,
+            },
+          )}
         >
           {isFocused && <SearchIcon width={28} height={28} />}
 

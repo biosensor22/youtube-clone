@@ -6,19 +6,22 @@ import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 export function VoiceSearch() {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useToolTip("Search with your voice", {
-    delay: 100,
-    position: "bottom",
-  });
+  const {
+    triggerRef,
+    onMouseEnter,
+    onMouseLeave,
+    tooltip: tooltipNode,
+  } = useToolTip("Search", { delay: 100, position: "bottom" });
 
   return (
     <div
-      ref={tooltip.triggerRef}
-      onMouseEnter={tooltip.onMouseEnter}
+      ref={triggerRef}
+      onMouseEnter={onMouseEnter}
       onMouseDown={onPress}
       onMouseUp={onRelease}
       onMouseLeave={() => {
-        (tooltip.onMouseLeave(), onRelease());
+        onMouseLeave();
+        onRelease();
       }}
       className={clsx(
         "items-center justify-center flex w-full rounded-full cursor-pointer",
@@ -29,7 +32,7 @@ export function VoiceSearch() {
       )}
     >
       <MicroIcon />
-      {tooltip.tooltip}
+      {tooltipNode}
     </div>
   );
 }

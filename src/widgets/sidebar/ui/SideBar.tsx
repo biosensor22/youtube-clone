@@ -8,39 +8,42 @@ import {
   YouIcon,
 } from "@/shared/ui/icons";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
-type urlPaths = {};
+export const urlPaths = {
+  home: "/",
+  shorts: "/shorts",
+  subscriptions: "/subscriptions",
+  you: "/you",
+};
 
 export function SideBar() {
   const pathname = usePathname();
-  const [isActive, setIsActive] = useState("home");
-  const current = pathname === "/" ? "home" : pathname.replace(/^\/+/, "");
+  console.log(pathname);
 
   const navItems = [
     {
       id: "home",
       label: "Home",
-      path: "/",
-      icon: <HomeIcon isActive={isActive} />,
+      path: urlPaths.home,
+      icon: <HomeIcon isActive={pathname} />,
     },
     {
       id: "shorts",
       label: "Shorts",
-      path: "/shorts",
-      icon: <ShortsIcon isActive={isActive} />,
+      path: urlPaths.shorts,
+      icon: <ShortsIcon isActive={pathname} />,
     },
     {
       id: "subscriptions",
       label: "Subscriptions",
-      path: "/subscriptions",
-      icon: <SubscriptionsIcon isActive={isActive} />,
+      path: urlPaths.subscriptions,
+      icon: <SubscriptionsIcon isActive={pathname} />,
     },
     {
       id: "you",
       label: "You",
-      path: "/you",
-      icon: <YouIcon isActive={isActive} />,
+      path: urlPaths.you,
+      icon: <YouIcon isActive={pathname} />,
     },
   ];
 

@@ -18,3 +18,4 @@ export const ModalMenu = forwardRef<HTMLDivElement, MenuBtnProps>(
     return <MenuCard type={type} ref={ref} />;
   },
 );
+ModalMenu.displayName = "ModalMenu";

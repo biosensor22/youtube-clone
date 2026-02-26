@@ -7,17 +7,20 @@ import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 export function SearchMobileBar() {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useToolTip("Search", {
-    delay: 100,
-    position: "bottom",
-  });
+  const {
+    triggerRef,
+    onMouseEnter,
+    onMouseLeave,
+    tooltip: tooltipNode,
+  } = useToolTip("Search", { delay: 100, position: "bottom" });
 
   return (
     <div
-      ref={tooltip.triggerRef}
-      onMouseEnter={tooltip.onMouseEnter}
+      ref={triggerRef}
+      onMouseEnter={onMouseEnter}
       onMouseLeave={() => {
-        (tooltip.onMouseLeave(), onRelease());
+        onMouseLeave();
+        onRelease();
       }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
@@ -30,7 +33,7 @@ export function SearchMobileBar() {
       )}
     >
       <SearchIcon />
-      {tooltip.tooltip}
+      {tooltipNode}
     </div>
   );
 }

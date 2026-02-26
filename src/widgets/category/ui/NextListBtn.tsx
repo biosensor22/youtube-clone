@@ -10,17 +10,20 @@ interface NextListBtnProps {
 
 export function NextListBtn({ onClick }: NextListBtnProps) {
   const { pressed, onPress, onRelease } = usePress();
-  const tooltip = useToolTip("Next", {
-    delay: 100,
-    position: "bottom",
-  });
+  const {
+    triggerRef,
+    onMouseEnter,
+    onMouseLeave,
+    tooltip: tooltipNode,
+  } = useToolTip("Search", { delay: 100, position: "bottom" });
 
   return (
     <div
-      ref={tooltip.triggerRef}
-      onMouseEnter={tooltip.onMouseEnter}
+      ref={triggerRef}
+      onMouseEnter={onMouseEnter}
       onMouseLeave={() => {
-        (tooltip.onMouseLeave(), onRelease());
+        onMouseLeave();
+        onRelease();
       }}
       className="bg-4 rounded-full bg-(--category-btn)"
     >
@@ -40,7 +43,7 @@ export function NextListBtn({ onClick }: NextListBtnProps) {
         )}
       >
         <NextListIcon />
-        {tooltip.tooltip}
+        {tooltipNode}
       </div>
     </div>
   );

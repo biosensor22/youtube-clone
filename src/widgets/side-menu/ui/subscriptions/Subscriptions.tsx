@@ -10,7 +10,7 @@ export function Subscriptions() {
   const [slice, setSlice] = useState(7);
 
   const userId = "12w3";
-  const { subscriptions, isLoading, error } = useSubscriptionsSide(userId);
+  const { subscriptions, isLoading } = useSubscriptionsSide(userId);
 
   if (isLoading) return <div>Loading</div>;
   return (

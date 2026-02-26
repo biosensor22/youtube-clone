@@ -7,9 +7,7 @@ function getPriority(s: SubscriptionsSideMenu) {
   return 3;
 }
 
-export async function fetchSubscriptions(
-  userId: string,
-): Promise<SubscriptionsSideMenu[]> {
+export async function fetchSubscriptions(): Promise<SubscriptionsSideMenu[]> {
   try {
     const res = await fetch(`${API_BASE_URL}${API_ROUTES.subscriptions}`);
     if (!res.ok) {

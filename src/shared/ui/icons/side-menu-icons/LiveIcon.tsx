@@ -1,9 +1,8 @@
 interface LiveSVGProps extends React.SVGProps<SVGSVGElement> {
-  isActive?: boolean;
   onSwitch?: () => void;
 }
 
-export function LiveIcon({ isActive, ...props }: LiveSVGProps) {
+export function LiveIcon({ ...props }: LiveSVGProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

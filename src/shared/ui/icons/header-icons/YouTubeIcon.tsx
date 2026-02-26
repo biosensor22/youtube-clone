@@ -8,6 +8,7 @@ export function YouTubeIcon(props: React.SVGProps<SVGSVGElement>) {
       focusable="false"
       aria-hidden="true"
       className="pointer-events-none w-full h-full"
+      {...props}
     >
       <g>
         <path

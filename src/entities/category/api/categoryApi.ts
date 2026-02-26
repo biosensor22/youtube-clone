@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 import type { Category } from "@/entities/category";
 
-export async function fetchCategories(userId: string): Promise<Category[]> {
+export async function fetchCategories(): Promise<Category[]> {
   try {
     const res = await fetch(`${API_BASE_URL}${API_ROUTES.user_category}`);
 

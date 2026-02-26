@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { forwardRef, RefObject } from "react";
 
 import {
@@ -20,9 +21,10 @@ export const MenuCard = forwardRef<HTMLDivElement, MenuBtnProps>(
     return (
       <div
         ref={ref}
-        className={`bg-(--dark-grey-bg) rounded-xl w-65 flex flex-col ${
-          position === "left" ? "right-0" : "left-0"
-        }`}
+        className={clsx("bg-(--dark-grey-bg) rounded-xl w-65 flex flex-col", {
+          "right-0": position === "left",
+          "left-0": position !== "left",
+        })}
         style={{ position: "absolute" }}
       >
         {type === "video" &&
@@ -43,3 +45,5 @@ export const MenuCard = forwardRef<HTMLDivElement, MenuBtnProps>(
     );
   },
 );
+
+MenuCard.displayName = "ModalMenu";

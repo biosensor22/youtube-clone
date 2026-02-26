@@ -26,7 +26,12 @@ export function ShowMore({ isActive }: ShowMoreProps) {
       )}
       href=""
     >
-      <NextListIcon className={` ${isActive ? "rotate-270" : "rotate-90"}`} />
+      <NextListIcon
+        className={clsx({
+          "rotate-270": isActive,
+          "rotate-90": !isActive,
+        })}
+      />
       <p>{isActive ? "Show fewer" : "Show More"}</p>
     </Link>
   );

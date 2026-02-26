@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node -e \"try{const fs=require('node:fs');for(const p of ['.next-dev/lock','.next-dev/dev/lock','.next/lock','.next/dev/lock'])fs.rmSync(p,{force:true})}catch(e){}\"",
     "dev": "node server.mjs",
     "dev:web": "next dev",
     "dev:api": "json-server db.json5 --watch --port 3001",

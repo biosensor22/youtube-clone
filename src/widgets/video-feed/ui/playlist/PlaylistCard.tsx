@@ -13,12 +13,10 @@ type PlaylistProps = {
 };
 
 export function PlaylistCard({
-  id,
   type,
   title,
   thumbnail,
   author,
-  videosCount,
 }: PlaylistProps) {
   const dominantColor = useDominantColor(thumbnail);
   return (

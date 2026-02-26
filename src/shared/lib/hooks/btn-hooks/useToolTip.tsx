@@ -7,10 +7,7 @@ type Position = "top" | "bottom" | "left" | "right";
 
 export function useToolTip(
   text: string,
-  options?: {
-    delay?: number;
-    position?: Position;
-  },
+  options?: { delay?: number; position?: Position },
 ) {
   const { delay = 500, position = "top" } = options || {};
 
@@ -27,22 +24,10 @@ export function useToolTip(
       const rect = triggerRef.current.getBoundingClientRect();
 
       const map = {
-        top: {
-          top: rect.top - 8,
-          left: rect.left + rect.width / 2,
-        },
-        bottom: {
-          top: rect.bottom + 8,
-          left: rect.left + rect.width / 2,
-        },
-        left: {
-          top: rect.top + rect.height / 2,
-          left: rect.left - 8,
-        },
-        right: {
-          top: rect.top + rect.height / 2,
-          left: rect.right + 8,
-        },
+        top: { top: rect.top - 8, left: rect.left + rect.width / 2 },
+        bottom: { top: rect.bottom + 8, left: rect.left + rect.width / 2 },
+        left: { top: rect.top + rect.height / 2, left: rect.left - 8 },
+        right: { top: rect.top + rect.height / 2, left: rect.right + 8 },
       };
 
       setCoords(map[position]);
@@ -58,7 +43,9 @@ export function useToolTip(
     setIsOpen(false);
   };
 
-  useEffect(() => hide, []);
+  useEffect(() => {
+    return hide;
+  }, []);
 
   const tooltip = isOpen
     ? createPortal(
@@ -76,13 +63,11 @@ export function useToolTip(
                     : "translate(0, -50%)",
           }}
           className="
-          fixed z-900
-          rounded-sm bg-(--tip-bg-color) px-2 py-2
-          text-[12px] font-normal text-white
-          whitespace-nowrap
-          shadow-lg
-          pointer-events-none
-        "
+            fixed z-900
+            rounded-sm bg-(--tip-bg-color) px-2 py-2
+            text-[12px] font-normal text-white
+            whitespace-nowrap shadow-lg pointer-events-none
+          "
         >
           {text}
         </div>,
