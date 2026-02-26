@@ -19,7 +19,7 @@ export function useSubscriptionsSide(userId: string) {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await fetchSubscriptions(userId);
+        const data = await fetchSubscriptions();
         if (data) {
           setSubscriptions(data);
         }

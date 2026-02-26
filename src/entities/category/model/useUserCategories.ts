@@ -15,7 +15,7 @@ export function useUserCategories(userId: string) {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await fetchCategories(userId);
+        const data = await fetchCategories();
         if (data) {
           setCategories(data);
         }

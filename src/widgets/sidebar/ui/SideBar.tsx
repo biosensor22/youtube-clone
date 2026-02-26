@@ -18,8 +18,6 @@ export const urlPaths = {
 
 export function SideBar() {
   const pathname = usePathname();
-  console.log(pathname);
-
   const navItems = [
     {
       id: "home",

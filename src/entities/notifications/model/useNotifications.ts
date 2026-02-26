@@ -17,7 +17,7 @@ export function useNotifications(userId: string) {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await fetchNotifications(userId);
+        const data = await fetchNotifications();
         if (data) {
           setNotifications(data);
         }

@@ -1,3 +1,5 @@
+"use client";
+
 import { lazy, Suspense } from "react";
 
 const SideBar = lazy(() =>
@@ -10,7 +12,7 @@ export default function Shorts() {
       <div
         className="w-full @mdxs:w-[calc(100%-70px)] h-17
 			 top-0 fixed mt-12 bg-(--glass-bg) backdrop-blur-3xl"
-      ></div>
+      />
       <Suspense fallback={<div>Loading...</div>}>
         <div>
           <SideBar />

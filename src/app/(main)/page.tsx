@@ -1,11 +1,21 @@
 "use client";
 
-import { CategoriesList } from "@/widgets/category";
-import { lazy, Suspense } from "react";
-import { MediaSection } from "@/widgets/video-feed";
-
-const SideBar = lazy(() => import("@/widgets/sidebar"));
-
+import dynamic from "next/dynamic";
+const CategoriesList = dynamic(
+  () =>
+    import("@/widgets/category").then((mod) => ({
+      default: mod.CategoriesList,
+    })),
+  { ssr: false },
+);
+const MediaSection = dynamic(
+  () =>
+    import("@/widgets/video-feed").then((mod) => ({
+      default: mod.MediaSection,
+    })),
+  { ssr: false },
+);
+const SideBar = dynamic(() => import("@/widgets/sidebar"), { ssr: false });
 export default function Home() {
   return (
     <div className="mt-29 duration-200 @mdxs:ml-18 @container overflow-y-hidden">
@@ -18,9 +28,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <Suspense fallback={<div>Loading...</div>}>
-          <SideBar />
-        </Suspense>
+        <SideBar />
       </div>
 
       <MediaSection />
