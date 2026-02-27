@@ -6,6 +6,8 @@ export const API_ROUTES = {
   subscriptions: "/subscriptions",
   meta: "/meta",
   videos: "/videos",
+  channels: "/channels",
+  comments: "/comments",
   notifications: "/notifications",
   search_history: "/search_history",
 } as const;

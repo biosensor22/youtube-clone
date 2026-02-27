@@ -6,7 +6,7 @@ export type FeedItemBase = {
   videosCount?: number;
 };
 
-type VideoItem = FeedItemBase & {
+export type VideoItem = FeedItemBase & {
   type: "video";
   duration: string;
   views: number;
@@ -14,12 +14,12 @@ type VideoItem = FeedItemBase & {
   publishedAt: string;
 };
 
-type PlaylistItem = FeedItemBase & {
+export type PlaylistItem = FeedItemBase & {
   type: "playlist";
   videosCount: number;
 };
 
-type StreamItem = FeedItemBase & {
+export type StreamItem = FeedItemBase & {
   type: "stream";
   viewers: number;
   startedAt: string;

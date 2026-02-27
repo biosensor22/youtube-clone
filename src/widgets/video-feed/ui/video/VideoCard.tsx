@@ -35,16 +35,18 @@ export function VideoCard({
   publishedAt,
   priority,
 }: VideoProps) {
+  const watchPath = `/watch/${id}`;
+
   return (
     <div className="group w-full relative">
       <HoverBg thumbnail={thumbnail} />
 
       <div className={` rounded-xl pb-6 flex items-center flex-col gap-y-3 `}>
-        <div className="relative cursor-pointer">
+        <Link href={watchPath} className="relative cursor-pointer block">
           <Thumbnail thumbnail={thumbnail} title={title} priority={priority} />
 
           <Duration id={id} duration={duration} />
-        </div>
+        </Link>
         <div className="flex gap-x-3 w-full cursor-pointer">
           <Avatar author={author} authorAvatar={authorAvatar} />
           <div className="w-full relative">
@@ -52,9 +54,11 @@ export function VideoCard({
               <MenuButton type={type} />
             </div>
             <div>
-              <p className="font-medium cursor-pointer max-w-[calc(100%-20px)]">
-                {title}
-              </p>
+              <Link href={watchPath}>
+                <p className="font-medium cursor-pointer max-w-[calc(100%-20px)]">
+                  {title}
+                </p>
+              </Link>
               <Link href="/">
                 <p className="text-[14px] text-(--grey-text-color) hover:text-white duration-150">
                   {author}
