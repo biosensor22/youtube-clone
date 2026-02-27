@@ -8,8 +8,10 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toggle } from "@/widgets/header/ui/notifications/model";
 import { useNotificationContext } from "./NotificationContext";
+import { useCountNotif, fetchClearNotif } from "@/entities/notifications";
 
 export function NotificationBtn() {
+  const { countOfNotif, clearNotifCount } = useCountNotif();
   const dispatch = useDispatch();
   const { triggerRef: contextRef } = useNotificationContext();
   const { pressed, onPress, onRelease } = usePress();
@@ -32,7 +34,11 @@ export function NotificationBtn() {
 
   return (
     <div
-      onClick={handleToggle}
+      onClick={() => {
+        clearNotifCount();
+        handleToggle();
+        fetchClearNotif();
+      }}
       ref={triggerRef}
       onMouseEnter={onMouseEnter}
       onMouseLeave={() => {
@@ -49,8 +55,16 @@ export function NotificationBtn() {
         },
       )}
     >
-      <div className="h-5 w-5 right-0 top-1 mb-1 border-2 border-black bg-red-600 rounded-full absolute flex justify-center items-center">
-        <p className="mb-0.5">4</p>
+      <div
+        className={clsx(
+          "h-5 min-w-5 px-1 left-5 top-1 mb-1 border-2 border-black bg-red-600 rounded-full absolute flex justify-center items-center",
+          {
+            hidden: countOfNotif === 0,
+            block: countOfNotif > 0,
+          },
+        )}
+      >
+        <p className="mb-0.5">{countOfNotif > 9 ? "9+" : countOfNotif}</p>
       </div>
       <NotificationIcon />
       {tooltipNode}

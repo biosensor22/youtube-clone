@@ -12,8 +12,7 @@ import {
   VideoIcon,
   WatchIcon,
 } from "@/shared/ui/icons";
-import { ShowMore } from "@/widgets/side-menu/ui/utils";
-import { NavBtn } from "@/widgets/side-menu/ui/you/NavBtn";
+import { ShowMore, NavBtn } from "@/widgets/side-menu";
 
 export function NavBtnPanel() {
   const [active, setActive] = useState(false);

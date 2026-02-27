@@ -11,11 +11,15 @@ export function SearchBarAndVoice() {
 
   return (
     <div className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}>
+      {/* <div className="bg-white z-1 absolute min-w-94 max-w-133.75 max-h-175 w-full">
+        dwadwad
+      </div> */}
       <div className="relative flex-1">
         <div
           onClick={focusRef}
           className={clsx(
-            "absolute right-0 flex items-center justify-between border border-(--border-color) rounded-l-full py-1.25 pl-3 bg-(--input-bg-color) text-white/70 text-lg cursor-text",
+            `absolute right-0 flex items-center justify-between border border-(--border-color)
+             rounded-l-full py-1.25 pl-3 bg-(--input-bg-color) text-white/70 text-lg cursor-text`,
             {
               "w-[105%] border-(--focus-input-color)": isFocused,
               "w-full": !isFocused,
@@ -23,7 +27,6 @@ export function SearchBarAndVoice() {
           )}
         >
           {isFocused && <SearchIcon width={28} height={28} />}
-
           <input
             ref={inputRef}
             onFocus={onFocused}
