@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { WatchComment } from "@/entities/watch";
 import { QueueIcon } from "@/shared/ui/icons";
 import { AddComment } from "./AddComment";
@@ -6,6 +9,8 @@ import { Reply } from "./Reply";
 
 type CommentsSectionProps = {
   comments: WatchComment[];
+  channelName: string;
+  channelAvatar: string;
   newCommentText: string;
   onChangeNewComment: (value: string) => void;
   onCancelComment: () => void;
@@ -16,6 +21,8 @@ type CommentsSectionProps = {
 
 export function CommentsSection({
   comments,
+  channelName,
+  channelAvatar,
   newCommentText,
   onChangeNewComment,
   onCancelComment,
@@ -23,12 +30,23 @@ export function CommentsSection({
   likedComments,
   onToggleCommentLike,
 }: CommentsSectionProps) {
+  const [openedReplies, setOpenedReplies] = useState<Record<string, boolean>>(
+    {},
+  );
+
+  const toggleReplies = (commentId: string) => {
+    setOpenedReplies((prev) => ({
+      ...prev,
+      [commentId]: !prev[commentId],
+    }));
+  };
+
   return (
     <section className="mt-6">
       <div className="flex items-center gap-7">
         <h2 className="text-xl font-semibold">{comments.length} Comments</h2>
         <button className="inline-flex items-center gap-2 text-sm font-medium hover:text-white/85">
-          <QueueIcon className="h-[18px] w-[18px]" />
+          <QueueIcon className="h-4.5 w-4.5" />
           Sort by
         </button>
       </div>
@@ -53,8 +71,14 @@ export function CommentsSection({
               author={comment.author}
               publishedAt={comment.publishedAt}
               text={comment.text}
+              isAuthor={comment.author === channelName}
               isLiked={isLiked}
               likes={likes}
+              creatorAvatar={channelAvatar}
+              showCreatorLike={comment.author !== channelName && likes > 0}
+              repliesCount={comment.replies?.length ?? 0}
+              isRepliesOpen={Boolean(openedReplies[comment.id])}
+              onToggleReplies={() => toggleReplies(comment.id)}
               onToggleComment={onToggleCommentLike}
             >
               {comment.replies?.length ? (
@@ -67,6 +91,7 @@ export function CommentsSection({
                       author={reply.author}
                       publishedAt={reply.publishedAt}
                       text={reply.text}
+                      isAuthor={reply.author === channelName}
                     />
                   ))}
                 </div>

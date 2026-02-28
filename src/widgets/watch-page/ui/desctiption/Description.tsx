@@ -21,14 +21,10 @@ export function Description({
       </p>
 
       {hashtags.length ? (
-        <p className="mt-1.5 text-[13px] text-(--grey-text-color)">
-          {hashtags.join(" ")}
-        </p>
+        <p className="mt-1.5 text-[13px] text-white">{hashtags.join(" ")}</p>
       ) : null}
 
-      <p className="mt-2 text-[14px] leading-6 text-(--grey-text-color)">
-        {description}
-      </p>
+      <p className="mt-2 text-[14px] leading-6 text-white">{description}</p>
     </div>
   );
 }

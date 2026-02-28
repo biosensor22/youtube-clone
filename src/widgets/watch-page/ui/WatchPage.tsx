@@ -75,6 +75,8 @@ export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
 
       <CommentsSection
         comments={commentsList}
+        channelName={channelName}
+        channelAvatar={channelAvatar}
         newCommentText={newCommentText}
         onChangeNewComment={setNewCommentText}
         onCancelComment={() => setNewCommentText("")}

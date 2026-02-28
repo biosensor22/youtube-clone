@@ -1,0 +1,56 @@
+import { numberConvert } from "@/shared/lib/hooks";
+import { ThumbUpIcon, ThumbDownIcon } from "@/shared/ui";
+import Image from "next/image";
+
+type ActionsProps = {
+  id: string;
+  onLike: (id: string) => void;
+  likes: number;
+  showCreatorLike: boolean;
+  creatorAvatar: string;
+};
+
+export function Actions({
+  id,
+  onLike,
+  likes,
+  showCreatorLike,
+  creatorAvatar,
+}: ActionsProps) {
+  return (
+    <div className="mt-1.5 flex items-center gap-2 text-sm -ml-2">
+      <div className="flex items-center">
+        <button
+          onClick={() => onLike(id)}
+          className="inline-flex text-white h-8 w-8 items-center gap-1 rounded-full px-1.5  hover:bg-(--hover-btn-color) hover:text-white"
+        >
+          <ThumbUpIcon className="h-4 rotate-180" />
+        </button>
+        <span className="text-[13px]">{numberConvert(likes)}</span>
+      </div>
+
+      <button className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white hover:bg-(--hover-btn-color) hover:text-white">
+        <ThumbDownIcon className="h-4 " />
+      </button>
+
+      {showCreatorLike ? (
+        <div className="relative h-6 w-6">
+          <Image
+            src={creatorAvatar}
+            alt="Creator liked"
+            width={24}
+            height={24}
+            className="h-6 w-6 rounded-full"
+          />
+          <span className="absolute -bottom-1 -right-1 rounded-full bg-red-600 px-1 text-[9px] leading-3 text-white">
+            ❤
+          </span>
+        </div>
+      ) : null}
+
+      <button className="h-8 rounded-full px-2 text-[13px] font-semibold text-white hover:bg-(--hover-btn-color) hover:text-white">
+        Reply
+      </button>
+    </div>
+  );
+}

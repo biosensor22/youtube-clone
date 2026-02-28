@@ -281,7 +281,7 @@
       avatar: "https://yt3.ggpht.com/BKpE74RwbPJ8zLaad9Y2XoX7SmIEsoma1KB8dNzwtWwiOqgTNnYI_guEP1iAaTBrdk4nHakx=s88-c-k-c0x00ffffff-no-rj",
       subscribers: 7840000,
       verified: true,
-      description: "Official channel with music videos, live performances, and premieres.",
+      description: "隠さないで 正を歌っていけ フジテレビ系月9「ヤンドク」主題歌",
     },
     {
       id: "ch-evan",
@@ -893,7 +893,6 @@
       publishedAt: "2025-02-19T00:00:00Z",
     },
   ],
-
   search_history: [
     {
       id: "1",

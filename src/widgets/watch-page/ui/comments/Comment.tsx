@@ -1,7 +1,12 @@
+"use client";
+
 import type { ReactNode } from "react";
-import { timeAgo, numberConvert } from "@/shared/lib/hooks";
-import { MenuIcon, ThumbUpIcon } from "@/shared/ui";
 import Image from "next/image";
+import { Options } from "./Options";
+import { Actions } from "./Actions";
+import { ReplyToggle } from "./ReplyToggle";
+import { useToggleComment } from "./model/useToggleComment";
+import { Author } from "./Author";
 
 interface CommentProps {
   id: string;
@@ -9,8 +14,14 @@ interface CommentProps {
   author: string;
   publishedAt: string;
   text: string;
+  isAuthor: boolean;
   isLiked: boolean;
   likes: number;
+  creatorAvatar: string;
+  showCreatorLike: boolean;
+  repliesCount: number;
+  isRepliesOpen: boolean;
+  onToggleReplies: () => void;
   onToggleComment: (commentId: string) => void;
   children?: ReactNode;
 }
@@ -21,11 +32,28 @@ export function Comment({
   author,
   publishedAt,
   text,
+  isAuthor,
   isLiked,
   likes,
+  creatorAvatar,
+  showCreatorLike,
+  repliesCount,
+  isRepliesOpen,
+  onToggleReplies,
   onToggleComment,
   children,
 }: CommentProps) {
+  const {
+    optionsClose,
+    optionsToggle,
+    isOptionsOpen,
+    modalRef,
+    optionsTriggerRef,
+  } = useToggleComment();
+  const handleLikeComment = (id: string) => {
+    onToggleComment(id);
+  };
+
   return (
     <article key={id} className="group flex gap-3">
       <Image
@@ -35,34 +63,42 @@ export function Comment({
         height={40}
         className="h-10 w-10 rounded-full"
       />
-      <div className="min-w-0 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <p className="text-[13px] font-medium leading-5">
-            {author}
-            <span className="ml-1 text-xs text-(--grey-text-color)">
-              {timeAgo(publishedAt)}
-            </span>
-          </p>
-          <button
-            className="rounded-full p-1.5 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-(--hover-btn-color)"
-            aria-label="Comment options"
-          >
-            <MenuIcon className="h-4 w-4" />
-          </button>
+      <div className="min-w-0 -mt-3 flex-1">
+        <div className="flex justify-between">
+          <Author
+            author={author}
+            isAuthor={isAuthor}
+            publishedAt={publishedAt}
+          />
+
+          <Options
+            optionsTriggerRef={optionsTriggerRef}
+            modalRef={modalRef}
+            onToggle={optionsToggle}
+            onClose={optionsClose}
+            isOptionsOpen={isOptionsOpen}
+          />
         </div>
-        <p className="mt-0.5 text-sm leading-6">{text}</p>
-        <button
-          onClick={() => onToggleComment(id)}
-          className={`mt-1.5 inline-flex h-8 items-center gap-1.5 rounded-full px-2.5 text-xs font-medium ${
-            isLiked
-              ? "bg-white text-black"
-              : "bg-(--btn-bg-color) text-white hover:bg-(--hover-btn-color)"
-          }`}
-        >
-          <ThumbUpIcon className="h-4 w-4" />
-          {numberConvert(likes)}
+        <p className="mt-0.5 text-[14px] leading-1">{text}</p>
+        <button className="mt-2 text-[14px] font-semibold text-(--grey-text-color) hover:text-white">
+          Translate to English
         </button>
-        {children}
+
+        <Actions
+          id={id}
+          onLike={handleLikeComment}
+          likes={likes}
+          showCreatorLike={showCreatorLike}
+          creatorAvatar={creatorAvatar}
+        />
+
+        <ReplyToggle
+          repliesCount={repliesCount}
+          onToggleReplies={onToggleReplies}
+          isRepliesOpen={isRepliesOpen}
+        />
+
+        {isRepliesOpen ? children : null}
       </div>
     </article>
   );

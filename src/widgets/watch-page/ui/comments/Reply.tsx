@@ -7,6 +7,7 @@ interface ReplyProps {
   author: string;
   publishedAt: string;
   text: string;
+  isAuthor: boolean;
 }
 
 export function Reply({
@@ -15,6 +16,7 @@ export function Reply({
   author,
   publishedAt,
   text,
+  isAuthor,
 }: ReplyProps) {
   return (
     <div key={id} className="flex gap-2.5">
@@ -26,9 +28,14 @@ export function Reply({
         className="h-7 w-7 rounded-full"
       />
       <div className="min-w-0">
-        <p className="text-xs font-medium leading-5">
-          {author}
-          <span className="ml-1 text-[11px] text-(--grey-text-color)">
+        <p className="flex items-center gap-1 text-xs font-medium leading-5">
+          <span>{author}</span>
+          {isAuthor ? (
+            <span className="rounded-md bg-white px-1 py-0.5 text-[10px] font-semibold text-black">
+              Author
+            </span>
+          ) : null}
+          <span className="text-[11px] text-(--grey-text-color)">
             {timeAgo(publishedAt)}
           </span>
         </p>
