@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { timeAgo, viewsConvert } from "@/shared/lib/hooks";
+import { timeAgo, numberConvert } from "@/shared/lib/hooks";
 import {
   MenuButton,
   Thumbnail,
@@ -66,7 +66,7 @@ export function VideoCard({
               </Link>
               <div className="flex items-center gap-x-2 cursor-pointer">
                 <p className="text-(--grey-text-color)">
-                  {viewsConvert(views)} views
+                  {numberConvert(views)} views
                 </p>
                 <p className="text-[14px] text-(--grey-text-color)">
                   {timeAgo(publishedAt)}

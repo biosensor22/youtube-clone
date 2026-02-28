@@ -1,3 +1,3 @@
 export { timeAgo } from "./timeAgo";
-export { viewsConvert } from "./viewsConvert";
+export { numberConvert } from "./numberConvert";
 export { getDominantColor } from "./getDominantColor";

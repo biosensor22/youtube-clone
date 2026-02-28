@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { viewsConvert } from "@/shared/lib/hooks";
+import { numberConvert } from "@/shared/lib/hooks";
 import { MenuButton, useDominantColor } from "@/widgets/video-feed";
 import { LiveIcon } from "@/shared/ui/icons";
 
@@ -83,7 +83,7 @@ export function StreamCard({
 
             <div className="flex ml-14 items-center gap-x-2 ">
               <p className="text-(--grey-text-color) text-[14px]">
-                {viewsConvert(viewers)} watching
+                {numberConvert(viewers)} watching
               </p>
             </div>
           </div>

@@ -83,3 +83,18 @@ html.lock-scroll {
   overflow: hidden !important;
   scrollbar-gutter: stable;
 }
+
+@keyframes like-counter-roll {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.like-counter-roll {
+  animation: like-counter-roll 240ms ease-out;
+}

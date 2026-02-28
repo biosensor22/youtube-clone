@@ -1,5 +1,7 @@
 "use client";
 
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import { ProfileButton } from "@/features/profile-menu";
 import { SearchBarAndVoice } from "@/features/search";
 import { LogoHome } from "./ui/logo";
@@ -12,6 +14,7 @@ import { HeaderMobile } from "./HeaderMobile";
 import { useIsMobileWidth } from "./model/useIsMobileWidth";
 
 export function Header() {
+  const watch = usePathname().startsWith("/watch");
   const { isMobile, isMobileSearch, handleBack, openMobileSearch } =
     useIsMobileWidth();
 
@@ -19,9 +22,14 @@ export function Header() {
 
   return (
     <header
-      className="fixed backdrop-blur-3xl top-0 left-0 flex sm:w-full w-screen
-     h-29 px-2 sm:px-4 pt-2 bg-(--glass-bg) z-10 @header
-     "
+      className={clsx(
+        ` fixed backdrop-blur-3xl top-0 left-0 flex sm:w-full w-screen px-2
+         sm:px-4 pt-2 bg-(--glass-bg) z-10 @header`,
+        {
+          "h-14": watch,
+          "h-29:": !watch,
+        },
+      )}
     >
       <div className="gap-4 h-10 flex">
         <SideMenuBtn />

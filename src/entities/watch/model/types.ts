@@ -19,6 +19,16 @@ export type WatchComment = {
   text: string;
   likes: number;
   publishedAt: string;
+  replies?: WatchReply[];
+};
+
+export type WatchReply = {
+  id: string;
+  author: string;
+  authorAvatar: string;
+  text: string;
+  likes: number;
+  publishedAt: string;
 };
 
 export type WatchPageData = {

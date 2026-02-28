@@ -356,6 +356,16 @@
       authorAvatar: "https://i.pravatar.cc/96?u=redstonefrog",
       text: "The pacing in this update video is perfect. Every segment has a clear purpose.",
       likes: 1320,
+      replies: [
+        {
+          id: "r101a",
+          author: "@blocklogic",
+          authorAvatar: "https://i.pravatar.cc/96?u=blocklogic",
+          text: "Agree, no filler at all.",
+          likes: 44,
+          publishedAt: "2026-02-08T16:14:00Z",
+        },
+      ],
       publishedAt: "2026-02-08T15:10:00Z",
     },
     {
@@ -366,6 +376,24 @@
       authorAvatar: "https://i.pravatar.cc/96?u=craftingcat",
       text: "I paused six times to inspect the build details. Great work.",
       likes: 780,
+      replies: [
+        {
+          id: "r102a",
+          author: "@shapegrid",
+          authorAvatar: "https://i.pravatar.cc/96?u=shapegrid",
+          text: "Same here, the storage room is genius.",
+          likes: 21,
+          publishedAt: "2026-02-11T13:05:00Z",
+        },
+        {
+          id: "r102b",
+          author: "@torchway",
+          authorAvatar: "https://i.pravatar.cc/96?u=torchway",
+          text: "Would love a block palette breakdown.",
+          likes: 9,
+          publishedAt: "2026-02-11T13:11:00Z",
+        },
+      ],
       publishedAt: "2026-02-11T12:42:00Z",
     },
     {
@@ -376,6 +404,16 @@
       authorAvatar: "https://i.pravatar.cc/96?u=mckay",
       text: "Can we get a follow-up about automation in survival mode?",
       likes: 502,
+      replies: [
+        {
+          id: "r103a",
+          author: "@farmbyte",
+          authorAvatar: "https://i.pravatar.cc/96?u=farmbyte",
+          text: "He hinted about it in the outro.",
+          likes: 17,
+          publishedAt: "2026-02-14T09:24:00Z",
+        },
+      ],
       publishedAt: "2026-02-14T08:18:00Z",
     },
     {
@@ -386,6 +424,16 @@
       authorAvatar: "https://i.pravatar.cc/96?u=devstart",
       text: "Спасибо за структурированный курс, очень удобно смотреть по таймкодам.",
       likes: 406,
+      replies: [
+        {
+          id: "r104a",
+          author: "@newgamedev",
+          authorAvatar: "https://i.pravatar.cc/96?u=newgamedev",
+          text: "Поддерживаю, формат очень понятный.",
+          likes: 12,
+          publishedAt: "2026-02-04T11:43:00Z",
+        },
+      ],
       publishedAt: "2026-02-04T09:02:00Z",
     },
     {

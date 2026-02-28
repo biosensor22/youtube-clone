@@ -1,4 +1,4 @@
-export function viewsConvert(views: number) {
+export function numberConvert(views: number) {
   if (views < 10000 && views > 999) {
     return (views / 1000).toFixed(1) + "k";
   }
