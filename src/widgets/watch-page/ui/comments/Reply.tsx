@@ -26,13 +26,13 @@ export function Reply({
         className="h-7 w-7 rounded-full"
       />
       <div className="min-w-0">
-        <p className="text-xs font-medium">
+        <p className="text-xs font-medium leading-5">
           {author}
-          <span className="text-[11px] text-(--grey-text-color)">
+          <span className="ml-1 text-[11px] text-(--grey-text-color)">
             {timeAgo(publishedAt)}
           </span>
         </p>
-        <p className="mt-0.5 text-xs leading-5">{text}</p>
+        <p className="text-xs leading-5">{text}</p>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export function Header() {
          sm:px-4 pt-2 bg-(--glass-bg) z-10 @header`,
         {
           "h-14": watch,
-          "h-29:": !watch,
+          "h-29": !watch,
         },
       )}
     >

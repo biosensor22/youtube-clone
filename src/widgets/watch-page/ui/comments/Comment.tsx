@@ -27,7 +27,7 @@ export function Comment({
   children,
 }: CommentProps) {
   return (
-    <article key={id} className="flex gap-3">
+    <article key={id} className="group flex gap-3">
       <Image
         src={authorAvatar}
         alt={author}
@@ -37,23 +37,23 @@ export function Comment({
       />
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
-          <p className="text-sm font-medium">
+          <p className="text-[13px] font-medium leading-5">
             {author}
-            <span className="text-xs text-(--grey-text-color)">
+            <span className="ml-1 text-xs text-(--grey-text-color)">
               {timeAgo(publishedAt)}
             </span>
           </p>
           <button
-            className="rounded-full p-1.5 hover:bg-(--hover-btn-color)"
+            className="rounded-full p-1.5 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-(--hover-btn-color)"
             aria-label="Comment options"
           >
             <MenuIcon className="h-4 w-4" />
           </button>
         </div>
-        <p className="mt-1 text-sm leading-6">{text}</p>
+        <p className="mt-0.5 text-sm leading-6">{text}</p>
         <button
           onClick={() => onToggleComment(id)}
-          className={`mt-2 flex items-center gap-1 rounded-full px-2 py-1 text-xs ${
+          className={`mt-1.5 inline-flex h-8 items-center gap-1.5 rounded-full px-2.5 text-xs font-medium ${
             isLiked
               ? "bg-white text-black"
               : "bg-(--btn-bg-color) text-white hover:bg-(--hover-btn-color)"

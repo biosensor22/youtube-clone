@@ -47,14 +47,9 @@ export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
         thumbnail={currentVideo.thumbnail}
       />
 
-      <h1 className="mt-3 text-[21px] font-semibold leading-7">
+      <h1 className="mt-3 text-xl font-semibold leading-7">
         {currentVideo.title}
       </h1>
-      <div className="mt-1 flex flex-wrap gap-2 text-sm text-(--video-blue-checked)">
-        {hashtags.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </div>
 
       <Actions
         channelAvatar={channelAvatar}
@@ -75,6 +70,7 @@ export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
         views={currentVideo.views}
         publishedAt={currentVideo.publishedAt}
         description={description}
+        hashtags={hashtags}
       />
 
       <CommentsSection

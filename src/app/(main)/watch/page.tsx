@@ -1,4 +1,4 @@
-import { WatchPage } from "@/widgets/watch-page";
+import { redirect } from "next/navigation";
 
 type WatchQueryPageProps = {
   searchParams: Promise<{
@@ -14,5 +14,5 @@ export default async function WatchQueryPage({
   const rawVideoId = params.v ?? params.videoId;
   const videoId = Array.isArray(rawVideoId) ? rawVideoId[0] : rawVideoId;
 
-  return <WatchPage key={videoId ?? "video1"} videoId={videoId ?? "video1"} />;
+  redirect(`/watch/${videoId ?? "video1"}`);
 }

@@ -1,4 +1,5 @@
 import type { WatchComment } from "@/entities/watch";
+import { QueueIcon } from "@/shared/ui/icons";
 import { AddComment } from "./AddComment";
 import { Comment } from "./Comment";
 import { Reply } from "./Reply";
@@ -23,8 +24,14 @@ export function CommentsSection({
   onToggleCommentLike,
 }: CommentsSectionProps) {
   return (
-    <section className="mt-5">
-      <h2 className="text-lg font-semibold">{comments.length} comments</h2>
+    <section className="mt-6">
+      <div className="flex items-center gap-7">
+        <h2 className="text-xl font-semibold">{comments.length} Comments</h2>
+        <button className="inline-flex items-center gap-2 text-sm font-medium hover:text-white/85">
+          <QueueIcon className="h-[18px] w-[18px]" />
+          Sort by
+        </button>
+      </div>
 
       <AddComment
         onCancel={onCancelComment}
@@ -33,7 +40,7 @@ export function CommentsSection({
         newCommentText={newCommentText}
       />
 
-      <div className="mt-4 space-y-5">
+      <div className="mt-7 space-y-6">
         {comments.map((comment) => {
           const isLiked = Boolean(likedComments[comment.id]);
           const likes = comment.likes + (isLiked ? 1 : 0);

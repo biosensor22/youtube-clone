@@ -10,7 +10,7 @@ export function WatchPlayer({ title, thumbnail }: WatchPlayerProps) {
   const youtubeId = extractYouTubeId(thumbnail);
 
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
+    <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black">
       {youtubeId ? (
         <iframe
           src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`}

@@ -2,12 +2,10 @@
 
 import { useParams } from "next/navigation";
 import { useWatchPageData } from "@/entities/watch";
-import { useRouter } from "next/navigation";
 import { WatchPage } from "@/widgets/watch-page";
 import { Recommendations } from "@/widgets/watch-page";
 
 export default function Page() {
-  const router = useRouter();
   const params = useParams<{ videoId: string }>();
   const videoId = params.videoId;
 
@@ -29,13 +27,12 @@ export default function Page() {
   }
 
   if (!currentVideo) {
-    router.push("/");
-    return;
+    return null;
   }
 
   return (
-    <div className="mt-18 pb-6 duration-200 text-white">
-      <div className="mx-auto grid max-w-420 grid-cols-1 gap-4 px-2 sm:px-3 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-4">
+    <div className="mt-18 pb-8 text-white [&_button]:cursor-pointer">
+      <div className="mx-auto grid max-w-450 grid-cols-1 gap-6 px-2 sm:px-3 lg:px-4 xl:grid-cols-[minmax(0,1fr)_402px]">
         <WatchPage
           currentVideo={currentVideo}
           channel={channel}
