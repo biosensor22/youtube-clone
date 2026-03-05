@@ -4,3 +4,5 @@ export { useSearch } from "./useSearch";
 export { useSearchUI } from "./useSearchUI";
 export { useToolTip } from "./useToolTip";
 export { useClickOutside } from "./useClickOutside";
+export { useAnchoredPosition } from "./useAnchoredPosition";
+export type { AnchoredPosition } from "./useAnchoredPosition";

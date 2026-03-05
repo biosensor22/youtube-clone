@@ -24,7 +24,7 @@ export function CategoriesList() {
   if (isLoading) return <div className="h-13"></div>;
 
   return (
-    <div className="relative text-white sm:w-full w-screen h-13 group z-100">
+    <div className="relative text-(--main-text-color) sm:w-full w-screen h-13 group z-100">
       {showLeft && (
         <div className="rounded-full absolute left-0 bottom-0 z-10 flex items-center pr-10">
           <PrevListBtn onClick={scrollPrev} />

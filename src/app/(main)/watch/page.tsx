@@ -14,5 +14,5 @@ export default async function WatchQueryPage({
   const rawVideoId = params.v ?? params.videoId;
   const videoId = Array.isArray(rawVideoId) ? rawVideoId[0] : rawVideoId;
 
-  redirect(`/watch/${videoId ?? "video1"}`);
+  redirect(`/watch/${videoId}`);
 }

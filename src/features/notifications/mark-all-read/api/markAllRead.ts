@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 import type { Notifications } from "@/entities/notifications";
 
-export async function fetchClearNotif() {
+export async function markAllRead() {
   const baseUrl = `${API_BASE_URL}${API_ROUTES.notifications}`;
 
   try {

@@ -8,13 +8,7 @@ import {
   YouIcon,
 } from "@/shared/ui/icons";
 import { usePathname } from "next/navigation";
-
-export const urlPaths = {
-  home: "/",
-  shorts: "/shorts",
-  subscriptions: "/subscriptions",
-  you: "/you",
-};
+import { urlPaths } from "@/shared/api/urlPaths";
 
 export function SideBar() {
   const pathname = usePathname();

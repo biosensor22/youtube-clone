@@ -20,7 +20,7 @@ export function Options({
       <button
         ref={optionsTriggerRef}
         onClick={onToggle}
-        className="rounded-full p-2 text-(--grey-text-color) hover:bg-(--hover-btn-color) hover:text-white"
+        className="rounded-full p-2 text-(--grey-text-color) hover:bg-(--hover-btn-color) hover:text-(--main-text-color)"
         aria-label="Comment options"
         aria-expanded={isOptionsOpen}
         aria-haspopup="menu"

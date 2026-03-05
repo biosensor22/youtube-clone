@@ -60,7 +60,7 @@ export function VideoCard({
                 </p>
               </Link>
               <Link href="/">
-                <p className="text-[14px] text-(--grey-text-color) hover:text-white duration-150">
+                <p className="text-[14px] text-(--grey-text-color) hover:text-(--main-text-color) duration-150">
                   {author}
                 </p>
               </Link>

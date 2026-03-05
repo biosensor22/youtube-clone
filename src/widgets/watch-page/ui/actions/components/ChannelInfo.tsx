@@ -45,7 +45,7 @@ export function ChannelInfo({
         onClick={onToggleSubscribe}
         className={`ml-1 h-9 rounded-full px-3 text-[15px] font-medium ${
           isSubscribed
-            ? "bg-(--btn-bg-color) text-white hover:bg-(--hover-btn-color)"
+            ? "bg-(--btn-bg-color) text-(--main-text-color)) hover:bg-(--hover-btn-color)"
             : "bg-white text-black hover:bg-white/90"
         }`}
       >

@@ -65,7 +65,7 @@ export function useToolTip(
           className="
             fixed z-900
             rounded-sm bg-(--tip-bg-color) px-2 py-2
-            text-[12px] font-normal text-white
+            text-[12px] font-normal text-(--main-text-color)
             whitespace-nowrap shadow-lg pointer-events-none
           "
         >

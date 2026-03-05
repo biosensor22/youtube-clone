@@ -1,8 +1,4 @@
-interface HistorySVGProps {
-  props?: React.SVGProps<SVGSVGElement>;
-}
-
-export function HistoryIcon({ props }: HistorySVGProps) {
+export function HistoryIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

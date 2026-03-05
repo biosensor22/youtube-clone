@@ -80,7 +80,7 @@ export function Comment({
           />
         </div>
         <p className="mt-0.5 text-[14px] leading-1">{text}</p>
-        <button className="mt-2 text-[14px] font-semibold text-(--grey-text-color) hover:text-white">
+        <button className="mt-2 text-[14px] font-semibold text-(--grey-text-color) hover:text-(--main-text-color)">
           Translate to English
         </button>
 

@@ -3,25 +3,20 @@
 import clsx from "clsx";
 import { PlusIcon } from "@/shared/ui/icons";
 import { usePress } from "@/shared/lib/hooks";
-import { useDispatch } from "react-redux";
-import { toggle } from "@/widgets/header/ui/create-btn/model";
+import { useCreateBtnContext } from "./CreateBtnContext";
 
 export function CreateButton() {
   const { pressed, onPress, onRelease } = usePress();
-  const dispatch = useDispatch();
-
-  const handleToggle = () => {
-    dispatch(toggle());
-  };
+  const { toggle } = useCreateBtnContext();
 
   return (
     <div
-      onClick={handleToggle}
+      onClick={toggle}
       onMouseDown={onPress}
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
       className={clsx(
-        "text-white font-semibold bg-(--btn-bg-color) rounded-full px-2.75 h-9 justify-center flex cursor-pointer",
+        "text-(--main-text-color) font-semibold bg-(--btn-bg-color) rounded-full px-2.75 h-9 justify-center flex cursor-pointer",
         {
           "active:bg-(--active-btn-color)": pressed,
           "hover:bg-(--hover-btn-color)": !pressed,

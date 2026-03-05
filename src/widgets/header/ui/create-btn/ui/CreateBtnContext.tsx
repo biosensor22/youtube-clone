@@ -1,11 +1,21 @@
 "use client";
 
-import { createContext, useContext, useRef, RefObject } from "react";
-import { useAppSelector } from "@/app/providers/hooks";
+import {
+  createContext,
+  useContext,
+  useRef,
+  type RefObject,
+  useState,
+  useMemo,
+} from "react";
 import { CreateBtnModal } from "./CreateBtnModal";
 
 type CreateContextType = {
   triggerRef: RefObject<HTMLDivElement | null>;
+  isOpen: boolean;
+  open: () => void;
+  close: () => void;
+  toggle: () => void;
 };
 
 const CreateBtnContext = createContext<CreateContextType | null>(null);
@@ -22,10 +32,21 @@ export const CreateBtnProvider = ({
   children: React.ReactNode;
 }) => {
   const triggerRef = useRef<HTMLDivElement>(null);
-  const isOpen = useAppSelector((state) => state.create.isOpen);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const value = useMemo<CreateContextType>(
+    () => ({
+      triggerRef,
+      isOpen,
+      open: () => setIsOpen(true),
+      close: () => setIsOpen(false),
+      toggle: () => setIsOpen((v) => !v),
+    }),
+    [isOpen],
+  );
 
   return (
-    <CreateBtnContext.Provider value={{ triggerRef }}>
+    <CreateBtnContext.Provider value={value}>
       {isOpen && <CreateBtnModal />}
       {children}
     </CreateBtnContext.Provider>

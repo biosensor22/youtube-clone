@@ -59,7 +59,7 @@ export function Recommendations({ recommendations }: RecommendationsProps) {
             className={`h-8 shrink-0 rounded-lg px-3 text-sm font-medium ${
               activeFilter === filter
                 ? "bg-white text-black"
-                : "bg-(--btn-bg-color) text-white hover:bg-(--hover-btn-color)"
+                : "bg-(--btn-bg-color) text-(--main-text-color) hover:bg-(--hover-btn-color)"
             }`}
           >
             {filter}

@@ -1,22 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useDispatch } from "react-redux";
 import { SplitLine } from "@/shared/ui";
 import { SettingsBtn } from "./SettingsBtn";
 import { Notification } from "./Notification";
 import { useNotifications } from "@/entities/notifications";
 import { useClickOutside } from "@/shared/lib/hooks";
-import {
-  useNotificationContext,
-  close,
-} from "@/widgets/header/ui/notifications";
+import { useNotificationContext } from "@/widgets/header/ui/notifications";
 
 export function NotificationModal() {
   const { notifications, isLoading } = useNotifications("dwadw");
-  const dispatch = useDispatch();
-  const { triggerRef } = useNotificationContext();
-  const { modalRef } = useClickOutside(triggerRef, () => dispatch(close()));
+  const { triggerRef, close } = useNotificationContext();
+  const { modalRef } = useClickOutside(triggerRef, close);
 
   if (isLoading)
     return (
@@ -42,12 +37,12 @@ export function NotificationModal() {
       fixed flex flex-col w-[calc(100%-12px)] top-2 max-h-160.5 rounded-xl max-w-120 bg-(--bg-drop-menu)
        z-11 mobile:top-14 small:right-20 small:left-auto left-2 mobile:w-[90vw]  overflow-hidden"
     >
-      <div className="w-full flex items-center text-white justify-between py-1 px-3 font-normal">
+      <div className="w-full flex items-center text-(--main-text-color) justify-between py-1 px-3 font-normal">
         <p>Notifications</p>
         <SettingsBtn />
       </div>
       <SplitLine />
-      <div className="text-white min-h-20 scrollbar-side">
+      <div className="text-(--main-text-color) min-h-20 scrollbar-side">
         {notifications.map((item) => (
           <Notification key={item.id} {...item} />
         ))}

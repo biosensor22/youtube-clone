@@ -5,15 +5,14 @@ import { NotificationIcon } from "@/shared/ui/icons";
 import { useToolTip, usePress } from "@/shared/lib/hooks";
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { toggle } from "@/widgets/header/ui/notifications/model";
 import { useNotificationContext } from "./NotificationContext";
-import { useCountNotif, fetchClearNotif } from "@/entities/notifications";
+import { useCountNotif } from "@/entities/notifications";
+
+import { markAllRead } from "@/features/notifications/mark-all-read/api/markAllRead";
 
 export function NotificationBtn() {
   const { countOfNotif, clearNotifCount } = useCountNotif();
-  const dispatch = useDispatch();
-  const { triggerRef: contextRef } = useNotificationContext();
+  const { triggerRef: contextRef, close, open } = useNotificationContext();
   const { pressed, onPress, onRelease } = usePress();
   const {
     triggerRef,
@@ -28,16 +27,12 @@ export function NotificationBtn() {
     }
   }, [triggerRef, contextRef]);
 
-  const handleToggle = () => {
-    dispatch(toggle());
-  };
-
   return (
     <div
       onClick={() => {
         clearNotifCount();
-        handleToggle();
-        fetchClearNotif();
+        open();
+        markAllRead();
       }}
       ref={triggerRef}
       onMouseEnter={onMouseEnter}
@@ -48,7 +43,7 @@ export function NotificationBtn() {
       onMouseDown={onPress}
       onMouseUp={onRelease}
       className={clsx(
-        "inline-flex rounded-full p-2 relative transition-colors duration-150 cursor-pointer mx-2.5 text-white text-[12px] bg-transparent",
+        "inline-flex rounded-full p-2 relative transition-colors duration-150 cursor-pointer mx-2.5 text-(--main-text-color) text-[12px] bg-transparent",
         {
           "bg-(--active-btn-color)": pressed,
           "hover:bg-(--hover-btn-color)": !pressed,

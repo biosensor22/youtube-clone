@@ -12,6 +12,7 @@ export type VideoItem = FeedItemBase & {
   views: number;
   authorAvatar: string;
   publishedAt: string;
+  hashtags?: string[];
 };
 
 export type PlaylistItem = FeedItemBase & {

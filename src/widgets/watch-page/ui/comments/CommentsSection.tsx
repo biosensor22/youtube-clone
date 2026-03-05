@@ -45,7 +45,7 @@ export function CommentsSection({
     <section className="mt-6">
       <div className="flex items-center gap-7">
         <h2 className="text-xl font-semibold">{comments.length} Comments</h2>
-        <button className="inline-flex items-center gap-2 text-sm font-medium hover:text-white/85">
+        <button className="inline-flex items-center gap-2 text-sm font-medium hover:text-(--main-text-color)/85">
           <QueueIcon className="h-4.5 w-4.5" />
           Sort by
         </button>

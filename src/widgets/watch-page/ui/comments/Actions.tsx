@@ -22,14 +22,14 @@ export function Actions({
       <div className="flex items-center">
         <button
           onClick={() => onLike(id)}
-          className="inline-flex text-white h-8 w-8 items-center gap-1 rounded-full px-1.5  hover:bg-(--hover-btn-color) hover:text-white"
+          className="inline-flex text-(--main-text-color) h-8 w-8 items-center gap-1 rounded-full px-1.5  hover:bg-(--hover-btn-color) hover:text-(--main-text-color)"
         >
           <ThumbUpIcon className="h-4 rotate-180" />
         </button>
         <span className="text-[13px]">{numberConvert(likes)}</span>
       </div>
 
-      <button className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white hover:bg-(--hover-btn-color) hover:text-white">
+      <button className="inline-flex h-8 w-8 items-center justify-center rounded-full text-(--main-text-color) hover:bg-(--hover-btn-color) hover:text-(--main-text-color)">
         <ThumbDownIcon className="h-4 " />
       </button>
 
@@ -42,13 +42,20 @@ export function Actions({
             height={24}
             className="h-6 w-6 rounded-full"
           />
-          <span className="absolute -bottom-1 -right-1 rounded-full bg-red-600 px-1 text-[9px] leading-3 text-white">
+          <span
+            className="absolute -bottom-1 -right-1 rounded-full bg-red-600 px-1 text-[9px] leading-3 text-(--main-text-color)
+          "
+          >
             ❤
           </span>
         </div>
       ) : null}
 
-      <button className="h-8 rounded-full px-2 text-[13px] font-semibold text-white hover:bg-(--hover-btn-color) hover:text-white">
+      <button
+        className="h-8 rounded-full px-2 text-[13px] font-semibold text-(--main-text-color)
+       hover:bg-(--hover-btn-color) hover:text-(--main-text-color)
+      "
+      >
         Reply
       </button>
     </div>

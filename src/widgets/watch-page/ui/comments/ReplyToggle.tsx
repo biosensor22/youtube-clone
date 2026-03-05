@@ -16,7 +16,7 @@ export function ReplyToggle({
       {repliesCount > 0 ? (
         <button
           onClick={onToggleReplies}
-          className="mt-1.5 inline-flex h-8 items-center gap-2 rounded-full px-2 text-[14px] font-semibold text-white hover:bg-(--hover-btn-color)"
+          className="mt-1.5 inline-flex h-8 items-center gap-2 rounded-full px-2 text-[14px] font-semibold text-(--main-text-color) hover:bg-(--hover-btn-color)"
         >
           <span>
             {isRepliesOpen

@@ -1,0 +1,1 @@
+export { searchHistoryFetch } from "./searchHistoryFetch";

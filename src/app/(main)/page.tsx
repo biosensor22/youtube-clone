@@ -18,7 +18,7 @@ const MediaSection = dynamic(
 const SideBar = dynamic(() => import("@/widgets/sidebar"), { ssr: false });
 export default function Home() {
   return (
-    <div className="mt-29 duration-200 @mdxs:ml-18 @container overflow-y-hidden">
+    <div className="mt-29 duration-200 @mdxs:ml-18 overflow-y-hidden">
       <div
         className="sm:w-full w-screen @mdxs:w-[calc(100%-70px)] h-17
        top-0 fixed mt-12 z-10"

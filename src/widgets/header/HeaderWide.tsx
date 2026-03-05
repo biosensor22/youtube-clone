@@ -2,23 +2,24 @@
 
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { ProfileButton } from "@/features/profile-menu";
-import { SearchBarAndVoice } from "@/features/search";
+import { ProfileButton } from "@/widgets/header/ui/profile-menu";
+import { SearchBarAndVoice } from "@/widgets/header/ui/search";
 import { LogoHome } from "./ui/logo";
 import { SideMenuBtn } from "./ui/side-menu-btn";
 import { VoiceSearch } from "./ui/voice-search";
 import { CreateButton } from "./ui/create-btn";
 import { NotificationBtn } from "./ui/notifications";
 import { SearchMobileBar } from "./ui/search-mobile";
-import { HeaderMobile } from "./HeaderMobile";
+import { SearchMobile } from "./ui/search-mobile/ui/SearchMobileInput";
 import { useIsMobileWidth } from "./model/useIsMobileWidth";
 
 export function Header() {
-  const watch = usePathname().startsWith("/watch");
+  const homeUrl = usePathname();
+  console.log(homeUrl);
   const { isMobile, isMobileSearch, handleBack, openMobileSearch } =
     useIsMobileWidth();
 
-  if (isMobileSearch && isMobile) return <HeaderMobile onBack={handleBack} />;
+  if (isMobileSearch && isMobile) return <SearchMobile onBack={handleBack} />;
 
   return (
     <header
@@ -26,8 +27,8 @@ export function Header() {
         ` fixed backdrop-blur-3xl top-0 left-0 flex sm:w-full w-screen px-2
          sm:px-4 pt-2 bg-(--glass-bg) z-10 @header`,
         {
-          "h-14": watch,
-          "h-29": !watch,
+          "h-14": homeUrl !== "/",
+          "h-29": homeUrl === "/",
         },
       )}
     >

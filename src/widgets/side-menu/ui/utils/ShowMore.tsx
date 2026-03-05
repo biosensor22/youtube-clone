@@ -18,7 +18,7 @@ export function ShowMore({ isActive }: ShowMoreProps) {
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
       className={clsx(
-        "px-3 gap-4.5 h-10 rounded-xl text-white text-sm flex justify-start items-center bg-transparent",
+        "px-3 gap-4.5 h-10 rounded-xl text-(--main-text-color) text-sm flex justify-start items-center bg-transparent",
         {
           "bg-(--active-btn-color)": pressed,
           "hover:bg-(--hover-btn-color)": !pressed,

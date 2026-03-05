@@ -6,7 +6,7 @@ export function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 -0.5 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`text-white`}
+      className={`text-(--main-text-color)`}
       {...props}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth={0} />

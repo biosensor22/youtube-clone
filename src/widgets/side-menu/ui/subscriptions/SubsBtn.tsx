@@ -14,7 +14,7 @@ export function SubsBtn() {
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
       className={clsx(
-        "px-3 h-10 rounded-xl text-white font-semibold flex justify-start items-center",
+        "px-3 h-10 rounded-xl text-(--main-text-color) font-semibold flex justify-start items-center",
         pressed
           ? "bg-(--active-btn-color)"
           : "bg-transparent hover:bg-(--hover-btn-color)",

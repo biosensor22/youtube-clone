@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useDispatch } from "react-redux";
 import { LiveIcon, VideoIcon, CreatePostIcon } from "@/shared/ui/icons";
-import { close } from "@/widgets/header/ui/create-btn";
 import { useCreateBtnContext } from "./CreateBtnContext";
 import { useClickOutside } from "@/shared/lib/hooks";
 
@@ -28,10 +26,9 @@ export function CreateBtnModal() {
       icon: <CreatePostIcon className="w-6 h-6" />,
     },
   ];
-  const { triggerRef } = useCreateBtnContext();
-  const dispatch = useDispatch();
+  const { triggerRef, close } = useCreateBtnContext();
 
-  const { modalRef } = useClickOutside(triggerRef, () => dispatch(close()));
+  const { modalRef } = useClickOutside(triggerRef, close);
 
   return (
     <div
@@ -40,7 +37,7 @@ export function CreateBtnModal() {
     >
       {createItems.map((item) => (
         <Link
-          className="w-full px-4 py-1.75 cursor-pointer hover:bg-(--hover-btn-color) text-white text-[14px]"
+          className="w-full px-4 py-1.75 cursor-pointer hover:bg-(--hover-btn-color) text-(--main-text-color) text-[14px]"
           key={item.id}
           href={item.url}
         >

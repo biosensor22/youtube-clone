@@ -76,7 +76,7 @@ export function StreamCard({
               </div>
             </div>
             <Link className="flex ml-14" href="/">
-              <p className="text-[14px] text-(--grey-text-color) hover:text-white duration-150">
+              <p className="text-[14px] text-(--grey-text-color) hover:text-(--main-text-color) duration-150">
                 {author}
               </p>
             </Link>

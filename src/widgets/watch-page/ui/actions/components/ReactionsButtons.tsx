@@ -26,12 +26,12 @@ export function ReactionsButtons({
     <div className="inline-flex h-9 shrink-0 items-stretch overflow-hidden rounded-full bg-(--btn-bg-color)">
       <button
         onClick={onLike}
-        className={`relative flex items-center px-3 text-white hover:bg-(--hover-btn-color) text-[14px] `}
+        className={`relative flex items-center px-3 text-(--main-text-color) hover:bg-(--hover-btn-color) text-[14px] `}
         aria-label="Like"
       >
         <ThumbUpIcon fill={isLikeActive ? "white" : "none"} />
         <span
-          className="relative px-1 text-white font-medium inline-flex h-5
+          className="relative px-1 text-(--main-text-color) font-medium inline-flex h-5
          items-center overflow-hidden"
         >
           <span

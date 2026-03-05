@@ -3,15 +3,24 @@
 import { useState } from "react";
 import { HomeLink } from "./HomeLink";
 import { ShortsLink } from "./ShortsLink";
+import { usePathname } from "next/navigation";
+import { urlPaths } from "@/shared/api/urlPaths";
 
 export function NavPanel() {
-  const [isActive, setIsActive] = useState("home");
+  const pathname = usePathname();
+  const [isActive, setIsActive] = useState(pathname);
 
   return (
-    <div className="text-white text-[14px] font-semibold gap-1 flex flex-col w-50">
-      <HomeLink onActive={() => setIsActive("home")} isActive={isActive} />
+    <div className="text-(--main-text-color) text-[14px] font-semibold gap-1 flex flex-col w-50">
+      <HomeLink
+        onActive={() => setIsActive(urlPaths.home)}
+        isActive={isActive}
+      />
 
-      <ShortsLink onActive={() => setIsActive("shorts")} isActive={isActive} />
+      <ShortsLink
+        onActive={() => setIsActive(urlPaths.shorts)}
+        isActive={isActive}
+      />
     </div>
   );
 }

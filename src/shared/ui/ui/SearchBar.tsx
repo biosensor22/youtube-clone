@@ -14,7 +14,8 @@ export function SearchBar() {
         <div
           onClick={focusRef}
           className={clsx(
-            "absolute right-0 flex items-center justify-between border border-(--border-color) rounded-l-full py-1.25 pl-3 bg-(--input-bg-color) text-white/70 text-lg cursor-text",
+            `absolute right-0 flex items-center justify-between border border-(--border-color)
+             rounded-l-full py-1.25 pl-3 bg-(--input-bg-color) text-(--main-text-color)/70 text-lg cursor-text`,
             {
               "w-[105%] border-(--focus-input-color)": isFocused,
               "w-full": !isFocused,

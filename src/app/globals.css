@@ -12,6 +12,8 @@
 }
 
 :root {
+  --main-text-color: rgb(255, 255, 255);
+
   --bg-dark: rgb(15, 15, 15);
   --hover-btn-color: rgba(255, 255, 255, 0.2);
   --active-btn-color: rgba(255, 255, 255, 0.3);
@@ -31,6 +33,7 @@
   --dark-grey-bg: rgb(40, 40, 40);
 
   --bg-drop-menu: rgb(28, 28, 28);
+
   --blur-high: 48px;
 }
 

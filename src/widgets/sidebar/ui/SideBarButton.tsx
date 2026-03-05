@@ -19,7 +19,7 @@ export function SideBarButton({ label, path, icon }: BtnProps) {
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
       className={clsx(
-        "text-white justify-center flex flex-col items-center text-[10px] gap-1 w-16 py-4 rounded-xl bg-transparent",
+        "text-(--main-text-color) justify-center flex flex-col items-center text-[10px] gap-1 w-16 py-4 rounded-xl bg-transparent",
         {
           "bg-(--active-btn-color)": pressed,
           "hover:bg-(--hover-btn-color)": !pressed,

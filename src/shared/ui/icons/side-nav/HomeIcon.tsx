@@ -1,4 +1,4 @@
-import { urlPaths } from "@/widgets/sidebar/ui/SideBar";
+import { urlPaths } from "@/shared/api/urlPaths";
 
 interface HomeSVGProps extends React.SVGProps<SVGSVGElement> {
   isActive: string;

@@ -48,7 +48,7 @@ export function useCursorToolTip(
             transform: "translate(-50%, 0)",
           }}
           className="
-            bg-(--bg-dark) text-white/90 font-light border-white border-[0.5px] px-3 py-1 shadow-lg
+            bg-(--bg-dark) text-(--main-text-color)/90 font-light border-white border-[0.5px] px-3 py-1 shadow-lg
             text-xs pointer-events-none z-100
           "
         >
