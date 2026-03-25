@@ -1,23 +1,21 @@
-import { timeAgo, numberConvert } from "@/shared/lib/hooks";
-
 type WatchDescriptionProps = {
-  views: number;
-  publishedAt: string;
+  primaryMeta: string;
+  secondaryMeta?: string | null;
   description: string;
   hashtags: string[];
 };
 
 export function Description({
-  views,
-  publishedAt,
+  primaryMeta,
+  secondaryMeta,
   description,
   hashtags,
 }: WatchDescriptionProps) {
   return (
     <div className="mt-3 rounded-xl bg-(--btn-bg-color) px-3.5 py-3 text-sm">
       <div className="text-[14px] flex gap-2 font-semibold">
-        {numberConvert(views)} views
-        <p>{timeAgo(publishedAt)}</p>
+        <p>{primaryMeta}</p>
+        {secondaryMeta ? <p>{secondaryMeta}</p> : null}
       </div>
 
       {hashtags.length ? (

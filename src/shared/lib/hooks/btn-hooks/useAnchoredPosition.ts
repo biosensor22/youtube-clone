@@ -73,7 +73,6 @@ export function useAnchoredPosition<T extends HTMLElement>(
     update();
 
     window.addEventListener("resize", update);
-    window.addEventListener("scroll", update, { capture: true, passive: true });
 
     let resizeObserver: ResizeObserver | null = null;
     if ("ResizeObserver" in window && triggerRef.current) {
@@ -83,7 +82,6 @@ export function useAnchoredPosition<T extends HTMLElement>(
 
     return () => {
       window.removeEventListener("resize", update);
-      window.removeEventListener("scroll", update, true);
       resizeObserver?.disconnect();
 
       if (frameRef.current !== null) {

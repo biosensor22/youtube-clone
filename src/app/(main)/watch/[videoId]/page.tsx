@@ -9,7 +9,7 @@ export default function Page() {
   const params = useParams<{ videoId: string }>();
   const videoId = params.videoId;
 
-  const { currentVideo, channel, comments, recommendations, isLoading, error } =
+  const { currentItem, channel, comments, recommendations, isLoading, error } =
     useWatchPageData(videoId);
 
   if (isLoading) {
@@ -28,7 +28,7 @@ export default function Page() {
     );
   }
 
-  if (!currentVideo) {
+  if (!currentItem) {
     return null;
   }
 
@@ -36,7 +36,7 @@ export default function Page() {
     <div className="mt-18 pb-8 text-(--main-text-color) [&_button]:cursor-pointer">
       <div className="mx-auto grid max-w-450 grid-cols-1 gap-6 px-2 sm:px-3 lg:px-4 xl:grid-cols-[minmax(0,1fr)_402px]">
         <WatchPage
-          currentVideo={currentVideo}
+          currentItem={currentItem}
           channel={channel}
           comments={comments}
         />

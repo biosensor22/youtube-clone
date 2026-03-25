@@ -1,7 +1,7 @@
 import type { SubscriptionsSideMenu } from "@/entities/subscriptions-side-menu";
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 
-function getPriority(s: SubscriptionsSideMenu) {
+export function getPriority(s: SubscriptionsSideMenu) {
   if (s.live) return 1;
   if (s.newVideoChecked) return 2;
   return 3;

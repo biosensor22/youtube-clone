@@ -3,16 +3,14 @@
 import clsx from "clsx";
 import { NotificationIcon } from "@/shared/ui/icons";
 import { useToolTip, usePress } from "@/shared/lib/hooks";
-
 import { useEffect } from "react";
 import { useNotificationContext } from "./NotificationContext";
 import { useCountNotif } from "@/entities/notifications";
-
 import { markAllRead } from "@/features/notifications/mark-all-read/api/markAllRead";
 
 export function NotificationBtn() {
   const { countOfNotif, clearNotifCount } = useCountNotif();
-  const { triggerRef: contextRef, close, open } = useNotificationContext();
+  const { triggerRef: contextRef, open } = useNotificationContext();
   const { pressed, onPress, onRelease } = usePress();
   const {
     triggerRef,
@@ -27,19 +25,23 @@ export function NotificationBtn() {
     }
   }, [triggerRef, contextRef]);
 
+  const handleClick = () => {
+    clearNotifCount();
+    open();
+    void markAllRead();
+  };
+
+  const handleMouseLeave = () => {
+    onMouseLeave();
+    onRelease();
+  };
+
   return (
     <div
-      onClick={() => {
-        clearNotifCount();
-        open();
-        markAllRead();
-      }}
+      onClick={handleClick}
       ref={triggerRef}
       onMouseEnter={onMouseEnter}
-      onMouseLeave={() => {
-        onMouseLeave();
-        onRelease();
-      }}
+      onMouseLeave={handleMouseLeave}
       onMouseDown={onPress}
       onMouseUp={onRelease}
       className={clsx(

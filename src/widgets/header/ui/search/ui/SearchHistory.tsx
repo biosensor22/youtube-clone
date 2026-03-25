@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { HistoryIcon } from "@/shared/ui";
 import { useSearchHistory } from "@/entities/search/model";
 import { useState } from "react";
+import { buildSearchResultsHref } from "@/features/search/submit-query";
 import { useDropSearchContext } from "./DropSearchContext";
 import { ClearSearchHistory } from "@/features/search/clear-history/ui/ClearSearchHistory";
 
@@ -35,10 +37,13 @@ export function SearchHistory({ id, text, img }: SearchHistoryProps) {
         <div className="text-(--grey-text-color) ml-5">Suggestion removed</div>
       ) : (
         <>
-          <div className="flex gap-2">
+          <Link
+            href={buildSearchResultsHref(text)}
+            className="flex min-w-0 flex-1 gap-2"
+          >
             <HistoryIcon className="w-5" />
-            <p className="font-semibold">{text}</p>
-          </div>
+            <p className="truncate font-semibold">{text}</p>
+          </Link>
           <div className="flex justify-center items-center gap-2">
             {img && (
               <Image

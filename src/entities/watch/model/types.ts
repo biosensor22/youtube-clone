@@ -1,4 +1,6 @@
-import type { VideoItem } from "@/entities/video-cards";
+import type { FeedItem, VideoItem } from "@/entities/video-cards";
+
+export type WatchMediaItem = FeedItem;
 
 export type WatchChannel = {
   id: string;
@@ -32,7 +34,7 @@ export type WatchReply = {
 };
 
 export type WatchPageData = {
-  currentVideo: VideoItem | null;
+  currentItem: WatchMediaItem | null;
   channel: WatchChannel | null;
   comments: WatchComment[];
   recommendations: VideoItem[];

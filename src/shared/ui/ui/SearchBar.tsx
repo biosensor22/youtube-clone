@@ -1,15 +1,36 @@
 "use client";
 
+import type { FormEvent } from "react";
+import { Suspense } from "react";
 import clsx from "clsx";
-import { useSearchUI, useSearch } from "@/shared/lib/hooks";
+import { useSearchUI } from "@/shared/lib/hooks";
+import { useSearchSubmit } from "@/features/search/submit-query";
 import { CrossIcon, SearchIcon } from "@/shared/ui/icons";
 
-export function SearchBar() {
+function SearchBarFallback() {
+  return (
+    <div className="relative flex flex-1 w-full max-w-165 px-1 h-10">
+      <div className="flex-1 rounded-l-full border border-(--border-color) bg-(--input-bg-color)" />
+      <div className="w-16 rounded-r-full border border-(--border-color) border-l-0 bg-(--btn-bg-color)" />
+    </div>
+  );
+}
+
+function SearchBarContent() {
   const { isFocused, onFocused, onBlured, focusRef, inputRef } = useSearchUI();
-  const { value, setValue } = useSearch();
+  const { value, setValue, submitSearch } = useSearchSubmit();
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    submitSearch();
+    inputRef.current?.blur();
+  };
 
   return (
-    <div className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}>
+    <form
+      onSubmit={handleSubmit}
+      className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}
+    >
       <div className="relative flex-1">
         <div
           onClick={focusRef}
@@ -26,6 +47,7 @@ export function SearchBar() {
 
           <input
             ref={inputRef}
+            name="search_query"
             onFocus={onFocused}
             onBlur={onBlured}
             onChange={(e) => setValue(e.target.value)}
@@ -37,6 +59,7 @@ export function SearchBar() {
 
           {value && (
             <button
+              type="button"
               onClick={() => {
                 focusRef();
                 setValue("");
@@ -51,12 +74,21 @@ export function SearchBar() {
       </div>
 
       <button
+        type="submit"
         className="bg-(--btn-bg-color) flex items-center justify-center
 					border border-(--border-color) border-l-0
 					rounded-r-full w-16 cursor-pointer"
       >
         <SearchIcon />
       </button>
-    </div>
+    </form>
+  );
+}
+
+export function SearchBar() {
+  return (
+    <Suspense fallback={<SearchBarFallback />}>
+      <SearchBarContent />
+    </Suspense>
   );
 }

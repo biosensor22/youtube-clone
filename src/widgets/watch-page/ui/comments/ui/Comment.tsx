@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Options } from "./Options";
 import { Actions } from "./Actions";
 import { ReplyToggle } from "./ReplyToggle";
-import { useToggleComment } from "./model/useToggleComment";
+import { useToggleComment } from "../model/useToggleComment";
 import { Author } from "./Author";
 
 interface CommentProps {

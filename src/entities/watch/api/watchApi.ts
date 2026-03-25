@@ -1,8 +1,18 @@
-import type { VideoItem } from "@/entities/video-cards";
+import type { FeedItem, VideoItem } from "@/entities/video-cards";
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 import type { WatchChannel, WatchComment, WatchPageData } from "../model/types";
 
 type UnknownObject = Record<string, unknown>;
+
+function isFeedItem(item: UnknownObject): item is FeedItem {
+  return (
+    typeof item.id === "string" &&
+    typeof item.title === "string" &&
+    typeof item.thumbnail === "string" &&
+    typeof item.author === "string" &&
+    (item.type === "video" || item.type === "playlist" || item.type === "stream")
+  );
+}
 
 function isVideoItem(item: UnknownObject): item is VideoItem {
   return item.type === "video";
@@ -18,13 +28,13 @@ async function fetchJson<T>(url: string): Promise<T> {
   return (await response.json()) as T;
 }
 
-async function fetchVideoById(videoId: string): Promise<VideoItem | null> {
+async function fetchItemById(videoId: string): Promise<FeedItem | null> {
   try {
     const item = await fetchJson<UnknownObject>(
       `${API_BASE_URL}${API_ROUTES.videos}/${videoId}`,
     );
 
-    return isVideoItem(item) ? (item as VideoItem) : null;
+    return isFeedItem(item) ? item : null;
   } catch {
     return null;
   }
@@ -61,16 +71,16 @@ async function fetchComments(videoId: string): Promise<WatchComment[]> {
 }
 
 export async function fetchWatchPageData(videoId: string): Promise<WatchPageData> {
-  const [currentVideo, allVideos, channels, comments] = await Promise.all([
-    fetchVideoById(videoId),
+  const [currentItem, allVideos, channels, comments] = await Promise.all([
+    fetchItemById(videoId),
     fetchAllVideos(),
     fetchChannels(),
     fetchComments(videoId),
   ]);
 
-  if (!currentVideo) {
+  if (!currentItem) {
     return {
-      currentVideo: null,
+      currentItem: null,
       channel: null,
       comments: [],
       recommendations: allVideos.slice(0, 10),
@@ -79,7 +89,7 @@ export async function fetchWatchPageData(videoId: string): Promise<WatchPageData
     };
   }
 
-  const currentIndex = allVideos.findIndex((video) => video.id === currentVideo.id);
+  const currentIndex = allVideos.findIndex((video) => video.id === currentItem.id);
   const hasVideos = allVideos.length > 0;
   const previousVideoId =
     hasVideos && currentIndex !== -1
@@ -91,20 +101,25 @@ export async function fetchWatchPageData(videoId: string): Promise<WatchPageData
       : null;
 
   const sameAuthor = allVideos.filter(
-    (video) => video.id !== currentVideo.id && video.author === currentVideo.author,
+    (video) => video.id !== currentItem.id && video.author === currentItem.author,
   );
   const otherVideos = allVideos.filter(
-    (video) => video.id !== currentVideo.id && video.author !== currentVideo.author,
+    (video) => video.id !== currentItem.id && video.author !== currentItem.author,
   );
 
-  const channel = channels.find((item) => item.name === currentVideo.author) ?? null;
+  const channel = channels.find((item) => item.name === currentItem.author) ?? null;
   const recommendations = [...sameAuthor, ...otherVideos].slice(0, 12);
-  const sortedComments = [...comments].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
+  const sortedComments =
+    currentItem.type === "video"
+      ? [...comments].sort(
+          (a, b) =>
+            new Date(b.publishedAt).getTime() -
+            new Date(a.publishedAt).getTime(),
+        )
+      : [];
 
   return {
-    currentVideo,
+    currentItem,
     channel,
     comments: sortedComments,
     recommendations,

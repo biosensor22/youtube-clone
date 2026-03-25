@@ -5,7 +5,7 @@ import { fetchWatchPageData } from "../api/watchApi";
 import type { WatchPageData } from "./types";
 
 const initialData: WatchPageData = {
-  currentVideo: null,
+  currentItem: null,
   channel: null,
   comments: [],
   recommendations: [],

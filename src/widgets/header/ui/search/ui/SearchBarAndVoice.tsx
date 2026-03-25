@@ -1,16 +1,30 @@
 "use client";
 
-import { useEffect } from "react";
+import type { FormEvent } from "react";
+import { Suspense, useEffect } from "react";
 import clsx from "clsx";
-import { useSearch, useSearchUI } from "@/shared/lib/hooks";
+import { useSearchUI } from "@/shared/lib/hooks";
+import { useSearchSubmit } from "@/features/search/submit-query";
 import { CrossIcon, SearchIcon } from "@/shared/ui/icons";
 import { VoiceSearch } from "@/widgets/header/ui/voice-search";
 import { useDropSearchContext } from "./DropSearchContext";
 
-export function SearchBarAndVoice() {
+function SearchBarAndVoiceFallback() {
+  return (
+    <div className="relative flex h-10 w-full max-w-165 px-1">
+      <div className="relative flex flex-1 h-10">
+        <div className="flex-1 rounded-l-full border border-(--border-color) bg-(--input-bg-color)" />
+        <div className="w-16 rounded-r-full border border-(--border-color) border-l-0 bg-(--btn-bg-color)" />
+      </div>
+      <div className="ml-3 h-10 min-w-10 rounded-full bg-(--btn-bg-color)" />
+    </div>
+  );
+}
+
+function SearchBarAndVoiceContent() {
   const { close, open, triggerRef, updatePosition } = useDropSearchContext();
   const { isFocused, onFocused, onBlured, focusRef, inputRef } = useSearchUI();
-  const { value, setValue } = useSearch();
+  const { value, setValue, submitSearch } = useSearchSubmit();
 
   useEffect(() => {
     if (isFocused) {
@@ -20,8 +34,18 @@ export function SearchBarAndVoice() {
     }
   }, [close, isFocused, open]);
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    submitSearch();
+    inputRef.current?.blur();
+    close();
+  };
+
   return (
-    <div className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}>
+    <form
+      onSubmit={handleSubmit}
+      className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}
+    >
       <div ref={triggerRef} className="relative flex flex-1 h-10">
         <div className="relative flex-1">
           <div
@@ -45,6 +69,7 @@ export function SearchBarAndVoice() {
             )}
             <input
               ref={inputRef}
+              name="search_query"
               onFocus={onFocused}
               onBlur={onBlured}
               onChange={(e) => setValue(e.target.value)}
@@ -56,6 +81,7 @@ export function SearchBarAndVoice() {
 
             {value && (
               <button
+                type="button"
                 onClick={() => {
                   focusRef();
                   setValue("");
@@ -71,6 +97,7 @@ export function SearchBarAndVoice() {
         </div>
 
         <button
+          type="submit"
           className="bg-(--btn-bg-color) flex items-center justify-center
           border border-(--border-color) border-l-0
           rounded-r-full w-16 cursor-pointer"
@@ -85,6 +112,14 @@ export function SearchBarAndVoice() {
           <VoiceSearch />
         </div>
       </div>
-    </div>
+    </form>
+  );
+}
+
+export function SearchBarAndVoice() {
+  return (
+    <Suspense fallback={<SearchBarAndVoiceFallback />}>
+      <SearchBarAndVoiceContent />
+    </Suspense>
   );
 }

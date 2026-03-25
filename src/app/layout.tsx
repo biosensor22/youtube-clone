@@ -8,6 +8,8 @@ import { StoreProvider } from "./providers/StoreProvider";
 import { NotificationProvider } from "@/widgets/header/ui/notifications";
 import { CreateBtnProvider } from "@/widgets/header/ui/create-btn";
 import { DropSearchProvider } from "@/widgets/header/ui/search/ui/DropSearchContext";
+import { ProfileMenuProvider } from "@/app/providers/ProfileMenuProvider";
+import { QueryProvider } from "./providers/query-provider";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -31,15 +33,19 @@ export default function RootLayout({
       <body className={clsx(roboto.variable, "@container antialiased")}>
         <div>
           <StoreProvider>
-            <CreateBtnProvider>
-              <NotificationProvider>
-                <DropSearchProvider>
-                  <SideMenu />
-                  <Header />
-                  <main>{children}</main>
-                </DropSearchProvider>
-              </NotificationProvider>
-            </CreateBtnProvider>
+            <QueryProvider>
+              <CreateBtnProvider>
+                <NotificationProvider>
+                  <DropSearchProvider>
+                    <ProfileMenuProvider>
+                      <SideMenu />
+                      <Header />
+                      <main>{children}</main>
+                    </ProfileMenuProvider>
+                  </DropSearchProvider>
+                </NotificationProvider>
+              </CreateBtnProvider>
+            </QueryProvider>
           </StoreProvider>
         </div>
       </body>

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import type { WatchComment } from "@/entities/watch";
-import { QueueIcon } from "@/shared/ui/icons";
 import { AddComment } from "./AddComment";
 import { Comment } from "./Comment";
 import { Reply } from "./Reply";
+import { CommentsCount } from "./CommentsCount";
+import { useToggleReplies } from "../model/useToggleReplies";
 
 type CommentsSectionProps = {
   comments: WatchComment[];
@@ -30,26 +30,11 @@ export function CommentsSection({
   likedComments,
   onToggleCommentLike,
 }: CommentsSectionProps) {
-  const [openedReplies, setOpenedReplies] = useState<Record<string, boolean>>(
-    {},
-  );
-
-  const toggleReplies = (commentId: string) => {
-    setOpenedReplies((prev) => ({
-      ...prev,
-      [commentId]: !prev[commentId],
-    }));
-  };
+  const { openedReplies, toggleReplies } = useToggleReplies();
 
   return (
     <section className="mt-6">
-      <div className="flex items-center gap-7">
-        <h2 className="text-xl font-semibold">{comments.length} Comments</h2>
-        <button className="inline-flex items-center gap-2 text-sm font-medium hover:text-(--main-text-color)/85">
-          <QueueIcon className="h-4.5 w-4.5" />
-          Sort by
-        </button>
-      </div>
+      <CommentsCount commentsLength={comments.length} />
 
       <AddComment
         onCancel={onCancelComment}

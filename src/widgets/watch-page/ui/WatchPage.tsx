@@ -1,8 +1,11 @@
 "use client";
 
-import type { VideoItem } from "@/entities/video-cards";
-import type { WatchChannel, WatchComment } from "@/entities/watch";
-import { CommentsSection } from "./comments";
+import type {
+  WatchChannel,
+  WatchComment,
+  WatchMediaItem,
+} from "@/entities/watch";
+import { CommentsSection } from "./comments/ui";
 import { Actions } from "./actions";
 import { Description } from "./desctiption";
 import { WatchPlayer } from "./videoplayer";
@@ -14,13 +17,24 @@ import {
 } from "@/widgets/watch-page/model";
 
 type WatchPageProps = {
-  currentVideo: VideoItem;
+  currentItem: WatchMediaItem;
   channel: WatchChannel | null;
   comments: WatchComment[];
 };
 
-export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
+export function WatchPage({ currentItem, channel, comments }: WatchPageProps) {
   const { isSubscribed, toggleSubscription } = useWatchSubscription();
+  const {
+    channelAvatar,
+    channelName,
+    subscribers,
+    hashtags,
+    description,
+    primaryMeta,
+    secondaryMeta,
+    reactionBase,
+    showComments,
+  } = useWatchChannelMeta(channel, currentItem);
   const {
     videoReaction,
     likeRollKey,
@@ -28,7 +42,7 @@ export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
     displayedDislikeCount,
     handleLike,
     handleDislike,
-  } = useWatchVideoReactions(currentVideo.views);
+  } = useWatchVideoReactions(reactionBase);
   const {
     newCommentText,
     setNewCommentText,
@@ -36,19 +50,17 @@ export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
     likedComments,
     handleCreateComment,
     handleToggleCommentLike,
-  } = useWatchComments(comments, currentVideo.id);
-  const { channelAvatar, channelName, subscribers, hashtags, description } =
-    useWatchChannelMeta(channel, currentVideo);
+  } = useWatchComments(comments, currentItem.id);
 
   return (
     <section className="min-w-0">
       <WatchPlayer
-        title={currentVideo.title}
-        thumbnail={currentVideo.thumbnail}
+        title={currentItem.title}
+        thumbnail={currentItem.thumbnail}
       />
 
       <h1 className="mt-3 text-xl font-semibold leading-7">
-        {currentVideo.title}
+        {currentItem.title}
       </h1>
 
       <Actions
@@ -67,23 +79,25 @@ export function WatchPage({ currentVideo, channel, comments }: WatchPageProps) {
       />
 
       <Description
-        views={currentVideo.views}
-        publishedAt={currentVideo.publishedAt}
+        primaryMeta={primaryMeta}
+        secondaryMeta={secondaryMeta}
         description={description}
         hashtags={hashtags}
       />
 
-      <CommentsSection
-        comments={commentsList}
-        channelName={channelName}
-        channelAvatar={channelAvatar}
-        newCommentText={newCommentText}
-        onChangeNewComment={setNewCommentText}
-        onCancelComment={() => setNewCommentText("")}
-        onCreateComment={handleCreateComment}
-        likedComments={likedComments}
-        onToggleCommentLike={handleToggleCommentLike}
-      />
+      {showComments ? (
+        <CommentsSection
+          comments={commentsList}
+          channelName={channelName}
+          channelAvatar={channelAvatar}
+          newCommentText={newCommentText}
+          onChangeNewComment={setNewCommentText}
+          onCancelComment={() => setNewCommentText("")}
+          onCreateComment={handleCreateComment}
+          likedComments={likedComments}
+          onToggleCommentLike={handleToggleCommentLike}
+        />
+      ) : null}
     </section>
   );
 }

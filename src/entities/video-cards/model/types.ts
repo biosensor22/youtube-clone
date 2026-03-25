@@ -3,6 +3,7 @@ export type FeedItemBase = {
   title: string;
   thumbnail: string;
   author: string;
+  authorAvatar?: string;
   videosCount?: number;
 };
 
@@ -18,6 +19,8 @@ export type VideoItem = FeedItemBase & {
 export type PlaylistItem = FeedItemBase & {
   type: "playlist";
   videosCount: number;
+  publishedAt: string;
+  updatedAt: string;
 };
 
 export type StreamItem = FeedItemBase & {

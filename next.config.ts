@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "i.pravatar.cc" },
       { protocol: "https", hostname: "i.ytimg.com" },
       { protocol: "https", hostname: "www.gstatic.com" },
+      { protocol: "https", hostname: "media.printables.com" },
     ],
   },
   async headers() {
