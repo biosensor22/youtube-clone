@@ -38,6 +38,4 @@ export type WatchPageData = {
   channel: WatchChannel | null;
   comments: WatchComment[];
   recommendations: VideoItem[];
-  previousVideoId: string | null;
-  nextVideoId: string | null;
 };

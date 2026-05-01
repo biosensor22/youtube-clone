@@ -14,8 +14,6 @@ export function Thumbnail({ thumbnail, title, priority }: ThumbnailProps) {
       height={400}
       src={thumbnail}
       alt={title}
-      placeholder="blur"
-      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwMDAwIi8+"
       priority={priority}
     />
   );

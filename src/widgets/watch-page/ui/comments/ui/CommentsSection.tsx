@@ -43,7 +43,7 @@ export function CommentsSection({
         newCommentText={newCommentText}
       />
 
-      <div className="mt-7 space-y-6">
+      <div className="mt-4 space-y-4">
         {comments.map((comment) => {
           const isLiked = Boolean(likedComments[comment.id]);
           const likes = comment.likes + (isLiked ? 1 : 0);

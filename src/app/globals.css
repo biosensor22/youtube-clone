@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* * {
+  outline: solid 2px rgb(153, 228, 15);
+} */
+
+:root {
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
 @theme {
   --container-xs: 28.75rem;
   --container-mdxs: 48.55rem;

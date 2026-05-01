@@ -7,12 +7,13 @@ export async function searchHistoryFetch() {
 
     if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
     const result: SearchHistory[] = await res.json();
-
-    if (!result.length) {
+    if (!result) {
       return [];
     }
+
     return result;
   } catch (err) {
     console.error("[Search API]:", err);
   }
+  return [];
 }

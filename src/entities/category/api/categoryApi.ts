@@ -9,9 +9,14 @@ export async function fetchCategories(): Promise<Category[]> {
 
     const data: Category[] = await res.json();
 
+    if (!Array.isArray(data)) {
+      console.warn("[Watch API] Unexpected comments data format:", data);
+      return [];
+    }
+
     return data;
   } catch (err) {
-    console.error("[Category API]:", err);
+    console.error(err);
   }
   return [];
 }

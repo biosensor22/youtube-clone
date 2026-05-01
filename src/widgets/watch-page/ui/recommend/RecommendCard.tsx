@@ -61,6 +61,7 @@ export function RecommendCard({
           <div className="absolute top-10 right-0 z-30 w-64 overflow-hidden rounded-xl border border-(--border-color) bg-(--dark-grey-bg) py-2 shadow-[0_8px_24px_rgba(0,0,0,0.45)]">
             {RecommendMenuItems.map((item) => (
               <RecommendMenuItem
+                key={item.id}
                 id={item.id}
                 icon={item.icon}
                 label={item.label}

@@ -41,11 +41,9 @@ export function StreamCard({
           <Image
             className="rounded-xl"
             width={1200}
-            height={400}
+            height={1200}
             src={thumbnail}
             alt={title}
-            placeholder="blur"
-            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwMDAwIi8+"
           />
           <div
             className="absolute flex justify-center items-center bottom-2 right-2 text-[12px]
@@ -56,32 +54,34 @@ export function StreamCard({
           </div>
         </div>
         <div className="flex gap-x-3 w-full relative cursor-pointer">
-          <div className="border-2 absolute border-(--live-red-bg) p-0.5 rounded-full h-11 w-11">
-            <Image
-              className="rounded-full w-9 h-9"
-              width={40}
-              height={40}
-              src={authorAvatar}
-              alt={author}
-            />
-          </div>
-          <div className="absolute text-[10px] bg-(--live-red-bg) px-0.5 rounded-sm top-7.5 left-2.75">
-            LIVE
+          <div>
+            <div className="border-2 border-(--live-red-bg) p-0.5 rounded-full w-11">
+              <Image
+                className="rounded-full w-9 h-9"
+                width={100}
+                height={100}
+                src={authorAvatar}
+                alt={author}
+              />
+            </div>
+            <div className="absolute text-[10px] bg-(--live-red-bg) px-0.5 rounded-sm top-7.5 left-2.75">
+              LIVE
+            </div>
           </div>
           <div>
-            <div className="flex ml-14">
-              <p className="font-medium max-w-[calc(100%-20px)]">{title}</p>
+            <div className="flex w-full pr-10">
+              <p className="font-medium">{title}</p>
               <div className="absolute right-1 cursor-pointer">
                 <MenuButton type={type} />
               </div>
             </div>
-            <Link className="flex ml-14" href="/">
+            <Link className="flex" href="/">
               <p className="text-[14px] text-(--grey-text-color) hover:text-(--main-text-color) duration-150">
                 {author}
               </p>
             </Link>
 
-            <div className="flex ml-14 items-center gap-x-2 ">
+            <div className="flex items-center gap-x-2 ">
               <p className="text-(--grey-text-color) text-[14px]">
                 {numberConvert(viewers)} watching
               </p>

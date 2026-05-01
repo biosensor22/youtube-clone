@@ -13,7 +13,6 @@ export async function fetchCountNotif(): Promise<number> {
 
     return data.length;
   } catch (err) {
-    console.error("[Notifications API]:", err);
     return 0;
   }
 }

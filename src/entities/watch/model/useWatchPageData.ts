@@ -9,8 +9,6 @@ const initialData: WatchPageData = {
   channel: null,
   comments: [],
   recommendations: [],
-  previousVideoId: null,
-  nextVideoId: null,
 };
 
 export function useWatchPageData(videoId: string) {

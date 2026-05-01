@@ -1,4 +1,4 @@
-import type { SubscriptionsSideMenu } from "@/entities/subscriptions-side-menu";
+import type { SubscriptionsSideMenu } from "@/entities/subscriptions";
 import { API_BASE_URL, API_ROUTES } from "@/shared/api/config";
 
 export function getPriority(s: SubscriptionsSideMenu) {

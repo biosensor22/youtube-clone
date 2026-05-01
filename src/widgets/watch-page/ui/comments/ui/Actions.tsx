@@ -1,5 +1,6 @@
 import { numberConvert } from "@/shared/lib/hooks";
 import { ThumbUpIcon, ThumbDownIcon } from "@/shared/ui";
+import { HeartIcon } from "@/shared/ui/icons/video-icons/HeartIcon";
 import Image from "next/image";
 
 type ActionsProps = {
@@ -35,19 +36,18 @@ export function Actions({
 
       {showCreatorLike ? (
         <div className="relative h-6 w-6">
-          <Image
-            src={creatorAvatar}
-            alt="Creator liked"
-            width={24}
-            height={24}
-            className="h-6 w-6 rounded-full"
-          />
-          <span
-            className="absolute -bottom-1 -right-1 rounded-full bg-red-600 px-1 text-[9px] leading-3 text-(--main-text-color)
-          "
-          >
-            ❤
-          </span>
+          <div className="h-6 w-6 relative">
+            <Image
+              src={creatorAvatar}
+              alt="Creator liked"
+              width={24}
+              height={24}
+              className="rounded-full"
+            />
+            <span className="absolute -bottom-1 -right-1 rounded-full px-1 text-[9px] leading-3 text-(--main-text-color)">
+              <HeartIcon className="text-red-500 w-3.5 absolute right-0.5 -bottom-0.5" />
+            </span>
+          </div>
         </div>
       ) : null}
 

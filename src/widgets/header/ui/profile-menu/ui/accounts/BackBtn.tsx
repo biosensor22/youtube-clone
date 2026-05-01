@@ -10,7 +10,7 @@ export function BackBtn() {
   const handleBack = useMenuLogic("to-profile");
 
   return (
-    <div className="flex items-center mt-1 px-1">
+    <div className="flex  items-center mt-1 px-1">
       <div
         onMouseDown={onPress}
         onMouseUp={onRelease}
@@ -23,7 +23,7 @@ export function BackBtn() {
         )}
         onClick={handleBack}
       >
-        <ArrowIcon className="w-6.5" />
+        <ArrowIcon className="w-6.5 text-white" />
       </div>
       <p className="text-[16px] ml-1">Accounts</p>
     </div>

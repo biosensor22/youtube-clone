@@ -3,7 +3,7 @@
 import {
   fetchSubscriptions,
   type SubscriptionsSideMenu,
-} from "@/entities/subscriptions-side-menu";
+} from "@/entities/subscriptions";
 import { useState, useEffect } from "react";
 
 export function useSubscriptionsSide(userId: string) {

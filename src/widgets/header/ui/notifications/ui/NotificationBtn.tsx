@@ -10,7 +10,7 @@ import { markAllRead } from "@/features/notifications/mark-all-read/api/markAllR
 
 export function NotificationBtn() {
   const { countOfNotif, clearNotifCount } = useCountNotif();
-  const { triggerRef: contextRef, open } = useNotificationContext();
+  const { triggerRef: contextRef, open, toggle } = useNotificationContext();
   const { pressed, onPress, onRelease } = usePress();
   const {
     triggerRef,
@@ -27,7 +27,7 @@ export function NotificationBtn() {
 
   const handleClick = () => {
     clearNotifCount();
-    open();
+    toggle();
     void markAllRead();
   };
 

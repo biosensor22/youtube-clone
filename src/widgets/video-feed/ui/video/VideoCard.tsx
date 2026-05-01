@@ -41,7 +41,7 @@ export function VideoCard({
     <div className="group w-full relative">
       <HoverBg thumbnail={thumbnail} />
 
-      <div className={` rounded-xl pb-6 flex items-center flex-col gap-y-3 `}>
+      <div className={`rounded-xl pb-6 flex items-center flex-col gap-y-3`}>
         <Link href={watchPath} className="relative cursor-pointer block">
           <Thumbnail thumbnail={thumbnail} title={title} priority={priority} />
 
@@ -55,7 +55,7 @@ export function VideoCard({
             </div>
             <div>
               <Link href={watchPath}>
-                <p className="font-medium cursor-pointer max-w-[calc(100%-20px)]">
+                <p className="font-medium cursor-pointer max-w-[calc(100%-32px)]">
                   {title}
                 </p>
               </Link>

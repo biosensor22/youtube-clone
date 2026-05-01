@@ -45,14 +45,12 @@ export function PlaylistCard({
             height={400}
             src={thumbnail}
             alt={title}
-            placeholder="blur"
-            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwMDAwIi8+"
           />
           <p className="absolute bottom-2 right-2 text-[12px] font-medium bg-black/70 rounded-md px-1 py-px">
             Mix
           </p>
         </div>
-        <div className="flex gap-x-3 w-full relative">
+        <div className="gap-x-3 relative">
           <div className="absolute right-1 cursor-pointer">
             <MenuButton type={type} />
           </div>

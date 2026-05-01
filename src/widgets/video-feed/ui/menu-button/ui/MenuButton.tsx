@@ -1,10 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ModalMenu } from "./ModalMenu";
 import { MenuIcon } from "@/shared/ui/icons";
-import { usePress } from "@/shared/lib/hooks";
+import { useLockPageScroll, usePress } from "@/shared/lib/hooks";
 import { useClickOutside, useMenuOpen } from "@/widgets/video-feed";
 
 type MenuBtnProps = {
@@ -17,8 +17,20 @@ export function MenuButton({ type }: MenuBtnProps) {
   const { pressed, onPress, onRelease } = usePress();
   useClickOutside({ menuRef, opened, onClose });
 
+  useEffect(() => {
+    const classList = document.documentElement.classList;
+
+    if (opened) {
+      classList.add("lock-scroll");
+    } else {
+      classList.remove("lock-scroll");
+    }
+    return () => classList.remove("lock-scroll");
+  }, [opened]);
+
   return (
     <div
+      onClick={onSwitch}
       onMouseDown={onPress}
       onMouseUp={onRelease}
       onMouseLeave={onRelease}
@@ -29,7 +41,7 @@ export function MenuButton({ type }: MenuBtnProps) {
           : "bg-transparent hover:bg-(--hover-btn-color)",
       )}
     >
-      <MenuIcon onClick={onSwitch} />
+      <MenuIcon />
 
       <div
         ref={menuRef}

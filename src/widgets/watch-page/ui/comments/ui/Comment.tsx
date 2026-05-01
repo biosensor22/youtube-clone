@@ -79,8 +79,8 @@ export function Comment({
             isOptionsOpen={isOptionsOpen}
           />
         </div>
-        <p className="mt-0.5 text-[14px] leading-1">{text}</p>
-        <button className="mt-2 text-[14px] font-semibold text-(--grey-text-color) hover:text-(--main-text-color)">
+        <p className="text-[14px] wrap-break-words">{text}</p>
+        <button className="text-[14px] font-semibold text-(--grey-text-color) hover:text-(--main-text-color)">
           Translate to English
         </button>
 

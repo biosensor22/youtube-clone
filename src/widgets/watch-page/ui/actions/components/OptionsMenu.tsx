@@ -1,4 +1,6 @@
-import type { RefObject } from "react";
+"use client";
+
+import { useLayoutEffect, type RefObject } from "react";
 import type { ActionMenuItem, SecondaryActionItem } from "../model";
 
 type OptionsMenuProps = {
@@ -16,6 +18,34 @@ export function OptionsMenu({
   videoOptions,
   onClose,
 }: OptionsMenuProps) {
+  useLayoutEffect(() => {
+    const menu = modalRef.current;
+    if (!isOpen || !menu) return;
+
+    const rect = menu.getBoundingClientRect();
+
+    if (rect.right > window.innerWidth) {
+      menu.style.left = "auto";
+      menu.style.right = "0";
+    }
+
+    if (rect.bottom > window.innerHeight) {
+      menu.style.top = "auto";
+      menu.style.bottom = "100%";
+      menu.style.marginBottom = "0.25rem";
+      menu.style.marginTop = "0";
+    }
+
+    return () => {
+      menu.style.left = "";
+      menu.style.right = "";
+      menu.style.top = "";
+      menu.style.bottom = "";
+      menu.style.marginBottom = "";
+      menu.style.marginTop = "";
+    };
+  }, [isOpen, modalRef]);
+
   if (!isOpen) return null;
 
   return (

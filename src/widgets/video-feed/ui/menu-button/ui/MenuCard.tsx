@@ -22,8 +22,10 @@ export const MenuCard = forwardRef<HTMLDivElement, MenuBtnProps>(
       <div
         ref={ref}
         className={clsx("bg-(--dark-grey-bg) rounded-xl w-65 flex flex-col", {
-          "right-0": position === "left",
-          "left-0": position !== "left",
+          "right-0": position.horizontal === "left",
+          "left-0": position.horizontal === "right",
+          "bottom-9": position.vertical === "top",
+          "top-3": position.vertical === "bottom",
         })}
         style={{ position: "absolute" }}
       >

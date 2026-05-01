@@ -16,7 +16,8 @@ export function BackBtn({ onBack }: BackBtnProps) {
       onMouseLeave={onRelease}
       onClick={onBack}
       className={clsx(
-        "w-10 h-10 rounded-full ml-2 cursor-pointer flex justify-center items-center bg-transparent",
+        `w-10 h-10 rounded-full ml-2 cursor-pointer flex justify-center items-center
+         bg-transparent text-(--main-text-color)`,
         {
           "bg-(--active-btn-color)": pressed,
           "hover:bg-(--hover-btn-color)": !pressed,

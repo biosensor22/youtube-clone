@@ -15,7 +15,7 @@ import { Observer } from "json-server/lib/observer.js";
 const dev = process.env.NODE_ENV !== "production";
 const hostname = process.env.HOST ?? "0.0.0.0";
 const hasExplicitPort = Boolean(process.env.PORT);
-const defaultPort = Number(process.env.PORT ?? 3000);
+const defaultPort = Number(process.env.PORT ?? 3001);
 const dbFile = process.env.JSON_DB_FILE ?? "db.json5";
 
 async function findAvailablePort(startPort, host, maxAttempts = 20) {
@@ -46,7 +46,7 @@ async function findAvailablePort(startPort, host, maxAttempts = 20) {
   }
 
   throw new Error(
-    `No free port found starting from ${startPort} after ${maxAttempts} attempts`
+    `No free port found starting from ${startPort} after ${maxAttempts} attempts`,
   );
 }
 
@@ -91,7 +91,7 @@ await nextApp.prepare();
 
 if (dev && port !== defaultPort) {
   console.warn(
-    `Port ${defaultPort} is busy. Starting dev server on http://${browserHost}:${port}`
+    `Port ${defaultPort} is busy. Starting dev server on http://${browserHost}:${port}`,
   );
 }
 

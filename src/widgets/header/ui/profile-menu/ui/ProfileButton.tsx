@@ -18,7 +18,7 @@ export function ProfileButton() {
         height={64}
         src={user?.[0].pfp}
         alt="profile"
-        className="rounded-full border-(--profile-border-color) cursor-pointer"
+        className="rounded-full border-(--profile-border-color) cursor-pointer select-none"
       />
     </div>
   );

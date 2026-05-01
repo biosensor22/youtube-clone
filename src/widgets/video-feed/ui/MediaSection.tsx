@@ -46,7 +46,7 @@ export function MediaSection() {
 
   return (
     <div
-      className="w-full text-(--main-text-color) px-4 pt-6 sm:pt-6 gap-4 gap-y-8
+      className="w-full text-(--main-text-color) px-4 py-6 sm:pt-6 gap-4 gap-y-8
     grid grid-cols-1 @video-md:grid-cols-2 @video-lg:grid-cols-3 @video-xl:grid-cols-4"
     >
       {videos.map((v, i) => {

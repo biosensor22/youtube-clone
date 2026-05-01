@@ -76,7 +76,7 @@ function SearchBarAndVoiceContent() {
               value={value}
               placeholder="Search"
               type="text"
-              className="w-full h-7 px-1.25 pb-1 text-[17px] bg-transparent outline-0"
+              className="w-full h-7 px-1.25 pb-1 pr-11 text-[17px] bg-transparent outline-0"
             />
 
             {value && (

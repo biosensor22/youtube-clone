@@ -5,6 +5,8 @@ import clsx from "clsx";
 import { HomeIcon } from "@/shared/ui/icons";
 import { useCursorToolTip, usePress } from "@/shared/lib/hooks";
 import { urlPaths } from "@/shared/api/urlPaths";
+import { close } from "@/widgets/side-menu/model";
+import { useDispatch } from "react-redux";
 
 type HomeLinkProps = {
   isActive: string;
@@ -12,6 +14,7 @@ type HomeLinkProps = {
 };
 
 export function HomeLink({ isActive, onActive }: HomeLinkProps) {
+  const dispatch = useDispatch();
   const { pressed, onPress, onRelease } = usePress();
   const tooltip = useCursorToolTip("Home", { delay: 500 });
 
@@ -22,7 +25,10 @@ export function HomeLink({ isActive, onActive }: HomeLinkProps) {
         tooltip.hide();
         onRelease();
       }}
-      onClick={onActive}
+      onClick={() => {
+        onActive();
+        dispatch(close());
+      }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
       className={clsx("flex rounded-xl px-3 py-2 gap-5 ", {

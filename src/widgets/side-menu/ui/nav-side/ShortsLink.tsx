@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ShortsIcon } from "@/shared/ui/icons";
 import { useCursorToolTip, usePress } from "@/shared/lib/hooks";
 import { urlPaths } from "@/shared/api/urlPaths";
+import { close } from "@/widgets/side-menu/model";
+import { useDispatch } from "react-redux";
 
 type ShortsLinkProps = {
   isActive: string;
@@ -12,6 +14,7 @@ type ShortsLinkProps = {
 };
 
 export function ShortsLink({ isActive, onActive }: ShortsLinkProps) {
+  const dispatch = useDispatch();
   const { pressed, onPress, onRelease } = usePress();
   const tooltip = useCursorToolTip("Shorts", { delay: 500 });
 
@@ -22,7 +25,10 @@ export function ShortsLink({ isActive, onActive }: ShortsLinkProps) {
         tooltip.hide();
         onRelease();
       }}
-      onClick={onActive}
+      onClick={() => {
+        onActive();
+        dispatch(close());
+      }}
       onMouseDown={onPress}
       onMouseUp={onRelease}
       className={clsx("flex rounded-xl px-3 py-2 gap-5 ", {
