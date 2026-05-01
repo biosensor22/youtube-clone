@@ -31,23 +31,25 @@ export function CategoriesList() {
         </div>
       )}
 
-      <div
-        ref={scrollRef}
-        onScroll={checkScroll}
-        className="flex sm:w-[calc(100%-20px)] w-screen ml-2 h-full pt-5 gap-2 overflow-x-auto scroll-smooth no-scrollbar"
-      >
-        {categories.map((category) => (
-          <CategoryButton
-            key={category.id}
-            label={category.label}
-            isActive={category.id === activeId}
-            onClick={() => setIsActiveId(category.id)}
-          />
-        ))}
+      <div className="overflow-hidden sm:w-[calc(100%-20px)] md:w-[calc(100%-80px)] w-[calc(100%-50px)]">
+        <div
+          ref={scrollRef}
+          onScroll={checkScroll}
+          className="flex sm:w-[calc(100%-20px)] w-screen ml-2 h-full pt-5 gap-2 overflow-x-auto scroll-smooth no-scrollbar"
+        >
+          {categories.map((category) => (
+            <CategoryButton
+              key={category.id}
+              label={category.label}
+              isActive={category.id === activeId}
+              onClick={() => setIsActiveId(category.id)}
+            />
+          ))}
+        </div>
       </div>
 
       {showRight && (
-        <div className="rounded-full absolute right-10 bottom-0 flex items-center pl-10">
+        <div className="rounded-full absolute right-10 sm:left-[calc(100%-80px)] md:left-[calc(100%-150px)] bottom-0 flex items-center pl-10">
           <NextListBtn onClick={scrollNext} />
         </div>
       )}
