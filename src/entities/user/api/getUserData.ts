@@ -8,7 +8,6 @@ export async function getUserData(): Promise<UserData[]> {
     if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
 
     const data: UserData[] = await res.json();
-    console.log(data);
 
     return data;
   } catch (err) {

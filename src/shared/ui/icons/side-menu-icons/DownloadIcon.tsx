@@ -1,8 +1,4 @@
-interface DownloadSVGProps {
-  props?: React.SVGProps<SVGSVGElement>;
-}
-
-export function DownloadIcon({ props }: DownloadSVGProps) {
+export function DownloadIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

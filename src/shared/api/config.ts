@@ -12,3 +12,7 @@ export const API_ROUTES = {
   notifications: "/notifications",
   search_history: "/search_history",
 } as const;
+
+export const EXTERNAL_API = {
+  user_country: "https://ipinfo.io/json",
+};

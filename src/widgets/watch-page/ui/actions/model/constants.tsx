@@ -16,7 +16,7 @@ export const VIDEO_OPTIONS_MENU: ActionMenuItem[] = [
   {
     id: "download",
     label: "Download",
-    icon: <DownloadIcon props={{ className: "h-6 w-6" }} />,
+    icon: <DownloadIcon className="h-6 w-6" />,
   },
   {
     id: "report",

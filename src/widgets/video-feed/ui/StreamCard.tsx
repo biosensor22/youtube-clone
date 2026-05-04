@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { numberConvert } from "@/shared/lib/hooks";
-import { MenuButton, useDominantColor } from "@/widgets/video-feed";
+import { MenuButton } from "@/widgets/video-feed";
 import { LiveIcon } from "@/shared/ui/icons";
+import { HoverBg, Thumbnail, Avatar } from "./card-parts";
 
 type StreamProps = {
   id: string;
@@ -16,35 +16,29 @@ type StreamProps = {
   isLive: boolean;
   startedAt: string;
   authorAvatar: string;
+  priority: boolean;
 };
 
 export function StreamCard({
+  id,
   type,
   title,
   thumbnail,
   author,
   viewers,
   authorAvatar,
+  priority,
 }: StreamProps) {
-  const dominantColor = useDominantColor(thumbnail);
+  const watchPath = `/watch/${id}`;
 
   return (
-    <div className="group w-full relative">
-      <div
-        className={`w-full h-full absolute rounded-xl cursor-pointer
-        group-hover:bg-[rgba(var(--bg),0.2)] bg-[rgba(var(--bg),0)] duration-150 group-hover:scale-105
-        `}
-        style={{ "--bg": dominantColor } as React.CSSProperties}
-      />
-      <div className=" w-full pb-6 flex items-center flex-col gap-y-3 cursor-pointer">
-        <div className="relative">
-          <Image
-            className="rounded-xl"
-            width={1200}
-            height={1200}
-            src={thumbnail}
-            alt={title}
-          />
+    <div className="group w-full relative cursor-pointer">
+      <Link href={watchPath}>
+        <HoverBg thumbnail={thumbnail} />
+      </Link>
+      <div className=" w-full pb-6 flex items-center flex-col gap-y-3">
+        <Link href={watchPath} className="relative block">
+          <Thumbnail thumbnail={thumbnail} title={title} priority={priority} />
           <div
             className="absolute flex justify-center items-center bottom-2 right-2 text-[12px]
          font-medium bg-(--live-red-bg) rounded-sm px-1 gap-1 py-px"
@@ -52,17 +46,12 @@ export function StreamCard({
             <LiveIcon className="w-3 h-3" />
             <p>LIVE</p>
           </div>
-        </div>
-        <div className="flex gap-x-3 w-full relative cursor-pointer">
+        </Link>
+
+        <div className="flex gap-x-3 w-full relative">
           <div>
             <div className="border-2 border-(--live-red-bg) p-0.5 rounded-full w-11">
-              <Image
-                className="rounded-full w-9 h-9"
-                width={100}
-                height={100}
-                src={authorAvatar}
-                alt={author}
-              />
+              <Avatar author={author} authorAvatar={authorAvatar} />
             </div>
             <div className="absolute text-[10px] bg-(--live-red-bg) px-0.5 rounded-sm top-7.5 left-2.75">
               LIVE
@@ -70,8 +59,10 @@ export function StreamCard({
           </div>
           <div>
             <div className="flex w-full pr-10">
-              <p className="font-medium">{title}</p>
-              <div className="absolute right-1 cursor-pointer">
+              <Link href={watchPath}>
+                <p className="font-medium">{title}</p>
+              </Link>
+              <div className="absolute right-1">
                 <MenuButton type={type} />
               </div>
             </div>
@@ -81,7 +72,7 @@ export function StreamCard({
               </p>
             </Link>
 
-            <div className="flex items-center gap-x-2 ">
+            <div className="flex items-center gap-x-2">
               <p className="text-(--grey-text-color) text-[14px]">
                 {numberConvert(viewers)} watching
               </p>

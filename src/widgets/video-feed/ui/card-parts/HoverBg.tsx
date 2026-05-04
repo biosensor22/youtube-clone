@@ -1,4 +1,4 @@
-import { useDominantColor } from "./useDominantColor";
+import { useDominantColor } from "../../model";
 
 interface HoverBgProps {
   thumbnail: string;

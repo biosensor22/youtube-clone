@@ -1,13 +1,11 @@
 export { MediaSection } from "./MediaSection";
 
-export { VideoCard, useDominantColor } from "./video";
+export { VideoCard } from "./VideoCard";
 
-export { PlaylistCard } from "./playlist";
+export { PlaylistCard } from "./PlaylistCard";
 
-export { StreamCard } from "./stream";
+export { StreamCard } from "./StreamCard";
 
-export { SkeletonCard } from "./skeleton";
+export { SkeletonCard } from "./SkeletonCard";
 
 export * from "./menu-button";
-
-export * from "./video";

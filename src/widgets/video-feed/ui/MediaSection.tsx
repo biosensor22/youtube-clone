@@ -1,11 +1,11 @@
 "use client";
 
 import { useUserVideos } from "@/entities/video-cards";
-import { VideoCard } from "./video/VideoCard";
-import { PlaylistCard } from "./playlist/PlaylistCard";
-import { StreamCard } from "./stream/StreamCard";
+import { VideoCard } from "./VideoCard";
+import { PlaylistCard } from "./PlaylistCard";
+import { StreamCard } from "./StreamCard";
 
-import { SkeletonCard } from "./skeleton/SkeletonCard";
+import { SkeletonCard } from "./SkeletonCard";
 
 export function MediaSection() {
   const userId = "123";
@@ -55,9 +55,9 @@ export function MediaSection() {
           case "video":
             return <VideoCard key={v.id} priority={isPriority} {...v} />;
           case "playlist":
-            return <PlaylistCard key={v.id} {...v} />;
+            return <PlaylistCard key={v.id} priority={isPriority} {...v} />;
           case "stream":
-            return <StreamCard key={v.id} {...v} />;
+            return <StreamCard key={v.id} priority={isPriority} {...v} />;
           default:
             return null;
         }

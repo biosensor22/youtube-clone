@@ -1,27 +1,39 @@
 import {
   BlockIcon,
   ClockIcon,
+  DownloadIcon,
   NotIcon,
   QueueIcon,
   ReportIcon,
+  SaveIcon,
 } from "@/shared/ui/icons";
 
 export const RecommendMenuItems = [
   {
-    id: "queue",
+    id: 1,
     label: "Add to queue",
-    icon: <QueueIcon className="h-5 w-5" />,
+    icon: <QueueIcon className="h-6 w-6" />,
   },
   {
-    id: "watch-later",
+    id: 2,
     label: "Save to Watch later",
-    icon: <ClockIcon className="h-5 w-5" />,
+    icon: <ClockIcon className="h-6 w-6" />,
   },
-  { id: "not", label: "Not interested", icon: <NotIcon className="h-5 w-5" /> },
   {
-    id: "block",
-    label: "Don't recommend channel",
-    icon: <BlockIcon className="h-5 w-5" />,
+    id: 3,
+    label: "Save to Playlist",
+    icon: <SaveIcon className="h-6 w-6" />,
   },
-  { id: "report", label: "Report", icon: <ReportIcon className="h-5 w-5" /> },
+  {
+    id: 4,
+    label: "Download",
+    icon: <DownloadIcon className="h-6 w-6" />,
+  },
+  { id: 5, label: "Not interested", icon: <NotIcon className="h-6 w-6" /> },
+  {
+    id: 6,
+    label: "Don't recommend channel",
+    icon: <BlockIcon className="h-6 w-6" />,
+  },
+  { id: 7, label: "Report", icon: <ReportIcon className="h-6 w-6" /> },
 ];
