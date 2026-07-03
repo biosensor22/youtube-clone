@@ -8,7 +8,7 @@ import {
   SaveIcon,
 } from "@/shared/ui/icons";
 
-export const RecommendMenuItems = [
+export const MenuItems = [
   {
     id: 1,
     label: "Add to queue",

@@ -1,5 +1,5 @@
 import type { FeedItem } from "@/entities/video-cards";
-import { SearchResultCard } from "./SearchResultCard";
+import { SearchResultCard } from "./Card";
 
 type SearchResultsListProps = {
   items: FeedItem[];

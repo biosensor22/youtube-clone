@@ -57,7 +57,7 @@ export function Actions({
     });
 
   return (
-    <div className="mt-3 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+    <div className="mt-2 ml-1.5 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
       <ChannelInfo
         channelAvatar={channelAvatar}
         channelName={channelName}

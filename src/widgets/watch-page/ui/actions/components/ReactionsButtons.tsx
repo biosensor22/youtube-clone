@@ -23,10 +23,10 @@ export function ReactionsButtons({
   const isDislikeActive = videoReaction === "dislike";
 
   return (
-    <div className="inline-flex h-9 shrink-0 items-stretch overflow-hidden rounded-full bg-(--btn-bg-color)">
+    <div className="inline-flex justify-center shrink-0 items-center overflow-hidden rounded-full bg-(--btn-bg-color)">
       <button
         onClick={onLike}
-        className={`relative flex items-center px-3 text-(--main-text-color) hover:bg-(--hover-btn-color) text-[14px] `}
+        className={`relative py-1.5 flex items-center px-3 text-(--main-text-color) hover:bg-(--hover-btn-color) text-[14px] `}
         aria-label="Like"
       >
         <ThumbUpIcon fill={isLikeActive ? "white" : "none"} />
@@ -36,18 +36,18 @@ export function ReactionsButtons({
         >
           <span
             key={`${displayedLikeCount}-${likeRollKey}`}
-            className="like-counter-roll inline-block"
+            className="mb-0.5 inline-block"
           >
             {numberConvert(displayedLikeCount)}
           </span>
         </span>
       </button>
 
-      <div className="h-5 w-px bg-(--border-color)" />
+      <div className="h-6 flex w-px bg-(--hover-btn-color)" />
 
       <button
         onClick={onDislike}
-        className="px-3 hover:bg-(--hover-btn-color)"
+        className="px-3 hover:bg-(--hover-btn-color) py-1.5 pr-4"
         aria-label="Dislike"
       >
         <ThumbDownIcon className="h-6 w-6" />

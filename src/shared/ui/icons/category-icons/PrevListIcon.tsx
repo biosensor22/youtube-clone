@@ -12,7 +12,7 @@ export function PrevListIcon(props: React.SVGProps<SVGSVGElement>) {
       <path
         fill={`white`}
         d="M13.793 5.293 7.086 12l6.707 6.707a1 1 0 101.414-1.414L9.914 12l5.293-5.293a1 1 0 10-1.414-1.414Z"
-      ></path>
+      />
     </svg>
   );
 }

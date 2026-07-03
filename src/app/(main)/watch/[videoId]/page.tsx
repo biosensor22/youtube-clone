@@ -33,8 +33,8 @@ export default function Page() {
   }
 
   return (
-    <div className="mt-18 pb-8 text-(--main-text-color) [&_button]:cursor-pointer">
-      <div className="mx-auto grid max-w-450 grid-cols-1 gap-6 px-2 sm:px-3 lg:px-4 xl:grid-cols-[minmax(0,1fr)_402px]">
+    <div className="medium:mt-16.5 mt-14 flex w-full justify-center overflow-hidden pb-8 text-(--main-text-color) [&_button]:cursor-pointer">
+      <div className="mx-auto grid w-full grid-cols-1 gap-3 px-2 sm:px-3 lg:px-4 medium:w-fit medium:max-w-full medium:grid-cols-[minmax(0,87.5rem)_35rem]">
         <WatchPage
           currentItem={currentItem}
           channel={channel}

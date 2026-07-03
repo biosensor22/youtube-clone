@@ -34,18 +34,8 @@ function SearchBarAndVoiceContent() {
     }
   }, [close, isFocused, open]);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    submitSearch();
-    inputRef.current?.blur();
-    close();
-  };
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}
-    >
+    <div className={`relative flex flex-1 w-full max-w-165 px-1 h-10`}>
       <div ref={triggerRef} className="relative flex flex-1 h-10">
         <div className="relative flex-1">
           <div
@@ -69,7 +59,6 @@ function SearchBarAndVoiceContent() {
             )}
             <input
               ref={inputRef}
-              name="search_query"
               onFocus={onFocused}
               onBlur={onBlured}
               onChange={(e) => setValue(e.target.value)}
@@ -97,11 +86,11 @@ function SearchBarAndVoiceContent() {
         </div>
 
         <button
-          type="submit"
+          onClick={() => submitSearch()}
+          type="button"
           className="bg-(--btn-bg-color) flex items-center justify-center
           border border-(--border-color) border-l-0
           rounded-r-full w-16 cursor-pointer"
-          aria-label="Search"
         >
           <SearchIcon />
         </button>
@@ -112,7 +101,7 @@ function SearchBarAndVoiceContent() {
           <VoiceSearch />
         </div>
       </div>
-    </form>
+    </div>
   );
 }
 

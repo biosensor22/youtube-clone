@@ -13,7 +13,7 @@ export function PrevListBtn({ onClick }: PrevListBtnProps) {
     onMouseEnter,
     onMouseLeave,
     tooltip: tooltipNode,
-  } = useToolTip("Search", { delay: 100, position: "bottom" });
+  } = useToolTip("Previous", { delay: 100, position: "bottom" });
   return (
     <div
       ref={triggerRef}

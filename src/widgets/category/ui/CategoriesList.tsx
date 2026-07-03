@@ -1,27 +1,21 @@
 "use client";
 
-import {
-  CategoryButton,
-  NextListBtn,
-  PrevListBtn,
-  useScrollLogic,
-} from "@/widgets/category";
+import { CategoryButton, NextListBtn, PrevListBtn } from "@/widgets/category";
+import { useScrollLogic } from "@/shared/lib/hooks";
+import { useUserCategories } from "@/entities/category";
 
 export function CategoriesList() {
+  const { categories } = useUserCategories("userId");
   const {
-    isLoading,
     activeId,
     showLeft,
     showRight,
     scrollRef,
-    categories,
     checkScroll,
     setIsActiveId,
     scrollPrev,
     scrollNext,
-  } = useScrollLogic();
-
-  if (isLoading) return <div className="h-13"></div>;
+  } = useScrollLogic(categories[0]?.id ?? 0);
 
   return (
     <div className="relative text-(--main-text-color) sm:w-full w-screen h-13 group z-100">
@@ -47,7 +41,6 @@ export function CategoriesList() {
           ))}
         </div>
       </div>
-
       {showRight && (
         <div className="rounded-full absolute right-10 sm:left-[calc(100%-80px)] md:left-[calc(100%-150px)] bottom-0 flex items-center pl-10">
           <NextListBtn onClick={scrollNext} />

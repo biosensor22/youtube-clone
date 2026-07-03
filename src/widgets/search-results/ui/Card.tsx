@@ -3,8 +3,8 @@
 import type { FeedItem } from "@/entities/video-cards";
 import { buildSearchResultPresentation } from "@/entities/search-results";
 import { MenuButton } from "@/widgets/video-feed";
-import { SearchResultContent } from "./SearchResultContent";
-import { SearchResultThumbnail } from "./SearchResultThumbnail";
+import { SearchResultContent } from "./Content";
+import { SearchResultThumbnail } from "./Thumbnail";
 
 type SearchResultCardProps = {
   item: FeedItem;

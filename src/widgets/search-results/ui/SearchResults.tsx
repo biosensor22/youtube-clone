@@ -1,10 +1,10 @@
 "use client";
 
 import { useSearchResults } from "@/entities/search-results";
-import { SearchResultsEmpty } from "./SearchResultsEmpty";
-import { SearchResultsError } from "./SearchResultsError";
-import { SearchResultsList } from "./SearchResultsList";
-import { SearchResultsSkeleton } from "./SearchResultsSkeleton";
+import { SearchResultsEmpty } from "./Empty";
+import { SearchResultsError } from "./Error";
+import { SearchResultsList } from "./List";
+import { SearchResultsSkeleton } from "./Skeleton";
 import { SearchFilters } from "../SearchFilters";
 
 type SearchResultsProps = {

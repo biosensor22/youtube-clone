@@ -6,4 +6,5 @@ export { useToolTip } from "./useToolTip";
 export { useClickOutside } from "./useClickOutside";
 export { useAnchoredPosition } from "./useAnchoredPosition";
 export { useLockPageScroll } from "./useLockPageScroll";
+export { useScrollLogic } from "./useScrollLogic";
 export type { AnchoredPosition } from "./useAnchoredPosition";

@@ -15,7 +15,7 @@ export function NextListBtn({ onClick }: NextListBtnProps) {
     onMouseEnter,
     onMouseLeave,
     tooltip: tooltipNode,
-  } = useToolTip("Search", { delay: 100, position: "bottom" });
+  } = useToolTip("Next", { delay: 100, position: "bottom" });
 
   return (
     <div

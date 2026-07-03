@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { FeedItem } from "@/entities/video-cards";
 import type { SearchResultPresentation } from "@/entities/search-results";
-import { SearchResultAuthor } from "./SearchResultAuthor";
+import { SearchResultAuthor } from "./Author";
 
 type SearchResultContentProps = {
   item: FeedItem;

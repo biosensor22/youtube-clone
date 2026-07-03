@@ -53,13 +53,13 @@ export function WatchPage({ currentItem, channel, comments }: WatchPageProps) {
   } = useWatchComments(comments, currentItem.id);
 
   return (
-    <section className="min-w-0">
+    <section className="flex w-full max-w-350 flex-col px-0">
       <WatchPlayer
         title={currentItem.title}
         thumbnail={currentItem.thumbnail}
       />
 
-      <h1 className="mt-3 text-xl font-semibold leading-7">
+      <h1 className="mt-2 ml-1.5 text-xl font-semibold leading-7">
         {currentItem.title}
       </h1>
 
